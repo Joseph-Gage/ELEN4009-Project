@@ -1,0 +1,65 @@
+\documentclass[10pt,onecolumn]{article}
+\usepackage{KJN}
+\usepackage{graphicx}
+
+\title{\vspace{-4.2cm}Software Engineering Project Proposal }
+\author{ Names: Julian Zeegers (704582) \\  Joseph Gage (751052)\\James Allingham (672732) \\ Nathan Haag (873666) }
+
+\addtolength{\oddsidemargin}{-1cm}
+\addtolength{\evensidemargin}{-1cm}
+\addtolength{\textwidth}{2cm}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\maketitle
+\pagestyle{plain}
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Main Body%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introduction}
+Facebook is one of the most popular social networks used today. Due to the fact that it has over 1.5 billion users, there is a large amount of captured data produced by this site \cite{fb}. Four Software Engineering students have been mandated to track interconnected Facebook links. This document is a brief description of the proposed project including a work distribution for each student pair, the types of technologies that will be utilized and the overall plan for this project.
+
+\section{Project Specification}
+It is assumed that there will be a database containing Facebook user information that is linked. A Model View Controller (MVC) web application will be created that visualizes this Facebook user information stored in this database. Depending on both the type of data and the size of this dataset there are a number of potential applications for the data. These applications may include marketing visualisations based on the user "Likes", large scale social trends, or analytics on a personal level. 
+
+This project will consist of a a front-end team and a back-end team. The front-end team will create the visualisations and the styling template. In other words the front-end team will be dealing with the views. The two members in the front-end team are Joseph Gage and Nathan Haag. The back-end team will be responsible for setting up the database and logic - models and controllers. The two members in this team are Julian Zeegers and James Allingham.
+
+\section{The Technical Aspects}
+The framework for this project will be the python driven MVC framework called Django \cite{django}. This framework will be responsible for linking the back-end to the front-end.
+
+The back-end part will use a graphing database called neo4j \cite{neo4j} and its Python driver called Py2Neo \cite{py2neo}. The front-end part will use HTML and Javascript (in particular is D3.js \cite{d3js}) styled with Bootstrap \cite{bootstrap}.
+
+The inputs for the project will be the data from the database as well as the particular queries which the web application will make. The outputs will be the various visualisations of the queried data.
+
+\section{The Interpersonal Aspects}
+In order to keep the team organised several tools will be employed. The project source code will be stored on a Git repository on GitHub for version control. Each team member will create their own functional branches which will be merged with a development branch and only stable code will be merged into the master branch.
+
+ The team will use Slack to communicate and keep track of each other's work \cite{slack}. The team will also use Trello to keep track of the jobs which need to be done as well as any bugs which require fixing \cite{trello}.
+
+
+\begin{thebibliography}{1}
+\bibitem{fb} Statista. \url {http://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/}. Last accessed 18 February 2016. 
+
+\bibitem{django}  Django. \url{https://www.djangoproject.com/}, Last accessed 18 February 2016.
+
+\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
+
+\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
+
+\bibitem{d3js} D3.js. \url{https://d3js.org/}, Last accessed 18 February 2016.
+
+
+\bibitem{bootstrap} Bootstrap. \url{http://getbootstrap.com/}, Last accessed 18 February 2016.
+
+\bibitem{slack} Slack. \url{https://slack.com/}, Last accessed 18 February 2016.
+
+\bibitem{trello} Trello. \url{https://trello.com/}, Last accessed 18 February 2016.
+	
+\end{thebibliography}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\end{document}
