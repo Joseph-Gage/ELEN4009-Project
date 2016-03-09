@@ -23,6 +23,16 @@
 \section{Introduction}
 The Tracking Interconnected Facebook Links project is a project that  is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualization are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the users friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This document describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and is created as close to the requirements as possible.
 
+\subsection{System Overview}
+This project will be made up of various software systems with the back-end and front-end working together to form a dynamic visualization program. The overview of the entire software system is illustrated in Figure 1. This figure shows how the various components of the system interact with each other. Figure 1 shows how the client (using a web browser) interacts with an Apache server and the Django framework. It also shows that the Neo4j database provides data to the framework and is then sent to the web browser (through the Apache server) to create visualizations.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.65]{system.jpg}
+	\caption{Diagram of System Overview}
+	\label{system}
+\end{figure}
+
 \section{Software Development Life Cycle Choice}
 The Software Development Life Cycle (SDLC) is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC of the project is an important decision at the start of a software project as it could determine whether a project is successfully completed in the time given and at the required quality. There are a few SDLCs that are taken under consideration such the sequential development Waterfall approach or the Iterative and Incremental process in which features are gradually added. However, for this particular project, the fast pace method of the Agile SDLC was thought to be the best approach as the pace of producing a working solution is a priority. The requirements for this project is also not fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with slight requirement changes.
 
