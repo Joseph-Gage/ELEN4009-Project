@@ -26,6 +26,20 @@
 \section{Introduction}
 The Tracking Interconnected Facebook Links project is a project that  is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualization are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the users friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This document describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and is created as close to the requirements as possible.
 
+\subsection{requirements}
+
+The requirements for the application are that it:
+\begin{enumerate}
+\item consists of a front-end that runs client side and a back-end that runs server side 
+\item has user friendly friendly front-end which is easy to use for non-technologically inclined people
+\item is scalable - with a back-end that supports multiple clients
+\item is fast and responsive leading to a pleasant user experience
+\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical manner leading to new and interesting discoveries being made
+\item is extensible - allowing for additions and modifications to be made quickly and with ease
+\item is secure - keeping the users personal data safe and respecting their privacy
+\item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API
+\end{enumerate}
+
 \subsection{System Overview}
 This project will be made up of various software systems with the back-end and front-end working together to form a dynamic visualization program. The overview of the entire software system is illustrated in Figure 1. This figure shows how the various components of the system interact with each other. Figure 1 shows how the client (using a web browser) interacts with an Apache server and the Django framework. It also shows that the Neo4j database provides data to the framework and is then sent to the web browser (through the Apache server) to create visualizations.
 
@@ -90,13 +104,13 @@ Graph databases are a type of NoSQL or Not Only SQL database. They excel at mana
 \begin{figure}[htbp]
     \centering
     \begin{tikzpicture}[->,>=stealth,shorten >=1pt,auto,node distance=3cm,
-       thick,main node/.style={circle,fill=black!20,draw}]
+       thick,main node/.style={circle,fill=black!20,draw,align=center}]
 
       \node[main node] at (0,0) (1) {Neo4j};
-      \node[main node] at (4,0) (2)  {Graph DB};
-      \node[main node] at (8,0) (3) {NoSQL DB};
+      \node[main node] at (4,0) (2)  {Graph\\ DB};
+      \node[main node] at (8,0) (3) {NoSQL\\ DB};
       \node[main node] at (8,3) (4) {Database};
-      \node[main node] at (4,3) (5) {Relational DB};
+      \node[main node] at (4,3) (5) {RDBMS};
       \node[main node] at (0,3) (6) {SQLite};
       \path
       (1) edge [bend right] node {is a} (2)
@@ -143,7 +157,7 @@ In this application the data being stored will be that of Facebook relationships
     \caption{Example of facebook type data in a graph database}
     \label{friends}
 \end{figure}
-From Figure \ref{friends} notice that both the relationships as well as the entities themselves have associated data. In face each entity acts as a key value store. Queries can be performed to find all friends since a certain date or all friends of friends (as discussed above). These queries can be performed using Neo4j's \emph{Cypher} query language or via language drivers. The language driver that will be used for this application is \emph{Py2neo}.
+Note, from Figure \ref{friends}, that both the relationships as well as the entities themselves have associated data. In face each entity acts as a key value store. Queries can be performed to find all friends since a certain date or all friends of friends (as discussed above). These queries can be performed using Neo4j's \emph{Cypher} query language or via language drivers. The language driver that will be used for this application is Py2neo.
 
 \section{Supporting Software}
 The Interconnected Facebook Links project is intended to be used by a Facebook user and this user is assumed to not technically advanced. Therefore the final product needs to be user friendly and easy to use. The supporting software mentioned in this section describes the technologies that will be used to ensure the user-friendliness and functionality of the product is achieved. The framework and internal structure  of the project in terms of the architecture, front-end and back-end has been described in the previous sections. This section describes the software that will be used to support these mentioned structures.
