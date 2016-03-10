@@ -59,6 +59,14 @@ In the Scrum process, prioritized project tasks (referred to as sprints) are def
 
 
 \section{Architecture Choice}
+The choice of software architecture is influenced by the tools and libraries used for both the back-end service and the front-end user interface method (detailed in sections four and five), network communication and team composition. These three sections will be described further in architecture choice. 
+
+To specify the architecture choice, the team has chosen to follow a two-tier, client-server architecture. In 'client-server', client refers to any user actively interacting with (that is, drawing on the server for relevant data), the user interface provided by the system. Server refers to the storage and hosting of the integrated software solution on the 'opposite end' of the network, including business and graphing logic, as well as data drawn on from the graph database \emph{Neo4j}. The user interface is only possible with large volumes of logic on the server, and based on user requests, the logic decides on the required data that needs to be pulled from the server. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request.
+
+Two-tier means that any instance of a client utilizing the provided user interface will be separated from the server via a network through which all communication will occur. For the purpose of tracking interconnected Facebook links, the network between the client and the server will be the Internet. This design choice follows the need for multiple users to have access to the software simultaneously. 
+
+It is important to take note that in this architecture, the client and the server are tightly woven together, as communication between the two entities occurs directly over the network. This means that there is no middle tier to interpret and translate data correctly. In terms of team composition, this design choice is beneficial and reduces the amount of code needed to ensure compatibility. A single, four-man team is working on the software, utilizing an Agile SDLC method that promotes continuous feedback. Due to the small size of the team and the ability to closely work together and ensure quality amongst team work, direct communication between client and server is efficient and easy to achieve.
+
 
 
 \section{Front-end User Interface Method}
