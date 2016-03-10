@@ -4,6 +4,7 @@
 \usepackage{url}
 \usepackage{wrapfig}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
 
 \title{\vspace{-4.2cm}Software Requirement Specification for Tracking Interconnected Facebook Links }
 \author{ ELEN4009 - Software Engineering\\ Julian Zeegers (704582) \\  Joseph Gage (751052)\\ James Allingham (672732) \\ Nathan Haag (873666)}
@@ -26,7 +27,7 @@
 \section{Introduction}
 The Tracking Interconnected Facebook Links project is a project that  is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualization are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the users friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This document describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and is created as close to the requirements as possible.
 
-\subsection{requirements}
+\subsection{Requirements}
 
 The requirements for the application are that it:
 \begin{enumerate}
@@ -40,12 +41,15 @@ The requirements for the application are that it:
 \item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API
 \end{enumerate}
 
+\subsection{Purpose}
+The purpose of the project is to provide a tool to be used  by individuals and organisations to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualising this information dynamically so that it will be advantageous to any  user.
+
 \subsection{System Overview}
-This project will be made up of various software systems with the back-end and front-end working together to form a dynamic visualization program. The overview of the entire software system is illustrated in Figure 1. This figure shows how the various components of the system interact with each other. Figure 1 shows how the client (using a web browser) interacts with an Apache server and the Django framework. It also shows that the Neo4j database provides data to the framework and is then sent to the web browser (through the Apache server) to create visualizations.
+This project will be made up of various software systems with the back-end and front-end working together to form a dynamic visualisation program. The overview of the entire software system is illustrated in Figure 1. This figure shows how the various components of the system interact with each other. Figure 1 shows how the client (using a web browser) interacts with an Apache server and the Django framework. It also shows that the Neo4j database provides data to the framework and is then sent to the web browser (through the Apache server) to create visualizations.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.65]{system.jpg}
+	\includegraphics[scale=0.65]{system}
 	\caption{Diagram of System Overview}
 	\label{system}
 \end{figure}
@@ -63,6 +67,111 @@ In the Scrum process, prioritized project tasks (referred to as sprints) are def
 
 \section{Front-end User Interface Method}
 
+\subsection{User Interface Functionality}
+The front-end User Interface (UI) will contain several tools for visualising Facebook friend networks. The most basic tool will show a simple network diagram to view all friends of the user and friends of the user's friends. This friendship diagram will include several functionalities.
+
+Firstly, a user may select any of his friends and the diagram will transition to the selected person's friend network. This is pictured in figure \ref{click}. 
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
+
+      \node[main node] at (2,0) (1) {Nathan};
+      \node[main node] at (6,0) (2)  {Julian};
+      \node[main node] at (4,-2) (3) {Bob};
+      \node[main node] at (2,-4) (4) {Alice};
+      \node[main node] at (6,-4) (5) {Sasha};
+      
+      \node[main node] at (10,0) (6) {Joe};
+      \node[main node] at (14,0) (7) {James};
+      \node[main node] at (12,-2) (8) {Sasha};
+      \node[main node] at (14,-4) (9) {Paul};
+      \node[main node] at (10,-4) (10) {Bob};
+      
+      \node[] at (4,-5) (11) {$(a)$};
+      \node[] at (12,-5) (12) {$(b)$};
+      
+      \node[single arrow, minimum size=1.5cm, draw] at (8,-2) (11) {};
+    
+      \path
+      (1) edge[bend left] (3)
+      (3) edge[bend right] (5)
+      (3) edge[bend left] (4)
+      (3) edge[bend left] (2)
+      
+      (6) edge[bend left] (8)
+      (8) edge[bend right] (9)
+      (8) edge[bend left] (10)
+      (8) edge[bend left] (7)
+      (9) edge[bend right] (7)
+      (6) edge[bend right] (9)
+      (6) edge[bend left] (7)
+      ;
+
+    \end{tikzpicture}
+    \caption{Transition of friend network after clicking on Sasha in (a) to (b).}
+    \label{click}
+\end{figure}
+
+Secondly, the user may select certain information to be displayed on the diagram. For example, friend data can be selected as in figure \ref{details} or relationship data as in figure \ref{relation}.
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
+
+      \node[main node] at (0,0) (1) {Nathan};
+      \node[main node] at (8,0) (2)  {Julian};
+      \node[main node] at (4,-2) (3) {Bob};
+      \node[main node] at (0,-4) (4) {Alice};
+      \node[main node] at (8,-4) (5) {Sasha};
+          
+      \path
+      (1) edge[bend left] node[above, fill=white] {\small Friends since} node[below,fill=white] {\small 2000} (3)
+      (3) edge[bend right] node[above, fill=white] {\small Friends since} node[below,fill=white] {2007} (5)
+      (3) edge[bend left] node[above,fill=white] {Friends since} node[below,fill=white] {2014} (4)
+      (3) edge[bend left] node[above,fill=white] {Friends since} node[below,fill=white] {2004}(2)
+      ;
+
+    \end{tikzpicture}
+    \caption{Friend network showing friendship details.}
+    \label{details}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
+
+      \node[main node] at (0,0) (1) {Nathan};
+      \node[main node] at (8,0) (2)  {Julian};
+      \node[main node] at (4,-2) (3) {Bob};
+      \node[main node] at (0,-4) (4) {Alice};
+      \node[main node] at (8,-4) (5) {Sasha};
+          
+      \path
+      (1) edge[bend left] node[above, fill=white] {\small It's complicated} node[below,fill=white] {\small since 2002} (3)
+      (3) edge[bend right] (5)
+      (3) edge[bend left] node[above,fill=white] {Open relationship} node[below,fill=white] {since 2015} (4)
+      (3) edge[bend left] (2)
+      ;
+
+    \end{tikzpicture}
+    \caption{Friend network showing relationship details.}
+    \label{relation}
+\end{figure}
+
+Finally, the user will be able customise the types of paths which he would like to show. For example, he or she may want to view only friends in the network who have a certain occupation or gender or age and or any other user attribute.
+
+\subsection{User Interface Implementation}
+The UI will be operated from a web browser. The following sections detail the tools the UI implementation will take advantage of.
+
+\subsubsection{HTML and CSS}
+The application will use HTML and CSS to present its content to users. Several HTML pages will be implemented including a landing page, a registration and login page, a personal information and link to Facebook page and the actual data visualisation page displaying the friend network.
+
+\subsubsection{Bootstrap}
+Bootstrap will be used to style the HTML and CSS pages \cite{Bootstrap}. This will make the UI more user friendly and aesthetically pleasing.
+
+\subsubsection{Javascript and D3.js}
+The application will use Javascript and D3.js for visualising the data \cite{D3}. The friend network diagram will use the D3.js force directed relational graph.
 
 \section{Back-end Service}
 
@@ -168,13 +277,13 @@ Another technology that will support the functionally of the website is the D3.j
 
 \begin{thebibliography}{1}
 \bibitem{Kinsey} H. van Vliet, \emph{Software Engineering: Principles and Practice} Wiley, 2007.
+\bibitem{Bootstrap}  \emph{Get Bootstrap - 3.3.6} \url{www.getbootstrap.com} Last accessed: 9 March 2016.
+\bibitem{D3}  \emph{D3.js - Data Driven Documents} \url{www.d3.com} Last accessed: 9 March 2016.
 \bibitem{django} Django Software Foundation. \emph{Django Overview}. \url{https://www.djangoproject.com/start/overview/}. 2016. Last accessed: 9 March 2016. 
 \bibitem{djangobook} Adrian Holovaty, Jacob Kaplan-Moss, et al. \emph{The Django Book}. \url{http://www.djangobook.com/en/2.0/index.html#}. Ch 3. Last accessed: 9 March 2016.
 \bibitem{djangoApache} Django Software Foundation. \emph{How to install Django}. \url{https://docs.djangoproject.com/en/1.9/topics/install/}. 2016. Last accessed: 9 March 2016.	
 \bibitem{apache} Apache Software Foundation. \emph{Apache - HTTP Server Project}. \url{https://httpd.apache.org/ABOUT_APACHE.html}. 2016. Last accessed: 9 March 2016.	
 \bibitem{graphdbs} Robinson I, Webber J, Eifrem E. \emph{Graph Databases} O'Reilly Media. ch 2. pp 21 - 22. June 2013.
-\bibitem{Bootstrap}  \emph{Get Bootstrap - 3.3.6} \url{www.getbootstrap.com} Last accessed: 9 March 2016.
-\bibitem{D3}  \emph{D3.js - Data Driven Documents} \url{www.d3.com} Last accessed: 9 March 2016.
 
 
 \end{thebibliography}
