@@ -1,0 +1,6 @@
+Introduction - everyone
+Software Development Life Cycle - Julian
+Architecture Choice - Nathan
+Front-end User Interface Method - Joseph
+Back-end Service - James
+Supporting Software - Julian
