@@ -2,13 +2,15 @@ This document contains instructions on how to setup up the project environment
 for the Friends Analyzer Project.
 
 The following system specifications are assumed:
-- Python 2.7 is installed
-- pip is installed (sudo apt-get install pip)
+
+- Python 2.7 is installed (sudo apt-get install python)
+- pip is installed (sudo apt-get install python-pip python-dev build-essential)
 - aptitude is installed (sudo apt-get install aptitude)
+- Apache2 is installed (sudo apt-get install apache2)
 
 How to setup Django Framework (Ubuntu):
 
-1) pip install Django
+1)sudo pip install Django
 2) Save the Project Folder "friendAnalyzer" in the following directory:
 		"/var/www"
 
@@ -24,27 +26,26 @@ How to setup Django Framework (Ubuntu):
 
 How to setup Apache Server (Ubuntu):
 
-1) sudo apt-get install apache2
-2) sudo apititude install libapache2-mod-wsgi
-3) Go to "/etc/apache2/sites-available" and replace "000-default.conf" with 
-	the "000-default.conf" attached.
+1) sudo apititude install libapache2-mod-wsgi
+2) Replace "/etc/apache2/sites-available/000-default.conf" with  "$GITPATH/ELEN4009-Project/source/Set_up_Server/000-default.conf".
 
-4) Open "000-default" and ensure that all the directories and Admin infomation
-	is correct. Path directories should be valid and exist.
+3) Open "000-default" and ensure that all the directories and Admin infomation is correct. Path directories should be valid and exist.
 
-5) Open "/etc/apache2/apache.conf" and add (to the last line):
-	 	WSGIPythonPath /var/www/friendAnalyzer
+4) Open "/etc/apache2/apache.conf" and add (to the last line):
 
-6) Go to "/var/www" and make a directory called "logs" :
+	WSGIPythonPath /var/www/friendAnalyzer
+
+5) Go to "/var/www" and make a directory called "logs" :
 
 		 sudo mkdir logs
-	then:
-		 chmod 777 logs
 
-7) In directory "/var/www" enter the following:
+	then:
+		 sudo chmod 777 logs
+
+6) In directory "/var/www" enter the following:
 	service apache2 restart
 
-8) In browser, go to : "localhost"
+7) In browser, go to : "localhost"
 	Again, Friend Analyzer Project homepage should load.
 	This time it is using the Apache server.
 	Setup is now complete.
