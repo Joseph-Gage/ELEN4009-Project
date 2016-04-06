@@ -1,0 +1,11 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{requirements}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{System Overview}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Software Development Life Cycle Choice}{}% 4
+\BOOKMARK [1][-]{section.3}{Architecture Choice}{}% 5
+\BOOKMARK [1][-]{section.4}{Front-end User Interface Method}{}% 6
+\BOOKMARK [1][-]{section.5}{Back-end Service}{}% 7
+\BOOKMARK [2][-]{subsection.5.1}{Django}{section.5}% 8
+\BOOKMARK [2][-]{subsection.5.2}{Apache}{section.5}% 9
+\BOOKMARK [2][-]{subsection.5.3}{Neo4j}{section.5}% 10
+\BOOKMARK [1][-]{section.6}{Supporting Software}{}% 11
