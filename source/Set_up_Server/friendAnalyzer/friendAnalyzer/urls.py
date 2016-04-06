@@ -4,5 +4,6 @@ from friendAnalyzerApp.views import home
 urlpatterns = patterns('',
     url(r'^$', 'friendAnalyzerApp.views.home'),
     url(r'^home/$', 'friendAnalyzerApp.views.home'),
+    url(r'^friend-network/$', 'friendAnalyzerApp.views.friendNetwork'),
     
 )
