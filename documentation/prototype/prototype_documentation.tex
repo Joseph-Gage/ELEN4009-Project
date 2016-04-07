@@ -34,12 +34,13 @@ The back-end team is comprised of two members with each member having a respecti
 \subsubsection{The Server and Framework}
 The server and framework set-up is an element of the back-end component but is also the link between the back-end and front-end sections. A Django project must be created that provides a framework for the website where web application's views, URLs and templates can be stored. The Django project must also be hosted on an Apache server so the web application is able to be accessed via the local host initially and then on th Internet at a certain domain. This framework must also link to the Neo4j database and send requested data to the web application. The following are tasks that are required to be completed for this component:
 
-\begin{itemize}
-	\item Investigate and install the required prerequisite resources such as: Django, apache2, $mod\_wsgi$, etc.
+\begin{enumerate}
+	\item Investigate and install the required prerequisite resources such as: Django, apache2, mod\_wsgi, etc \cite{django}.
 	\item Create a Django project and Django web application: This includes setting up a homepage URL, making a homepage view and a homepage template.
 	\item Set-up an Apache2 server: Configure the apache.conf file to make server host the Django project and server static files such as css and images.
-	\item Write a README instrutions file that explains how to set the   
-\end{itemize}
+	\item Write a README instructions file that explains how to set-up the project so a user can it. Write instructions that explain the Django and Apache server set-up in particular.
+	\item Integrate the various components of the project. This includes storing the HTML files (created by the front-end team) in the correct places within the Django project and connect the neo4j database to the server.     
+\end{enumerate}
 
 \subsubsection{The Database}
 
