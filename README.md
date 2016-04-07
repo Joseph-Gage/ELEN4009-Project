@@ -5,6 +5,7 @@
 
 **Pre-requisites:**
 
+- Ubuntu 15.04 or later
 - Python 2.7 is installed (sudo apt-get install python)
 - pip is installed (sudo apt-get install python-pip python-dev build-essential)
 - aptitude is installed (sudo apt-get install aptitude)
