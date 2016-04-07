@@ -42,5 +42,5 @@ def getFoFNetwork(name, surname):
 	return result
 
 
-#result = getFoFNetwork("James", "Allingham")
-#print(json.dumps(result, indent=4, sort_keys=True))
+result = getFoFNetwork("James", "Allingham")
+print(json.dumps(result, indent=4, sort_keys=True))
