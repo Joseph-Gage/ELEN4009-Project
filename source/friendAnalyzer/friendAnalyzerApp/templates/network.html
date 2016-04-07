@@ -45,11 +45,12 @@
   <section class = "container">
     <script type="text/javascript">
 
+/* Define graph window parameters */
 var width = 960,
     height = 500,
     radius = 6;
 
-/*var graph = {
+/*dummy data:var graph = {
   "nodes":[{"name":"Joseph Gage","group":1, "image_url": "{% static 'images/joe.jpg' %}"},
            {"name":"James Allingham","group":2, "image_url": "{% static 'images/james.jpg' %}"},
            {"name":"Julian Zeegers","group":2, "image_url": "{% static 'images/julz.jpg' %}"},
@@ -79,12 +80,13 @@ var width = 960,
          {"source":8,"target":3,"value":200, "relationship": "friend"},
          {"source":9,"target":3,"value":200, "relationship": "friend"},]}*/
 
-
+/* Import graph data from view controller */
 var graph = {{ FriendGraph|safe }};
 
 var nodes = graph.nodes,
     links = graph.links;
 
+/* Match friend id's to order of friends in JSON document for target and source display */
 for(i=0; i<links.length; i++)
 {
   for(j=0; j<nodes.length; j++)
@@ -94,10 +96,12 @@ for(i=0; i<links.length; i++)
     }
 }
 
+/* Create graphic */
 var svg = d3.select("body").append("svg")
     .attr("width", width)
     .attr("height", height);
 
+/* Create d3.js force object */
 var force = d3.layout.force()
     .charge(-400)
     .gravity(0.05)
@@ -109,14 +113,17 @@ var force = d3.layout.force()
       .links(links)
       .start();
 
+/* Allow for moving nodes around */
   var drag = force.drag()
       .on("dragstart", dragstart);
 
+/* Insert links */
   var link = svg.selectAll(".link")
       .data(links)
     .enter().insert("line")
       .attr("class", "link");
 
+/* Insert nodes */
   var node = svg.selectAll(".node")
       .data(nodes)
     .enter().append("g")
@@ -124,6 +131,7 @@ var force = d3.layout.force()
       .call(force.drag)
       .on("dblclick", dblclick);
 
+/* Add images to nodes */
   node.insert("image")
       .attr("xlink:href", function(d) {return d.img_url})
       .attr("x", function(d) {if (d.group==1) return -20
@@ -134,6 +142,7 @@ var force = d3.layout.force()
                                   else return 40})
       .attr("height", function(d) {if (d.group==1) return 40
                                   else return 40})
+/* Make images blow up slightly on mouseover and return to normal when mouse leaves */
       .on('mouseenter', function() {
         d3.select(this)
           .transition()
@@ -151,20 +160,23 @@ var force = d3.layout.force()
           .attr("width", 50);
       });
 
+/* Add name labels to nodes */
   node.append("text")
       .attr("dx", 25)
       .attr("dy", ".35em")
       .text(function(d) { return d.name });
 
+/* Draw everything */
   force.on("tick", function() {
+/* Enforce borders */
     node.attr("cx", function(d) {return d.x = Math.max(radius, Math.min(width-radius, d.x)); })
         .attr("cy", function(d) {return d.y = Math.max(radius, Math.min(width-radius, d.y)); });
-
+/* Draw links */
     link.attr("x1", function(d) { return d.source.x; })
         .attr("y1", function(d) { return d.source.y; })
         .attr("x2", function(d) { return d.target.x; })
         .attr("y2", function(d) { return d.target.y; });
-        
+/* Draw nodes */        
     node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
     force.start();
   });
