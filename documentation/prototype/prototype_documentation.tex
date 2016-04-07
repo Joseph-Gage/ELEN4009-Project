@@ -21,6 +21,7 @@
 
 
 \section{Introduction}
+This document describes several aspects of the prototype developed for the interconnected Facebook link data. An expanded description is provided based on the prototype's completion. The responsibilities of the back-end and front-end teams in developing the prototype are also discussed along with several a description of each member's work on the project. Finally, the testing which each team member implemented to ensure the quality of their parts of the project is discussed.
 
 \section{Expanded Description}
 A Model View Controller (MVC) web application was created using Django \cite{django} which visualises Facebook user information stored in a neo4j database \cite{neo4j}. This application was hosted on an Apache server using mod\_wsgi \cite{wsgi} and the neo4j database was integrated with the application using the py2neo driver \cite{py2neo}. The visualisations were created using d3.js \cite{d3js} and bootstrap \cite{bootstrap}. The visualisations provide data about friend networks as well as common words used in friend status updates.
@@ -30,25 +31,46 @@ The project is able to provide basic data about friends and their status updates
 The project consisted of a front-end team and a back-end team. The front-end team created the visualisations. The two members in the front-end team were Joseph Gage and Nathan Haag. The back-end team was responsible for setting up the database, server and web application. The two members in this team were Julian Zeegers and James Allingham.
 
 \section{Group Members Responsibilities}
-The Friend Analyzer Project is created by four project team members divided into two main components, namely the back-end and front-end team. This section outlines the responsibilities each member has and respective tasks. 
-
+The Friend Analyzer Project was created by four project team members divided into two main components, namely the back-end and front-end teams. This section outlines the responsibilities each member had and their respective tasks. 
 
 \subsection{The Back-end Team}
-The back-end team is comprised of two members with each member having a respective back-end component to work on.
+The back-end team was comprised of two members with each member having a respective back-end component to work on.
+
+The database was developed and tested by James Allingham. The server and framework were developed and tested by Julian Zeegers.
 
 \subsubsection{The Server and Framework}
-The server and framework set-up is an element of the back-end component but is also the link between the back-end and front-end sections. A Django project must be created that provides a framework for the website where web application's views, URLs and templates can be stored. The Django project must also be hosted on an Apache server so the web application is able to be accessed via the local host initially and then on th Internet at a certain domain. This framework must also link to the Neo4j database and send requested data to the web application. The following are tasks that are required to be completed for this component:
+The server and framework set-up was an element of the back-end component but was also the link between the back-end and front-end sections. A Django project was created that provided a framework for the website where web application views, URLs and templates could be stored. The Django project was also be hosted on an Apache server so the web application was able to be accessed via the local host initially and then on the Internet at a certain domain. This framework was also link to the neo4j database and requested data to the web application. The following are tasks that were required to be completed for this component:
 
 \begin{enumerate}
-	\item Investigate and install the required prerequisite resources such as: Django, apache2, mod\_wsgi, etc \cite{django}.
+	\item Investigate and install the required prerequisite resources such as: Django, apache2, mod\_wsgi, etc \cite{django} \cite{wsgi} .
 	\item Create a Django project and Django web application: This includes setting up a homepage URL, making a homepage view and a homepage template.
-	\item Set-up an Apache2 server: Configure the apache.conf file to make server host the Django project and server static files such as css and images.
-	\item Write a README instructions file that explains how to set-up the project so a user can it. Write instructions that explain the Django and Apache server set-up in particular.
+	\item Set-up an Apache2 server: Configure the apache.conf file to make a server host the Django project and serve static files such as css and images.
+	\item Write a README instructions file that explains how to set-up the project so a user can run it. Write instructions that explain the Django and Apache server set-up in particular.
 	\item Integrate the various components of the project. This includes storing the HTML files (created by the front-end team) in the correct places within the Django project and connect the neo4j database to the server.     
 \end{enumerate}
 
 \subsubsection{The Database}
+The database used for this project is the graph database called neo4j \cite{neo4j}. This database stores information pertaining to data of a typical Facebook user's profile such as personal identification and relationship with other Facebook users data. Queried data is formatted into a JSON format and returned to the Django framework (as discussed in Section 3.1.1). Various neo4j set-up tasks are required which include the following:
 
+\begin{enumerate}
+	\item Investigate neo4j and Cypher query language and gain knowledge required to use the database. Also research "py2neo" that is a driver used to run Cypher quires using python.
+	\item Setup a neo4j database.
+	\item Create python script that populates the neo4j database (with dummy data). This data is Facebook profile information obtained from the Facebook website and includes information such as the name, friends, age, occupation and a profile picture.
+	\item Create script to query database for data required for the front-end d3.js graphs. This data is formatted to a JSON format.
+	\item Write a README instructions file that explains how to set-up the project so a user can it. Write instructions that explain how to set-up neo4j in particular.
+
+	  
+\end{enumerate}
+
+\subsection{Testing}
+Once the back-end component was coded and set-up, a few tests were conducted to ensure the back-end worked as required. These tests included:
+
+\begin{itemize}
+	\item Tested neo4j Set-up scripted (called "dbSetup.py") successfully created a neo4j database.
+	\item Tested neo4j querying script (called  "dbQuery.py") successfully return the correct queried data from the database as JSON.
+	\item Test the the various Django URLs works and route to the front-end HTML views 
+	\item Tested that the entire project was successfully integrated by ensuring the web application is severed on the Apache server.
+\end{itemize}
 
 
 \subsection{The Front-end Team}
@@ -66,11 +88,11 @@ The friend network graph page was developed and tested by Joseph Gage. The home 
 
 In terms of general responsibilities for the front-end team, the following was required:
 
-\begin{itemize}
+\begin{enumerate}
 	\item Investigate the use of d3.js for all visualisations of Facebook data, researching the various visualisations available and implementing chosen ones that would best serve the purpose of the program. 
 	\item Investigate the use of bootstrap in conjunction with HTML to create a desirable look-and-feel that ensures users enjoy their front-end application experience. 
 	\item Test implementations of the chosen d3.js visualisations as well as their integration into HTML pages, stylised with bootstrap, ensuring that data was pulled correctly from the neo4j database, and where applicable, dummy JSON data.  
-\end{itemize}
+\end{enumerate}
 
 \subsubsection{Testing}
 
