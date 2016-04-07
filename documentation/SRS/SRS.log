@@ -1,17 +1,10 @@
-
-
-
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2015/dev/Debian) (preloaded format=pdflatex 2016.3.3)  10 MAR 2016 18:46
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.3.3)  6 APR 2016 17:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **SRS.tex
 (./SRS.tex
-
 LaTeX2e <2015/01/01>
-
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 Babel <3.9l> and hyphenation patterns for 2 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -31,16 +24,14 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \bibindent=\dimen102
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
@@ -48,11 +39,7 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-<<<<<<< HEAD
 Package graphics Info: Driver file: pdftex.def on input line 94.
-=======
-Package graphics Info: Driver file: pdftex.def on input line 91.
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 
 (/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
@@ -183,11 +170,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip43
 )
-<<<<<<< HEAD
 (./wrapfig.sty
-=======
-(/home/james/texmf/tex/latex/wrapfig/wrapfig.sty
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 \wrapoverhang=\dimen109
 \WF@size=\dimen110
 \c@WF@wrappedlines=\count98
@@ -471,25 +454,6 @@ File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.0 (rcs-revision 1.2)
-<<<<<<< HEAD
-))) (./SRS.aux)
-\openout1 = `SRS.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-=======
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibraryshapes.code.tex
@@ -577,17 +541,12 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
 \scratchdimen=\dimen157
-<<<<<<< HEAD
-\scratchbox=\box38
-=======
 \scratchbox=\box58
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 \nofMPsegments=\count119
 \nofMParguments=\count120
 \everyMPshowfont=\toks28
@@ -611,13 +570,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<<<<<<< HEAD
-\AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring OFF on input line 17.
-=======
 \AtBeginShipoutBox=\box59
 Package hyperref Info: Link coloring OFF on input line 18.
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -627,38 +581,6 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count124
 )
-
-LaTeX Info: Redefining \ref on input line 17.
-LaTeX Info: Redefining \pageref on input line 17.
-LaTeX Info: Redefining \nameref on input line 17.
-\@outlinefile=\write4
-\openout4 = `SRS.out'.
-
-
-ABD: EveryShipout initializing macros
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 20.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 20.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 20.
-
-
-LaTeX Warning: File `system.jpg' not found on input line 48.
-
-
-! Package pdftex.def Error: File `system.jpg' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.48 	\includegraphics[scale=0.65]{system.jpg}
-                                              
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
 LaTeX Info: Redefining \ref on input line 18.
 LaTeX Info: Redefining \pageref on input line 18.
 LaTeX Info: Redefining \nameref on input line 18.
@@ -687,123 +609,10 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 99.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 99.
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<<<<<<< HEAD
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Citation `Kinsey' on page 2 undefined on input line 56.
-
-<django.png, id=27, 281.05pt x 281.05pt>
-File: django.png Graphic file (type png)
- <use django.png>
-Package pdftex.def Info: django.png used on input line 73.
-(pdftex.def)             Requested size: 77.46133pt x 77.45837pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 75--75
-[]\OT1/cmr/m/n/10 Figure 2: []The
- []
-
-[2]
-
-LaTeX Warning: Citation `django' on page 3 undefined on input line 79.
-
-
-LaTeX Warning: Citation `djangobook' on page 3 undefined on input line 81.
-
-
-LaTeX Warning: Citation `djangoApache' on page 3 undefined on input line 83.
-
-
-LaTeX Warning: Citation `apache' on page 3 undefined on input line 86.
-
-<apache.png, id=42, 319.1925pt x 172.645pt>
-File: apache.png Graphic file (type png)
- <use apache.png>
-Package pdftex.def Info: apache.png used on input line 89.
-(pdftex.def)             Requested size: 77.46133pt x 41.89665pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 91--91
-[]\OT1/cmr/m/n/10 Figure 3: []The
- []
-
-
-LaTeX Warning: Reference `neo4eg' on page 3 undefined on input line 102.
-
-
-LaTeX Warning: Citation `graphdbs' on page 3 undefined on input line 130.
-
-
-LaTeX Warning: Reference `friends' on page 3 undefined on input line 130.
-
-[3 <./django.png> <./apache.png>]
-
-LaTeX Warning: Reference `friends' on page 4 undefined on input line 160.
-
-[4]
-
-LaTeX Warning: Citation `Bootstrap' on page 5 undefined on input line 165.
-
-
-LaTeX Warning: Citation `Bootstrap' on page 5 undefined on input line 165.
-
-
-LaTeX Warning: Citation `D3' on page 5 undefined on input line 167.
-
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 171.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 171.
-[5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 184.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 184.
- (./SRS.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 184.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 184.
-
-
-Package rerunfilecheck Warning: File `SRS.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `SRS.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  0DDFAE35630E6D7CD017929017B5F873;636.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 184.
- ) 
-Here is how much of TeX's memory you used:
- 15089 strings out of 495000
- 287537 string characters out of 6181170
- 343834 words of memory out of 5000000
- 18058 multiletter control sequences out of 15000+600000
- 8409 words of font info for 30 fonts, out of 8000000 for 9000
- 14 hyphenation exceptions out of 8191
- 55i,10n,54p,946b,933s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on SRS.pdf (5 pages, 187619 bytes).
-PDF statistics:
- 117 PDF objects out of 1000 (max. 8388607)
- 98 compressed objects within 1 object stream
- 39 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
-=======
 [4] <django.png, id=122, 281.05pt x 281.05pt>
 File: django.png Graphic file (type png)
  <use django.png>
@@ -847,10 +656,10 @@ Package rerunfilecheck Info: File `SRS.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 303.
  ) 
 Here is how much of TeX's memory you used:
- 17055 strings out of 495020
- 343855 string characters out of 6181325
- 436607 words of memory out of 5000000
- 19936 multiletter control sequences out of 15000+600000
+ 17054 strings out of 495000
+ 343742 string characters out of 6181170
+ 437672 words of memory out of 5000000
+ 19956 multiletter control sequences out of 15000+600000
  8708 words of font info for 31 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  55i,10n,67p,942b,930s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -863,11 +672,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist
 type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb>
-Output written on SRS.pdf (9 pages, 270288 bytes).
+Output written on SRS.pdf (9 pages, 270281 bytes).
 PDF statistics:
  232 PDF objects out of 1000 (max. 8388607)
  204 compressed objects within 3 object streams
  54 named destinations out of 1000 (max. 500000)
  164 words of extra memory for PDF output out of 10000 (max. 10000000)
->>>>>>> 8c679974587e1745d69033fb90dc8674345eccec
 
