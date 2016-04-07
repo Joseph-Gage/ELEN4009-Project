@@ -54,7 +54,7 @@
 
 **How to setup Neo4j Graph Database**
 
-1. Download and install Neo4j by going to "http://neo4j.com/download-thanks/?edition=community&flavour=unix&release=2.3.3", and following the instructions
+1. Download and install Neo4j by going to http://neo4j.com/download-thanks/?edition=community&flavour=unix&release=2.3.3, and following the instructions
 
 2. Run Neo4j:
 	$NEO4J_HOME/bin/neo4j start 
