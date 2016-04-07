@@ -5,7 +5,7 @@ authenticate('localhost:7474', 'neo4j', 'nathan3j')
 
 graph.delete_all()
 
-people = [{"name":"Paul", "surname":"Cresswell", "img_url":"/static/images/paul.jpg"},{"name": "James", "surname":"Allingham", "age":21, "occupation":"Student", "img_url":"/static/images/james.jpg"}, {"name":"Julian", "surname":"Zeegers", "age":21, "occupation":"Data Scientist","img_url":"/static/images/jules.jpg"}, {"name":"Joseph", "surname":"Gage", "age":22, "img_url":"/static/images/joe.jpg"} , {"name":"Nathan", "surname":"Haag", "img_url":"/static/images/nathan.jpg}"}, {"name":"Sasha", "surname":"Naidoo", "age":"22", "img_url":"/static/images/sasha.jpg"}]
+people = [{"name":"Paul", "surname":"Cresswell", "img_url":"/static/images/paul.jpg"},{"name": "James", "surname":"Allingham", "age":21, "occupation":"Student", "img_url":"/static/images/james.jpg"}, {"name":"Julian", "surname":"Zeegers", "age":21, "occupation":"Data Scientist","img_url":"/static/images/julz.jpg"}, {"name":"Joseph", "surname":"Gage", "age":22, "img_url":"/static/images/joe.jpg"} , {"name":"Nathan", "surname":"Haag", "img_url":"/static/images/nathan.jpg"}, {"name":"Sasha", "surname":"Naidoo", "age":"22", "img_url":"/static/images/sasha.jpg"}]
 
 # for each person add a node to the graph
 for person in people:

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+{% load staticfiles %}
   <title>Word Chart</title>
   <meta charset="utf-8"/>
-  <link rel="stylesheet" href="staticfiles/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
 
-  <script src="staticfiles/d3.min.js"></script>
+  <script src="{% static 'js/d3.min.js' %} "></script>
 
 </head>
 <body>
@@ -15,8 +16,9 @@
         <a class="navbar-brand" href="#">Tracking Interconnected Facebook Nodes - A Visualisation</a>
       </div>
       <ul class="nav navbar-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">About Project</a></li>
+        <li class="index"><a href="/home/">Home</a></li>
+        <li ><a href="/friend-network/">Friend Network Chart</a></li>
+        <li><a href="/word-chart/">Word Chart</a></li>
       </ul>
     </div>
   </nav>
@@ -24,7 +26,7 @@
   <h2>Nathan Haag's Status Update Bubble Chart</h2>
 
   <section class = "container">
-    <script src="staticfiles/bubblechart.js"></script>
+    <script src="{% static 'js/bubblechart.js' %}"></script>
   </section>
 
   <section class = "container">
