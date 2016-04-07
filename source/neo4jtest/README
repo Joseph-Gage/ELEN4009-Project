@@ -1,6 +1,6 @@
 need java - sudo apt-get install default-jdk
 
-1. Download and install Neo4j http://neo4j.com/download-thanks/?edition=community&flavour=unix&release=2.3.3&_ga=1.63239463.987922973.1457453181
+1. Download and install Neo4j http://neo4j.com/download-thanks/?edition=community&flavour=unix&release=2.3.3
 
 2. Run Neo4j
 
