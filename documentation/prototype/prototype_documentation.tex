@@ -23,6 +23,11 @@
 \section{Introduction}
 
 \section{Expanded Description}
+A Model View Controller (MVC) web application was created using Django \cite{django} which visualises Facebook user information stored in a neo4j database \cite{neo4j}. This application was hosted on an Apache server using mod\_wsgi \cite{wsgi} and the neo4j database was integrated with the application using the py2neo driver \cite{py2neo}. The visualisations were created using d3.js \cite{d3js} and bootstrap \cite{bootstrap}. The visualisations provide data about friend networks as well as common words used in friend status updates.
+
+The project is able to provide basic data about friends and their status updates which could be useful for market research, personal interest or social studies.
+
+The project consisted of a front-end team and a back-end team. The front-end team created the visualisations. The two members in the front-end team were Joseph Gage and Nathan Haag. The back-end team was responsible for setting up the database, server and web application. The two members in this team were Julian Zeegers and James Allingham.
 
 \section{Group Members Responsibilities}
 The Friend Analyzer Project is created by four project team members divided into two main components, namely the back-end and front-end team. This section outlines the responsibilities each member has and respective tasks. 
@@ -47,26 +52,47 @@ The server and framework set-up is an element of the back-end component but is a
 
 
 \subsection{The Front-end Team}
+\subsubsection{Description}
+The front-end team developed three views to be hosted by the back-end web application. These views were a home page, a friend network graph page and a friend status update word analysing bubble chart page. 
 
+The home page, since the application was in its prototype phase, consisted of only two visual links to each of the other pages. The page included a navigation bar as well. 
 
+The friend network graph page included the same navigation bar as the home page, thus it was linked to the other two pages. The page displayed a friend network using a d3.js force diagram which included friend profile pictures, links between pictures and name labels. The data used to create the force diagram was taken from the neo4j database. 
+
+The friend status update word analysing bubble chart page included the same navigation bar as the home page, thus it was linked to the other two pages. The page displayed a bubble chart generated using a d3.js pack payout with a flattened hierarchy (that is, one level of bubbles). The bubble chart was based on dummy data, which essentially listed words found in Facebook status updates and counted the frequency of those words. The dummy data was stored in a JSON format. The bubble chart visualised the dummy data by basing the size of the circles on the frequency of the word in status updates. 
+
+\subsubsection{Responsibilities}
+The friend network graph page was developed and tested by Joseph Gage. The home page and the friend status update word analysing bubble chart page was developed and tested by Nathan Haag.
+
+In terms of general responsibilities for the front-end team, the following was required:
+
+\begin{itemize}
+	\item Investigate the use of d3.js for all visualisations of Facebook data, researching the various visualisations available and implementing chosen ones that would best serve the purpose of the program. 
+	\item Investigate the use of bootstrap in conjunction with HTML to create a desirable look-and-feel that ensures users enjoy their front-end application experience. 
+	\item Test implementations of the chosen d3.js visualisations as well as their integration into HTML pages, stylised with bootstrap, ensuring that data was pulled correctly from the neo4j database, and where applicable, dummy JSON data.  
+\end{itemize}
+
+\subsubsection{Testing}
+
+General testing involved ensuring that the project workflow ran smoothly. This meant following all existing links and testing that they actually worked, in other words, redirecting users to the correct pages.
+
+The friend network graph page was tested first by using dummy data to ensure that the graph behaved as expected. The graph's border, node characteristics and interaction capabilities was constantly adjusted until they were considered satisfactory. After this the network graph was tested with real data from the neo4j database to ensure integration worked as expected. All of these tests were successful.
+
+Testing of the friend status update word analysing bubble chart page involved using various sets of dummy data to see how the bubble chart changed when the size and content of the data set changed.
 
 \begin{thebibliography}{1}
-\bibitem{fb} Statista. \url {http://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/}. Last accessed 18 February 2016. 
 
 \bibitem{django}  Django. \url{https://www.djangoproject.com/}, Last accessed 18 February 2016.
 
 \bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
 
+\bibitem{wsgi} mod\_wsgi. \url{https://modwsgi.readthedocs.org/en/develop/}, Last accessed 7 April 2016.
+
 \bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
 
 \bibitem{d3js} D3.js. \url{https://d3js.org/}, Last accessed 18 February 2016.
 
-
 \bibitem{bootstrap} Bootstrap. \url{http://getbootstrap.com/}, Last accessed 18 February 2016.
-
-\bibitem{slack} Slack. \url{https://slack.com/}, Last accessed 18 February 2016.
-
-\bibitem{trello} Trello. \url{https://trello.com/}, Last accessed 18 February 2016.
 	
 \end{thebibliography}
 
