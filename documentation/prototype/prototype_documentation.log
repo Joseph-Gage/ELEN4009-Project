@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.6)  6 APR 2016 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.4.6)  7 APR 2016 17:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -201,20 +201,20 @@ This is texnames.sty, Version 1.10 <02 March 1998>
 ) (./prototype_documentation.aux)
 \openout1 = `prototype_documentation.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
-LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
+LaTeX Font Info:    ... okay on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -254,7 +254,7 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 142.
 )
-Package hyperref Info: Link coloring ON on input line 14.
+Package hyperref Info: Link coloring ON on input line 15.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -264,71 +264,71 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count106
 )
-LaTeX Info: Redefining \ref on input line 14.
-LaTeX Info: Redefining \pageref on input line 14.
-LaTeX Info: Redefining \nameref on input line 14.
+LaTeX Info: Redefining \ref on input line 15.
+LaTeX Info: Redefining \pageref on input line 15.
+LaTeX Info: Redefining \nameref on input line 15.
+
+(./prototype_documentation.out) (./prototype_documentation.out)
 \@outlinefile=\write3
 \openout3 = `prototype_documentation.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 17.
+(Font)              <12> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 17.
+(Font)              <8> on input line 18.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 17.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 28.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 28.
+(Font)              <6> on input line 18.
+ [1
 
-Underfull \hbox (badness 10000) in paragraph at lines 28--29
-[]\OT1/cmr/m/n/10 Statista. [][]$\OT1/cmtt/m/n/10 http : / / www . statista . c
-om / statistics / 264810 /
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 69.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 69.
+
+Overfull \hbox (3.20628pt too wide) in paragraph at lines 69--70
+[]\OT1/cmr/m/n/10 Tested neo4j Set-up scripted (called "db-Setup.py") suc-cess-
+fully cre-ated a neo4j database. 
  []
 
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 49.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 49.
-
-(./prototype_documentation.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 49.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 49.
-
-
-Package rerunfilecheck Warning: File `prototype_documentation.out' has changed.
-
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `prototype_documentation.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  A02D95553E30B97FF125B1AA17CF9044;47.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 49.
+[3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 107.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 107.
+ [4]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
+ (./prototype_documentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
+Package rerunfilecheck Info: File `prototype_documentation.out' has not changed
+.
+(rerunfilecheck)             Checksum: C71C7FE946EE0D173DDC60DC7917D186;723.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 123.
  ) 
 Here is how much of TeX's memory you used:
- 5569 strings out of 493085
- 81862 string characters out of 6136918
- 168641 words of memory out of 5000000
- 9006 multiletter control sequences out of 15000+600000
- 8641 words of font info for 30 fonts, out of 8000000 for 9000
+ 5624 strings out of 493085
+ 82669 string characters out of 6136918
+ 169811 words of memory out of 5000000
+ 9029 multiletter control sequences out of 15000+600000
+ 9256 words of font info for 32 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,30p,345b,321s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on prototype_documentation.pdf (1 page, 66320 bytes).
+ 36i,6n,30p,658b,402s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on prototype_documentation.pdf (4 pages, 106174 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 45 compressed objects within 1 object stream
- 12 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 140 PDF objects out of 1000 (max. 8388607)
+ 125 compressed objects within 2 object streams
+ 36 named destinations out of 1000 (max. 500000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 
