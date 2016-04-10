@@ -600,7 +600,58 @@
 	Two other details of the database are important. Firstly, the fields in the dictionaries returned by the above functions were nodes and links where each node and link had sub-fields. An example of their format is shown in Listing \ref{list:dbjson}. Secondly, the database requires an initialisation and migration to start it up. Standard code is provided for these functionalities.
 	
 	\begin{lstlisting}[caption=test,captionpos=b,label=list:dbjson]
-	Please insert JSON dictionary example here Jamie!
+	{
+	    "links": [
+	        {
+	            "level": "None", 
+	            "since": "2014", 
+	            "source": 248, 
+	            "target": 247, 
+	            "type": "FRIENDS_WITH"
+	        }, 
+	        {
+	            "level": "dating", 
+	            "since": "2015", 
+	            "source": 248, 
+	            "target": 252, 
+	            "type": "IN_RELATIONSHIP_WITH"
+	        }, 
+	        {
+	            "level": "None", 
+	            "since": "2013", 
+	            "source": 248, 
+	            "target": 249, 
+	            "type": "FRIENDS_WITH"
+	        }
+	    ], 
+	    "nodes": [
+	        {
+	            "age": null, 
+	            "id": 247, 
+	            "img_url": "{% static 'images/paul.jpg' %}", 
+	            "name": "Paul", 
+	            "occupation": "None", 
+	            "surname": "Cresswell"
+	        }, 
+	        {
+	            "age": 21, 
+	            "id": 248, 
+	            "img_url": "{% static 'images/james.jpg' %}", 
+	            "name": "James", 
+	            "occupation": "Student", 
+	            "surname": "Allingham"
+	        }, 
+	        {
+	            "age": 21, 
+	            "id": 249, 
+	            "img_url": "{% static 'images/jules.jpg' %}", 
+	            "name": "Julian", 
+	            "occupation": "Data Scientist", 
+	            "surname": "Zeegers"
+	        }
+	    ]
+	}
+
 	\end{lstlisting} 
 	
 	\subsection{Implementation} % Nathan
