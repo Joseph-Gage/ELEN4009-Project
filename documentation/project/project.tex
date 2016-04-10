@@ -166,7 +166,7 @@
 	\section{Software Requirement Specification} % James
 	
 	\subsection{Introduction}
-	This project is intended to visualise the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This section describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and fulfils its requirements.
+	This project is intended to visualise the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Additional features could potentially be added to this tool and therefore the solution must be dynamic and flexible. This section describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and fulfils its requirements.
 	
 	\subsubsection{Requirements}
 	
@@ -176,7 +176,7 @@
 		\item has user friendly front-end which is easy to use for non-technologically inclined people,
 		\item is scalable - with a back-end that supports multiple clients,
 		\item is fast and responsive leading to an enjoyable user experience,
-		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical which facilitates discovery,
+		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical manner which facilitates discovery,
 		\item is extensible - allowing for additions and modifications to be made quickly and with ease,
 		\item is secure - keeping the users personal data safe and respecting their privacy, and
 		\item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API.
@@ -186,7 +186,7 @@
 	The purpose of the project is to provide a tool to be used by individuals (and organizations at a later stage) to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualizing this information dynamically so that it will be advantageous to any  user.
 	
 	\subsubsection{System Overview}
-	This project will be made up of various software systems with the back-end and front-end working together to form a dynamic visualisation program. The overview of the entire software system is illustrated in Figure \ref{system}. This figure shows how the various components of the system interact with each other. Figure \ref{system} shows how the client (using a web browser) interacts with an Apache server and the Django framework. It describes how data from the Neo4j database is fetched by the Django framework and sent to the user via the Apache server.
+	This project will be made up of various software systems with the back-end and front-end working together to form a web-based visualisation application. The overview of the entire software system is illustrated in Figure \ref{system}. This figure shows how the various components of the system interact with each other. Figure \ref{system} shows how the client (using a web browser) interacts with an Apache server and the Django framework. It describes how data from the Neo4j database is fetched by the Django framework and sent to the user via the Apache server.
 	
 	\begin{figure}[h]
 		\centering
@@ -196,7 +196,7 @@
 	\end{figure}
 	
 	\subsection{Software Development Life Cycle Choice}
-	The Software Development Life Cycle (SDLC) is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SLDCs were considered:
+	The SDLC is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SLDCs were considered and are listed below.
 	
 	\begin{itemize}
 		\item \textbf{Waterfall model} - A sequential development model that lacks feedback. This technique consists of the following steps: requirements definition, design, implementation, verification and maintenance. However, due to the lack of feedback, this approach is not feasible unless the requirements are not completely defined in advance, the scope is fixed and the technology is well understood by the development team.
@@ -207,9 +207,9 @@
 		
 	\end{itemize}
 	
-	For this particular project, the fast pace method of the Agile SDLC was thought to be the best approach as the pace of producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
+	For this particular project, the fast pace method of the Agile SDLC is the best approach as the pace of producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
 	
-	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed\cite{Kinsey}.
+	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
 	
 	In the Scrum process, prioritized project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
 	
@@ -217,18 +217,18 @@
 	\subsection{Architecture Choice}
 	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{backsec} and \ref{frontsec}), network communication and team composition. 
 	
-	To specify the architecture choice, the team has chosen to follow a two-tier, client-server architecture. In 'client-server', client refers to any user actively interacting with (that is, drawing on for relevant data) the server via the user interface provided by the system. Server refers to the storage and hosting of the integrated software solution on the 'opposite end' of the network, including business and data layer (drawn from the Neo4j graph database). The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
+	A two-tier, client-server architecture has been selected. In 'client-server', client refers to any user actively interacting with the server via the user interface provided by the system. Server refers to the storage and hosting of the business and data layers. The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
 	
 	Two-tier means that any instance of a client utilizing the provided user interface will be separated from the server via a network through which all communication will occur. For the purpose of tracking interconnected Facebook links, the network between the client and the server will be the Internet. This design choice follows the need for multiple users to have access to the software simultaneously \cite{beginningsofteng}. 
 	
-	It is important to take note that in this architecture, the client and the server are tightly woven together, as communication between the two entities occurs directly over the network. This means that there is no middle tier to interpret and translate data correctly. In terms of team composition, this design choice is beneficial and reduces the amount of code needed to ensure compatibility. A single, four-man team is working on the software, utilizing an Agile SDLC method that promotes continuous feedback. Due to the small size of the team and the ability to closely work together and ensure quality amongst team work, direct communication between client and server is efficient and easy to achieve.
+	It is important to take note that in this architecture, the client and the server are tightly woven together, as communication between the two entities occurs directly over the network. This means that there is no middle tier to interpret and translate data correctly. In terms of team composition, this design choice is beneficial and reduces the amount of code needed to ensure compatibility.
 	
 	\subsection{Front-End Service} \label{frontsec}
 	
 	\subsubsection{User Interface Functionality}
 	The front-end User Interface (UI) will contain several tools for visualizing Facebook friend networks. The most basic tool will show a simple network diagram to view all friends and friends of friends for the user. This friendship diagram will include several functionalities.
 	
-	Firstly, a user may select any of his friends and the diagram will transition to the selected person's friend network. This is pictured in figure \ref{click}. 
+	Firstly, a user may select any of his friends and the diagram will transition to the selected person's friend network. This is pictured in Figure \ref{click}. 
 	
 	\begin{figure}[htbp]
 		\centering	    
@@ -283,7 +283,7 @@
 		\label{click}
 	\end{figure}
 	
-	Secondly, the user may select certain information to be displayed on the diagram. For example, friendship data can be selected as in figure \ref{details} or relationship data as in figure \ref{relation}.
+	Secondly, the user may select certain information to be displayed on the diagram. For example, friendship data can be selected as in Figure \ref{details} or relationship data as in Figure \ref{relation}.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -929,6 +929,10 @@
 	\end{itemize}
 	
 	During the next sprint meetings, better task time estimation must be made, especially tasks that involve integrating the project components. The use of the Slack messaging platform must also be encouraged to allow the entire team an opportunity to help fix problems. Although the first sprint has these mention improvements that must be implemented, the outcome of the first sprint was successful and it has create a good software development foundation for the future increments of the project.
+
+	\section{Conclusion}
+
+	The requirements, design, implementation and testing of a two-tier web-based application for visualising interconnected Facebook links has been presented. The group work aspects of the project, including SLDC as tools for communication and organisation, have been discussed. The prototype application showed that the selected technologies and tools are capable of delivering the required features and specifications. Future work for the project as well as improvements in the performance of the development team have been suggested.
 	
 	\begin{thebibliography}{1}
 		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
