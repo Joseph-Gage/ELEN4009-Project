@@ -595,42 +595,76 @@ Your abstract goes here...
 		\subsubsection{Basic Flow}
 
 		\begin{enumerate}
-			\item The user launches a browser
+			\item The user launches a browser.
 
-			\item The user navigates to the URL of the web application
+			\item The user navigates to the URL of the web application.
 
-			\item The user clicks the log in button on the default home page
+			\item The user clicks the log in button on the default home page.
 
-			\item The user enters their user name and passwords in the appropriate fields
+			\item The user enters their user name and passwords in the appropriate fields.
 
-			\item The user clicks the log in button on the login page
+			\item The user clicks the log in button on the login page.
 
-			\item The user is taken to their personal landing page
+			\item The user is taken to their personal landing page.
 
 		\end{enumerate}
 
 		\subsubsection{Alternate Flows}
 
-		6a. The user enters the incorrect login details
+		6a. The user enters the incorrect login details:
 
 		\begin{enumerate}
-			\item The user is notified of their mistake
+			\item The user is notified of their mistake.
 
-			\item The user enters the correct details
+			\item The user enters the correct details.
 
-			\item The user is taken to their personal landing page
+			\item The user is taken to their personal landing page.
 		\end{enumerate}
-
-		\hspace{-0.8cm} 6b. The user enters the incorrect login details
+		
+		6b. The user enters the incorrect login details and is unable to correct them:
 
 		\begin{enumerate}
-			\item The user is notified of their mistake
+			\item The user is notified of their mistake.
 
-			\item The user requests that their password be reset
+			\item The user requests that their password be reset.
 
-			\item A password reset link it emailed to the user
+			\item A password reset link it emailed to the user.
 		\end{enumerate}
 
+	\subsection{Use Case 2: Sign Up}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user launches a browser.
+
+			\item The user navigates to the URL of the web application.
+
+			\item The user clicks the sign up button on the default home page.
+
+			\item The user enters their account details on the sign up page. These include: user name, password and email address.
+
+			\item The user is informed that they have been sent a verification email address.
+
+			\item The user goes to their email and clicks the validation link sent to them.
+
+			\item The user is taken back to the default home page, where they can now log in.
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		7a. The user does not receive the verification email:
+
+		\begin{enumerate}
+			\item The user is able to request a second email.
+		\end{enumerate}
+
+		7b. The users email address is incorrect:
+
+		\begin{enumerate}
+			\item The user is able to change their email address and a second email.
+		\end{enumerate}
 
 
 \end{document}
