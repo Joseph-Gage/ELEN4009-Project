@@ -55,7 +55,7 @@
 	
 	\subsection{Problem Statement} % James
 	
-	Facebook is one of the most popular social networks used today. Due to the fact that it has over 1.5 billion users, it produces an incredibly large amount of data \cite{fb}. This data could be used in a number of ways:
+	Facebook is one of the most popular social networks used today. Due to the fact that it has over 1.5 billion users, it produces an incredibly large amount of data \cite{fb}. This data could be used in a number of ways, listed below.
 	
 	\begin{itemize}
 		\item Data scientists and analysts could make use of this data to learn about social trends.
@@ -70,17 +70,17 @@
 	
 	There are a large number of potential applications and the possibilities are only constrained by human creativity.
 	
-	The Tracking Interconnected Facebook Links project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example degrees of separation analyses or more personal analytics. This document describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and is created as close to the requirements as possible. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
+	The Tracking Interconnected Facebook Links project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example degrees of separation analyses or more personal analytics could be added. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
 	
 	The project team consists of four Software Engineering students, divided into two groups: one for the front-end and one for the back-end. This document serves as a description of the project. The software requirement specification will be laid out. The design and implementation of the front and back ends will be discussed. Finally, the Scrum planning and retrospective will be presented.
 	
 	\subsection{Project Objectives} % James
 	
-	In order to both quantify the success of the project as well as properly create tasks with correct priorities, the objective of the project must be laid out. They are as follows:
+	In order to both quantify the success of the project as well as properly create tasks with correct priorities, the objectives of the project must be laid out. They are as listed below.
 	
 	\begin{itemize}
 		
-		\item Create a prototype system for visualizing a persons Facebook connections, social trends and personal analytics.
+		\item Create a prototype system for visualizing a person's Facebook connections, social trends and personal analytics.
 		
 		\item Document the requirements for the system.
 		
@@ -99,9 +99,9 @@
 	\begin{itemize}
 		\item \textbf{The Users}. The users of the system will be individuals who wish to explore their own personal Facebook friend networks and perform intimate personal analytics on their data. At this point the users \textbf{do not} include data scientists, analysts, sociologists and marketing/ advertising professionals - a later version of the software will be targeted at these groups. The reason that the individual was chosen as the first target market is that the requirements for the individual are much less resource intensive and thus are a more realistic goal for the first version of a product. Every decision that is made should improve the user's experience when interacting with the product. 
 		
-		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are then divided into two teams, the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. It is important to note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
+		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are then divided into two teams, the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. Note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
 		
-		\item \textbf{Facebook}. Although Facebook will not themselves be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about amount or type of data about them on Facebook.
+		\item \textbf{Facebook}. Although Facebook will not itself be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about amount or type of data about them on Facebook.
 		
 	\end{itemize}
 	
@@ -114,7 +114,7 @@
 		
 		\item \textbf{Client-Server}. An architecture or model for distributed computing via the Internet or other network.
 		
-		\item \textbf{CSS} - Cascading Style Sheets. A style sheet language for describing the presentation of a website.
+		\item \textbf{CSS} - Cascading Style Sheets. A language for describing the presentation of a website.
 		
 		\item \textbf{Cypher}. The query language for Neo4j graph databases.
 		
@@ -130,13 +130,13 @@
 		
 		\item \textbf{GUI} - Graphical User Interface. A visual tool that allows a user to interact with an application.
 		
-		\item \textbf{HTML} - Hyper Text Markup Language. A markup language for creating web pages.
+		\item \textbf{HTML} - Hyper Text Markup Language. A language for creating web pages.
 		
 		\item \textbf{HTTP} - Hyper Text Transfer Protocol. An Application level protocol that makes use of HTML from sending and receiving messages in a client-server architecture.
 		
 		\item \textbf{JS} - JavaScript. A scripting language often used in building interactive applications in the Web 2.0.
 		
-		\item \textbf{JSON} - JavaScript Object Notation. A data interchange notation used extensively in web applications.
+		\item \textbf{JSON} - JavaScript Object Notation. A data interchange format used extensively in web applications.
 		
 		\item \textbf{mod\_wsgi}. The Django module for Apache Web Server.
 		
@@ -172,14 +172,14 @@
 	
 	The requirements for the application are that it:
 	\begin{enumerate}
-		\item consists of a front-end that runs client side and a back-end that runs server side 
-		\item has user friendly front-end which is easy to use for non-technologically inclined people
-		\item is scalable - with a back-end that supports multiple clients
-		\item is fast and responsive leading to an enjoyable user experience
-		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical which facilitates discovery
-		\item is extensible - allowing for additions and modifications to be made quickly and with ease
-		\item is secure - keeping the users personal data safe and respecting their privacy
-		\item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API
+		\item consists of a front-end that runs client side and a back-end that runs server side, 
+		\item has user friendly front-end which is easy to use for non-technologically inclined people,
+		\item is scalable - with a back-end that supports multiple clients,
+		\item is fast and responsive leading to an enjoyable user experience,
+		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical which facilitates discovery,
+		\item is extensible - allowing for additions and modifications to be made quickly and with ease,
+		\item is secure - keeping the users personal data safe and respecting their privacy, and
+		\item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API.
 	\end{enumerate}
 	
 	\subsubsection{Purpose}
