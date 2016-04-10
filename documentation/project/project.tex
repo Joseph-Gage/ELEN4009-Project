@@ -631,7 +631,7 @@
 	\subsubsection{Friend Network}
 	The friend network was implemented using the d3.js force directed graph. To create the graph, explicit parameters were defined in the script to control the size of the graph, setting the width at 960px, the height at 500px and the radius of the  nodes in the graph to 6px. The HTML code imports the data through back-end functionality to create the friend network. 
 	
-	The script accepts graph data with two concepts: "nodes" and "links". The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has a name and a group assigned to it. The link data maps nodes to each other, describing their relationship and assigning a value to the link between the nodes. This mapping is done by defining a link as the relationship between a source node and a target node.
+	The script accepts graph data with two concepts: "nodes" and "links". The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has an id, name, surname, occupation, age and img\_url assigned to it. The link data maps nodes to each other, describing their relationship level, type and duration. This mapping is done by defining a link as the relationship between a source node and a target node.
 	
 	\subsubsection{Word Bubble Chart}
 	The word bubble chart was implemented using the d3.js pack layout. The d3.js pack layout allows developers to represent elements as bubbles, and the size of the bubble is determined by the frequency (also known as the size attribute) of the elements. The word bubble chart was implemented with a flattened hierarchy, meaning that there is only one level of bubbles as in figure \ref{fig:bubblechart}, as opposed to "bubble charts within bubble charts," shown in \ref{fig:packlayout}.
@@ -641,18 +641,18 @@
    \begin{figure}
    	\centering
    	\includegraphics[scale=1]{bubblechart.PNG}
-   	\caption{Bubble Chart with a flattened hierarchy} \label{fig:bubblechart}
+   	\caption{Bubble Chart with a flattened hierarchy.} \label{fig:bubblechart}
    \end{figure}
    
    \begin{figure}
    	\centering
    	\includegraphics[scale=1]{packlayout.PNG}
-   	\caption{Pack Layout, showing hierarchical composition} \label{fig:packlayout}
+   	\caption{Pack Layout, showing hierarchical composition.} \label{fig:packlayout}
    \end{figure}
    
    \subsubsection{Front-End Testing}
    
-   In order to ensure implementation occurred correctly, the following testing following implementation: 
+   In order to ensure implementation occurred correctly, the following testing followed implementation: 
    
    General testing involved ensuring that the project workflow ran smoothly. This meant following all existing links and testing that they actually worked, in other words, redirecting users to the correct pages.
    
@@ -764,6 +764,53 @@
 	\end{lstlisting} 
 	
 	\subsection{Implementation} % Nathan
+	
+	\subsubsection{Introduction}
+	
+	All implementation discussions are considered to occur in a Linux environment.
+	The implementation of the back-end consisted of setting up Django as the main framework that provided means for integration of the front-end templates and visualisations with back-end data modelling and logic. 
+	
+	\subsubsection{Django}
+	
+	The first step in the implementation of the software was installing Django. In order for the software to run, the Django source code, containing all front-end and back-end code, needed to be copied into the path /var/www. According to the Filesystem Hierarchy Standard Group, /var is the folder in which variable data files are placed, including "spool directories and files, administrative and logging data, and transient and temporary files" \cite{FHS}. The Friend Analyzer software is constantly displayed dynamically generated content, that changes constantly, and so it  
+	
+	\subsubsection{Web Server} 
+	
+	The Apache HTTP server hosts the web application, and is simple to implement. In order to host a Python web application, the mod\_wsgi package is implemented. Once the Apache server and the mod\_wsgi package have been installed, the Apache configuration files need to be changed to direct traffic through the mod\_wsgi package. 
+	
+	This is done by replacing the default Apache configuration file with a new configuration file directing Django to run on the Apache server through  the mod\_wsgi package. Listing \ref{list:apacheconfig} is essentially telling Apache that the application needs to be served from the friend analyzer directory, and that Apache needs to serve any request that is received from the application using the WSGI application defined in the WSGIScriptAlias path.
+	
+	\begin{lstlisting} [caption=Apache Configration File Snippet,captionpos=b,label=list:apacheconfig]
+DocumentRoot /var/www/friendAnalyzer
+WSGIScriptAlias / /var/www/friendAnalyzer/friendAnalyzer/wsgi.py
+	\end{lstlisting}
+
+	\begin{lstlisting} [caption=wsgi.py,captionpos=b,label=list:wsgiscript,breaklines=true]
+os.environ.setdefault ("DJANGO_SETTINGS_MODULE", "friendAnalyzer.settings")
+application = get_wsgi_application()
+	\end{lstlisting}
+	
+	The WSGI application callable is the interface that is used for communication between the server and the code. As seen in listing \ref{list:wsgiscript}, it is an object named \textit{application}. The DJANGO\_SETTINGS\_MODULE is used by Django to locate the settings for the software. The settings module for the friend analyzer application is found in the friend analyzer folder, and is titled \textit{settings.py}. In the settings file, the WSGI\_APPLICATION variable is set to be the application object defined in listing \ref{list:wsgiscript}.
+	
+	\subsubsection{Views}
+	
+	Django uses a \textit{views} file to return data to the web pages to be rendered and used in visualisations. There are three functions which have been named in the back-end design documents: \texttt{home()}, \texttt{friendNetwork()} and \texttt{wordChart()}.
+	
+	The functions \texttt{home()} and \texttt{wordChart()} return the path to where the HTML page is stored. The home page is statically created and thus requires no generated content. Current implementation of the word bubble chart in the prototype consists of dummy data, and so no dynamic data is generated for this function either. The function format is shown in listing \ref{list:homefunc}.
+	
+	The  \texttt{friendNetwork()} function generates content in the form of a JSON file and then passes it to the web page. The parameters passed to the \texttt{getFoFNetwork()} function is the name and surname of the current user, as seen in \ref{list:friendNetwork}.
+	\begin{lstlisting} [caption=home(),captionpos=b,label=list:homefunc,breaklines=true]
+	def home(request):
+		return render_to_response("/var/www/friendAnalyzer/friendAnalyzerApp/templates/index.html")
+	\end{lstlisting}
+	
+	\begin{lstlisting} [caption=friendNetwork(),captionpos=b,label=list:friendNetwork,breaklines=true]
+	#content is rendered to network.html page
+		content = {"FriendGraph": json.dumps(db.getFoFNetwork("Joseph", "Gage"))}
+		return render_to_response("/var/www/friendAnalyzer/friendAnalyzerApp/templates/network.html",content)
+	\end{lstlisting}
+	
+
 	
 	\section{The Sprint Planning}
 	The Scrum process is an agile approach to projects (particularly software development projects) that encourages incremental progress, teamwork, collaboration with clients and allows for sudden requirement changes \cite{Cohn}. This process is comprised of short project sprints (typically 30 days) with each sprint focusing on the succeeding project requirements. This incremental approach requires functionally of aspects of the project after each sprint. This section discusses the sprint planning progress and the Scrum approach taken for the Tracking Interconnected Facebook Links project. Figure \ref{fig:scrum} illustrates the Scrum process and the labeled numbered sections 1, 2 and 3 are discussed in Sections  \ref{scrumback} ,  \ref{sprintback} and  \ref{retro} respectively.
@@ -970,7 +1017,7 @@
 			\hline
 			Joseph Gage & & & \\
 			\hline
-			Nathan Haag & & & \\
+			Nathan Haag & Team communication and delegating of tasks was efficient and clear cut. That being said, team interaction and help was still a contributing factor to team success. & Clearly defined requirements as to what was needed from the "client" was not a part of the sprint, which was frustrating. & Integrate all front-end visualisations with back-end, retrieving real data and create visualisations with bigger data. \\
 			\hline
 			Julian Zeegers & Each member of the team knew their respective responsibility and the Trello web application work well to ensure that was the case. & There was not a lot of time left for integrating the components and the integration was therefore unnecessarily stressful.   & A better estimation for the time each task takes is required. A better visual design of the web application must be implemented.\\
 			\hline
@@ -1023,6 +1070,8 @@
 		\bibitem{djangoApache} Django Software Foundation. \emph{How to install Django}. \url{https://docs.djangoproject.com/en/1.9/topics/install/}. 2016. Last accessed: 9 March 2016.	
 		
 		\bibitem{apache} Apache Software Foundation. \emph{Apache - HTTP Server Project}. \url{https://httpd.apache.org/ABOUT_APACHE.html}. 2016. Last accessed: 9 March 2016.	
+		
+		\bibitem{FHS} Filesystem Hierarchy Standard Group. \emph{Filesystem Hierarchy Standard}. \url{http://www.pathname.com/fhs/pub/fhs-2.3.html}. 2004. Last accessed: 10 March 2016.
 		
 		\bibitem{graphdbs} Robinson I, Webber J, Eifrem E. \emph{Graph Databases} O'Reilly Media. ch 2. pp 21 - 22. June 2013.
 		\bibitem{wsgi} mod\_wsgi. \url{https://modwsgi.readthedocs.org/en/develop/}, Last accessed 7 April 2016.
