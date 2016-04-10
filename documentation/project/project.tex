@@ -62,15 +62,15 @@
 		
 		\item Individuals can use the data for personal analytics.
 		
-		\item Sociologists to use the data to make and test new hypotheses.
+		\item Sociologists could use the data to make and test new hypotheses.
 		
-		\item Marketing and advertising agencies could create specialized and targeted adds depending on a set of user's likes and status updates.
+		\item Marketing and advertising agencies could create specialised and targeted adds depending on a set of user's likes and status updates.
 		
 	\end{itemize}    
 	
 	There are a large number of potential applications and the possibilities are only constrained by human creativity.
 	
-	The Tracking Interconnected Facebook Links project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example degrees of separation analyses or more personal analytics could be added. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
+	The Tracking Interconnected Facebook Links project is intended to visualise the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example, degrees of separation analyses or more personal analytics could be added. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
 	
 	The project team consists of four Software Engineering students, divided into two groups: one for the front-end and one for the back-end. This document serves as a description of the project. The software requirement specification will be laid out. The design and implementation of the front and back ends will be discussed. Finally, the Scrum planning and retrospective will be presented.
 	
@@ -80,7 +80,7 @@
 	
 	\begin{itemize}
 		
-		\item Create a prototype system for visualizing a person's Facebook connections, social trends and personal analytics.
+		\item Create a prototype system for visualising a person's Facebook connections, social trends and personal analytics.
 		
 		\item Document the requirements for the system.
 		
@@ -94,14 +94,14 @@
 	
 	\subsection{Stakeholders} % James
 	
-	The Project Management Body of Knowledge describes stakeholders as individuals or organizations that may be impacted in any way by the decisions or outcomes of a project \cite{pmbok}. There are a number of stakeholders whose interests must be considered when carrying out the objectives above. Often the stakeholders can have conflicting interests which must be compared and carefully weighed up in order to resolve the conflict. The following stakeholders are considered to be of paramount importance:
+	The Project Management Body of Knowledge describes stakeholders as individuals or organisations that may be impacted in any way by the decisions or outcomes of a project \cite{pmbok}. There are a number of stakeholders whose interests must be considered when carrying out the objectives above. Often the stakeholders can have conflicting interests which must be compared and carefully weighed up in order to resolve the conflict. The following stakeholders are considered to be of paramount importance:
 	
 	\begin{itemize}
-		\item \textbf{The Users}. The users of the system will be individuals who wish to explore their own personal Facebook friend networks and perform intimate personal analytics on their data. At this point the users \textbf{do not} include data scientists, analysts, sociologists and marketing/ advertising professionals - a later version of the software will be targeted at these groups. The reason that the individual was chosen as the first target market is that the requirements for the individual are much less resource intensive and thus are a more realistic goal for the first version of a product. Every decision that is made should improve the user's experience when interacting with the product. 
+		\item \textbf{The users}. The users of the system will be individuals who wish to explore their own personal Facebook friend networks and perform intimate personal analytics on their data. At this point the users \textbf{do not} include data scientists, analysts, sociologists and marketing/advertising professionals - a later version of the software will be targeted at these groups. The reason that the individual was chosen as the first target market is that the requirements for the individual are much less resource intensive and thus are a more realistic goal for the first version of a product. Every decision that is made should improve the user's experience when interacting with the product. 
 		
-		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are then divided into two teams, the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. Note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
+		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are divided into two teams - the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. Note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
 		
-		\item \textbf{Facebook}. Although Facebook will not itself be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about amount or type of data about them on Facebook.
+		\item \textbf{Facebook}. Although Facebook will not itself be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about the amount or type of data about them on Facebook.
 		
 	\end{itemize}
 	
@@ -112,15 +112,15 @@
 		
 		\item \textbf{Apache}. A popular web server.
 		
-		\item \textbf{Client-Server}. An architecture or model for distributed computing via the Internet or other network.
+		\item \textbf{API} - Application Program Interface. A set of tools for building for software products.
+		
+		\item \textbf{Client-Server}. An architecture or model for distributed computing via the Internet or other networks.
 		
 		\item \textbf{CSS} - Cascading Style Sheets. A language for describing the presentation of a website.
 		
 		\item \textbf{Cypher}. The query language for Neo4j graph databases.
 		
 		\item \textbf{d3.js}. A popular JavaScript library for visualisation.
-		
-		\item \textbf{SVG}. Scalable Vector Graphic. An XML-based vector image format, supporting interactive functionality and animations.
 		
 		\item \textbf{DBMS} - Database Management System. A database program.
 		
@@ -179,7 +179,7 @@
 	The requirements for the application are that it:
 	\begin{enumerate}
 		\item consists of a front-end that runs client side and a back-end that runs server side, 
-		\item has user friendly front-end which is easy to use for non-technologically inclined people,
+		\item has a user friendly front-end which is easy to use for non-technologically inclined people,
 		\item is scalable - with a back-end that supports multiple clients,
 		\item is fast and responsive leading to an enjoyable user experience,
 		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical manner which facilitates discovery,
@@ -189,7 +189,7 @@
 	\end{enumerate}
 	
 	\subsubsection{Purpose}
-	The purpose of the project is to provide a tool to be used by individuals (and organizations at a later stage) to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualizing this information dynamically so that it will be advantageous to any  user.
+	The purpose of the project is to provide a tool to be used by individuals (and organisations at a later stage) to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualising this information dynamically so that it will be advantageous to any  user.
 	
 	\subsubsection{System Overview}
 	This project will be made up of various software systems with the back-end and front-end working together to form a web-based visualisation application. The overview of the entire software system is illustrated in Figure \ref{system}. This figure shows how the various components of the system interact with each other. Figure \ref{system} shows how the client (using a web browser) interacts with an Apache server and the Django framework. It describes how data from the Neo4j database is fetched by the Django framework and sent to the user via the Apache server.
@@ -202,28 +202,28 @@
 	\end{figure}
 	
 	\subsection{Software Development Life Cycle Choice}
-	The SDLC is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SLDCs were considered and are listed below.
+	The SDLC is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SDLCs were considered and are listed below.
 	
 	\begin{itemize}
 		\item \textbf{Waterfall model} - A sequential development model that lacks feedback. This technique consists of the following steps: requirements definition, design, implementation, verification and maintenance. However, due to the lack of feedback, this approach is not feasible unless the requirements are not completely defined in advance, the scope is fixed and the technology is well understood by the development team.
 		
-		\item \textbf{Iterative and Incremental process} - A development model in which features are gradually added. Unlike the waterfall approach, this approach makes small changes at a time which can allow for more flexibility. However, this approach still requires the whole system to be well defined at the project start.
+		\item \textbf{Iterative and incremental process} - A development model in which features are gradually added. Unlike the waterfall approach, this approach makes small changes at a time which can allow for more flexibility. However, this approach still requires the whole system to be well defined at the project start.
 		
 		\item \textbf{Agile} - A number of development principles aimed at facilitating the evolution of requirements and solutions in a collaborative process.
 		
 	\end{itemize}
 	
-	For this particular project, the fast pace method of the Agile SDLC is the best approach as the pace of producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
+	For this particular project, the fast pace method of the Agile SDLC is the best approach as speed in producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
 	
-	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
+	The Agile SDLC also has varying methodologies that allows the achievement of an Agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
 	
 	In the Scrum process, prioritised project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
 	
 	
 	\subsection{Architecture Choice}
-	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{backsec} and \ref{frontsec}), network communication and team composition. 
+	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{frontsec} and \ref{backsec}), network communication and team composition. 
 	
-	A two-tier, client-server architecture has been selected. In 'client-server', client refers to any user actively interacting with the server via the user interface provided by the system. Server refers to the storage and hosting of the business and data layers. The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
+	A two-tier, client-server architecture has been selected. In `client-server', client refers to any user actively interacting with the server via the user interface provided by the system. Server refers to the storage and hosting of the business and data layers. The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
 	
 	Two-tier means that any instance of a client utilizing the provided user interface will be separated from the server via a network through which all communication will occur. For the purpose of tracking interconnected Facebook links, the network between the client and the server will be the Internet. This design choice follows the need for multiple users to have access to the software simultaneously \cite{beginningsofteng}. 
 	
@@ -238,7 +238,7 @@
 	
 	\begin{figure}[htbp]
 		\centering	    
-		\begin{subfigure}[b]{0.3\textwidth}
+		\begin{subfigure}[b]{0.45\textwidth}
 			\centering
 			\begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
 			
@@ -246,7 +246,8 @@
 			\node[main node] at (6,0) (2)  {Julian};
 			\node[main node] at (4,-2) (3) {Bob};
 			\node[main node] at (2,-4) (4) {Alice};
-			\node[main node] at (6,-4) (5) {Sasha};	      
+			\node[main node] at (6,-4) (5) {Sasha};	  
+			\node[coordinate] at (8,0) (point) {};    
 			
 			\path
 			(1) edge[bend left] (3)
@@ -259,9 +260,8 @@
 			\caption{Before click}
 			\label{fig:gull1}
 		\end{subfigure}
-		\qquad
-		\qquad
-		\begin{subfigure}[b]{0.3\textwidth}
+		~
+		\begin{subfigure}[b]{0.45\textwidth}
 			\centering
 			\begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
 			
@@ -346,6 +346,13 @@
 		\node[main node] at (4,-2) (3) {Bob};
 		\node[main node] at (0,-4) (4) {Alice};
 		\node[main node] at (8,-4) (5) {Sasha};
+
+		\path
+		(1) edge[bend left]  (3)
+		(3) edge[bend right] (5)
+		(3) edge[bend left]  (4)
+		(3) edge[bend left] (2)
+		;
 		
 		\node[below = 0 cm of 5, fill= white, rectangle, draw, align = left] {Age: 22 \\ Sex: female \\ Job: Engineer};
 		\node[below = 0 cm of 4, fill= white, rectangle, draw, align = left] {Age: 22 \\ Sex: female};
@@ -353,12 +360,7 @@
 		\node[below = 0 cm of 2, fill= white, rectangle, draw, align = left] {Age: 21 \\ Sex: male};
 		\node[below = 0 cm of 1, fill= white, rectangle, draw, align = left] {Sex: male};
 		
-		\path
-		(1) edge[bend left]  (3)
-		(3) edge[bend right] (5)
-		(3) edge[bend left]  (4)
-		(3) edge[bend left] (2)
-		;
+		
 		
 		\end{tikzpicture}
 		\caption{Friend network showing personal details.}
@@ -479,7 +481,7 @@
 	
 	In order to ensure that the end program is easy to use and looks professional, the visual design and theme needs to have a consistent, well designed layout and be visually appealing. Bootstrap is an HTML, CSS and JavaScript framework that allows this charming front-end visual design to be achieved \cite{Bootstrap}. Bootstrap provides various templates that will maintain the consistent theme throughout the final website. It also provides navigational links for the website and the template is customisable so it can be used to create the desired theme.
 	
-	Another technology that will support the functionally of the website is the d3.js JavaScript graphical library \cite{D3}. This library contains JavaScript code for many different visualisation graphs that can be used to visualize the data stored in the Neo4j database. Considering that the main requirement for this project is to visualise the interconnections, the 'force-directed graph' from the d3.js library will be used. As mentioned, other visualisations from the d3.js library can also be used to the further explore the database. These other visualisations include dynamic bar and line charts, geographical heat-maps and dc.js cross-filter graphs, as well as a variety of other options that may be used if they match the functionality appropriately.
+	Another technology that will support the functionally of the website is the d3.js JavaScript graphical library \cite{D3}. This library contains JavaScript code for many different visualisation graphs that can be used to visualize the data stored in the Neo4j database. Considering that the main requirement for this project is to visualise the interconnections, the `force-directed graph' from the d3.js library will be used. As mentioned, other visualisations from the d3.js library can also be used to the further explore the database. These other visualisations include dynamic bar and line charts, geographical heat-maps and dc.js cross-filter graphs, as well as a variety of other options that may be used if they match the functionality appropriately.
 	
 	\subsection{Use Cases}
 	A number of important use cases describing the base functionality of the product are listed and described in Table \ref{usecase}. The relationships between the use cases are shown in Figure \ref{usecased}.
@@ -631,12 +633,16 @@
 	\subsubsection{Friend Network}
 	The friend network was implemented using the d3.js force directed graph. To create the graph, explicit parameters were defined in the script to control the size of the graph, setting the width at 960px, the height at 500px and the radius of the  nodes in the graph to 6px. The HTML code imports the data through back-end functionality to create the friend network. 
 	
+<<<<<<< HEAD
 	The script accepts graph data with two concepts: "nodes" and "links". The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has an id, name, surname, occupation, age and img\_url assigned to it. The link data maps nodes to each other, describing their relationship level, type and duration. This mapping is done by defining a link as the relationship between a source node and a target node.
+=======
+	The script accepts graph data with two concepts: `nodes' and `links'. The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has a name and a group assigned to it. The link data maps nodes to each other, describing their relationship and assigning a value to the link between the nodes. This mapping is done by defining a link as the relationship between a source node and a target node.
+>>>>>>> 29f920414a3772d0b833188c8f0e893b17aa891b
 	
 	\subsubsection{Word Bubble Chart}
-	The word bubble chart was implemented using the d3.js pack layout. The d3.js pack layout allows developers to represent elements as bubbles, and the size of the bubble is determined by the frequency (also known as the size attribute) of the elements. The word bubble chart was implemented with a flattened hierarchy, meaning that there is only one level of bubbles as in figure \ref{fig:bubblechart}, as opposed to "bubble charts within bubble charts," shown in \ref{fig:packlayout}.
+	The word bubble chart was implemented using the d3.js pack layout. The d3.js pack layout allows developers to represent elements as bubbles, and the size of the bubble is determined by the frequency (also known as the size attribute) of the elements. The word bubble chart was implemented with a flattened hierarchy, meaning that there is only one level of bubbles as in figure \ref{fig:bubblechart}, as opposed to `bubble charts within bubble charts', shown in \ref{fig:packlayout}.
 	
-  	The script accepts graph data with two attributes: "name" and "size". Each element in the JSON file gets its own bubble. The radius of the bubble is determined by each element's associated size attribute.
+  	The script accepts graph data with two attributes: `name' and `size'. Each element in the JSON file gets its own bubble. The radius of the bubble is determined by each element's associated size attribute.
   	
    \begin{figure}
    	\centering
@@ -685,7 +691,7 @@
 	
 	The web application framework has the following dependencies: Django web framework, Apache HTTP server, mod\_wsgi, Python  and the page documents \cite{django, apache, wsgi}. Django was the framework used for integrating the source code used in the web application. Apache was the HTTP server used to host the web application. mod\_wsgi integrates the Django framework and the Apache server. Python was the programming language used by the framework. The page documents were stored within the Django framework and were required by the functions described above. 
 	
-	Several other details of the web framework are important. Firstly, the web application file system contains all of the dependencies of the functions mentioned as well as their supporting functions. Secondly, the file system also contains several configuration files specific to Django. Finally, several other scripts are required to run to start the server and web application - these are standardly available with the dependencies used.
+	Several other details of the web framework are important. Firstly, the web application file system contains all of the dependencies of the functions mentioned as well as their supporting functions. Secondly, the file system also contains several configuration files specific to Django. Finally, several other scripts are required to run to start the server and web application - these are standard and available with the dependencies used.
 	
 	\subsubsection{The Graph Database}
 	This section will discuss the functions, dependencies and details of the the graph database. The general operation of the supporting functions of the system is shown in Figure \ref{fig:db}.
@@ -824,7 +830,7 @@ application = get_wsgi_application()
 
 	
 	\subsection{The Scrum Backlog } \label{scrumback}
-	The Scrum backlog (labeled "1" in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
+	The Scrum backlog (labeled `1' in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
 	
 	\begin{longtable}{|>{\centering\arraybackslash}p{1cm}|p{8cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
 		\caption{The Scrum Product Backlog\label{backlog}}\\
@@ -841,9 +847,9 @@ application = get_wsgi_application()
 		\hline
 		10	& Write Python scripts and functions that return data required by the different views in a correct format (i.e. JSON, CSV, TSV etc.) by using database queries 	& 3 & 5\\ 
 		\hline
-		5	& Create a view that contains a d3.js "Force-diagram" that is used to visualize a friend network diagram that is interactively used by the end user. 	& 5 & 6\\
+		5	& Create a view that contains a d3.js `Force-diagram' that is used to visualize a friend network diagram that is interactively used by the end user. 	& 5 & 6\\
 		\hline 
-		6	& Create a view that contains a d3.js "Word bubble chart" that visualizes the popularity of words used by Facebook friends of the end user in their Facebook status.	& 4 & 7\\
+		6	& Create a view that contains a d3.js `Word bubble chart' that visualizes the popularity of words used by Facebook friends of the end user in their Facebook status.	& 4 & 7\\
 		\hline 
 		7	& Set-up an Apache server on a server host computer and host the Django project that contains the various views. 	& 2 & 8 \\
 		\hline 
@@ -889,7 +895,7 @@ application = get_wsgi_application()
 		\captionof{figure}{Screen shot of the Trello web application taken from \cite{trello}} \label{fig:trello}
 	\end{center}
 	
-	In terms of communication, there are various platforms used to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{fig:trello}. This application has prioritized "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{fig:trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
+	In terms of communication, there are various platforms used to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{fig:trello}. This application has prioritized `boards' that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a `card' to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{fig:trello} show a screen shot of the Trello web application and shows an example of the `boards' and `cards' using for the project.
 	
 
 	\begin{center}
@@ -905,7 +911,7 @@ application = get_wsgi_application()
 	
 	
 	\subsection{The Sprint Backlog } \label{sprintback}
-	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{fig:scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
+	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled `2' in Figure \ref{fig:scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
 	
 	The first sprint for the Tracking Facebook Interconnected Links project is planned in a sprint planning meeting conducted between the Scrum members. This meeting is run for about 6 hours because the sprint is planned to run for about 4 weeks. During this meeting a sprint product backlog is drawn up and is shown in Table \ref{sprintbacklog}. As shown in Table \ref{sprintbacklog}, a short description of each task is defined as while as the duration of each task. It also shows the number of days in each week of the sprint each task should be worked on for. The overall sprint goals are defined for the sprint in this meeting which outline the expectations of the sprint's end product. For this first sprint, the following sprint goals are set out:
 	
@@ -932,9 +938,9 @@ application = get_wsgi_application()
 		\hline
 		10	& Write Python scripts and functions that return data required in a correct format &  & 2  & 1 & \\ 
 		\hline
-		5	& Create a view that contains a d3.js "Force-diagram" that is used to visualize a friend network diagram	&  & 2  & 2 & 1 \\
+		5	& Create a view that contains a d3.js `Force-diagram' that is used to visualize a friend network diagram	&  & 2  & 2 & 1 \\
 		\hline 
-		6	& Create a view that contains a d3.js "Word bubble chart" that visualizes the popularity of words used in status	&  & 1 & 2 & 1 \\
+		6	& Create a view that contains a d3.js `Word bubble chart' that visualizes the popularity of words used in status	&  & 1 & 2 & 1 \\
 		\hline 
 		7	& Set-up an Apache server that host the Django project &  &   & 2 & \\
 		\hline 
@@ -970,7 +976,7 @@ application = get_wsgi_application()
 	
 
 	\section{Sprint Retrospective} \label{retro}
-	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label "3" in Figure \ref{fig:scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
+	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label `3' in Figure \ref{fig:scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
 	
 	\subsection{The Goals Achieved and Positive Outcomes}
 	After the first sprint, a shippable prototype of the Tracking Facebook Interconnected Links project was produced by the Scrum team. The following goals were successfully achieved:
@@ -994,7 +1000,7 @@ application = get_wsgi_application()
 		\item The overall layout, design and chosen bootstrap theme used for the web application lacks attractiveness.
 		\item There is not enough data in the database. Although the sprint's end product is only a prototype, much more data is required to make the graphs for each view more functional.
 		\item The created views are not as interactive as they should be. More functionality must be added to them.
-		\item Did not make full use of the Django project as the "models" aspect of Django was not utilized. 
+		\item Did not make full use of the Django project as the `models' aspect of Django was not utilized. 
 	\end{itemize}
 	
 	One negative aspect of the working environment was a lack of communication between the Scrum members at times. The Slack messaging platform was not fully utilized by the members to communicate. Often communication about challenges and problems faced by a member was dealt with in person with only one or two other members present. This meant that many times the entire team were not involved in that communication and therefore input and insight from the missing members could not happen. 
@@ -1031,7 +1037,7 @@ application = get_wsgi_application()
 	One of the main purposes of the sprint retrospective meeting is to highlight improvements that can be made for the next sprint and suggest plans on how to implement these improvements. The negative outcomes mentioned in Section \ref{neg} must be improved and the following are suggestions that should improve them:
 	
 	\begin{itemize}
-		\item The design and  layout can be improved by using a better bootstrap template. It is suggested that the "Dashboard" template should be used.
+		\item The design and  layout can be improved by using a better bootstrap template. It is suggested that the `Dashboard' template should be used.
 		\item In order to obtain more Facebook data, the database should use a Facebook API to continuously pull data from the Facebook site. 
 		\item Hosting the Apache server on a dedicated host computer server.
 	\end{itemize}
@@ -1045,8 +1051,6 @@ application = get_wsgi_application()
 
 	
 	\begin{thebibliography}{1}
-		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
-		
 		\bibitem{fb} Statista. \url {http://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/}. Last accessed 18 February 2016. 
 		
 		\bibitem{pmbok} Project Management Institute. \emph{A Guide to the Project Management Body of Knowledge (PMBOK Guide)}. Newtown Square, Pa: Project Management Institute, 2004. ch 13. p 390.
@@ -1074,11 +1078,14 @@ application = get_wsgi_application()
 		\bibitem{FHS} Filesystem Hierarchy Standard Group. \emph{Filesystem Hierarchy Standard}. \url{http://www.pathname.com/fhs/pub/fhs-2.3.html}. 2004. Last accessed: 10 March 2016.
 		
 		\bibitem{graphdbs} Robinson I, Webber J, Eifrem E. \emph{Graph Databases} O'Reilly Media. ch 2. pp 21 - 22. June 2013.
+		
 		\bibitem{wsgi} mod\_wsgi. \url{https://modwsgi.readthedocs.org/en/develop/}, Last accessed 7 April 2016.
+		
 		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
-		\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
 		
 		\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
+		
+		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
 		
 		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
 		
