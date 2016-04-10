@@ -221,18 +221,18 @@
 	
 	
 	\subsection{Architecture Choice}
-	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{frontsec} and \ref{backsec}), network communication and team composition. 
+	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in Sections \ref{frontsec} and \ref{backsec} respectively), network communication and team composition. 
 	
-	A two-tier, client-server architecture has been selected. In 'client-server', client refers to any user actively interacting with the server via the user interface provided by the system. Server refers to the storage and hosting of the business and data layers. The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
+	A two-tier, client-server architecture has been selected. The UI is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user requests \cite{twotieradvantage}. 
 	
-	Two-tier means that any instance of a client utilizing the provided user interface will be separated from the server via a network through which all communication will occur. For the purpose of tracking interconnected Facebook links, the network between the client and the server will be the Internet. This design choice follows the need for multiple users to have access to the software simultaneously \cite{beginningsofteng}. 
+	Two-tier means that any instance of a client utilising the provided UI will be separated from the server via a network through which all communication will occur. For the purpose of tracking interconnected Facebook links, the network between the client and the server will be the Internet. This design choice follows the need for multiple users to have access to the software simultaneously \cite{beginningsofteng}. 
 	
 	It is important to take note that in this architecture, the client and the server are tightly woven together, as communication between the two entities occurs directly over the network. This means that there is no middle tier to interpret and translate data correctly. In terms of team composition, this design choice is beneficial and reduces the amount of code needed to ensure compatibility.
 	
 	\subsection{Front-End Service} \label{frontsec}
 	
-	\subsubsection{User Interface Functionality}
-	The front-end User Interface (UI) will contain several tools for visualizing Facebook friend networks. The most basic tool will show a simple network diagram to view all friends and friends of friends for the user. This friendship diagram will include several functionalities.
+	\subsubsection{UI Functionality}
+	The front-end UI will contain several tools for visualising Facebook friend networks. The most basic tool will show a simple network diagram to view all friends and friends of friends for the user. This friendship diagram will include several functionalities.
 	
 	Firstly, a user may select any of his friends and the diagram will transition to the selected person's friend network. This is pictured in Figure \ref{click}. 
 	
@@ -365,9 +365,9 @@
 		\label{moreinfo}
 	\end{figure}
 	
-	Finally, the user will be able customize the types of paths which he would like to show. For example, he or she may want to view only friends in the network who have a certain occupation or gender or age and or any other user attribute. Although it is not shown here the views may be able to display the Facebook profile pictures rather than generic circular nodes.
+	Finally, the user will be able customise the types of paths which he or she would like to show. For example, he or she may want to view only friends in the network who have a certain occupation or gender or age and or any other user attribute. Although it is not shown here the views must be able to display the Facebook profile pictures rather than generic circular nodes.
 	
-	\subsubsection{User Interface Implementation}
+	\subsubsection{UI Implementation}
 	The UI will be operated from a web browser. The following sections detail the tools the UI implementation will take advantage of.
 	
 	\subsubsection*{HTML and CSS}
@@ -376,12 +376,12 @@
 	\subsubsection*{Bootstrap}
 	Bootstrap will be used to style the HTML and CSS pages \cite{Bootstrap}. This will make the UI more user friendly and aesthetically pleasing.
 	
-	\subsubsection*{Javascript and d3.js}
-	The application will use Javascript and d3.js for visualizing the data \cite{D3}. The friend network diagram will use the D3.js force directed graph. Other d3.js visualisations will also be used for a number of views. Examples of these view include word bubbles for analyses of a user's status messages.
+	\subsubsection*{JS and d3.js}
+	The application will use JS and d3.js for visualising the data \cite{D3}. The friend network diagram will use the D3.js force directed graph. Other d3.js visualisations will also be used for a number of views. An example of these views is word bubbles for analysis of a user's status messages.
 	
 	\subsection{Back-End Service} \label{backsec}
 	
-	The back-end will be based on the Django web framework running on an Apache Web Server. The DBMS will be Neo4j, that will be interacted with via the Python driver Py2neo. 
+	The back-end will be based on the Django web framework running on an Apache Web Server \cite{django, apache}. The DBMS will be Neo4j, that will be interacted with via the Python driver Py2neo \cite{neo4j,py2neo}. 
 	% \subsubsection{Django}
 	% \begin{wrapfigure}{r}{0.2\textwidth}
 	%   \begin{center}
@@ -391,9 +391,9 @@
 	% \end{wrapfigure}
 	
 	
-	Django is an open source high-level Python Web Framework. It is based on speed, security and scalability. It is also commonly used, with companies such as Mozilla, Pinterest and National Geographic building their websites with it \cite{django}. 
+	Django is an open source high-level Python web framework. It is based on speed, security and scalability. It is also commonly used, with companies such as Mozilla, Pinterest and National Geographic building their websites with it \cite{django}. 
 	
-	Although it has its own nomenclature, Django can be considered an MVC (Model View Controller) framework and has been compared to the popular Ruby on Rails web framework. An MVC framework is based on a three layer abstraction. The first layer abstracts the data access of the web application and is called the Model layer. The second layer is responsible for data display and is called the View layer. The final layer regulates the Views and is called the Controller layer. In Django's nomenclature, the view is equivalent to the standard controller, the template is equivalent to the standard view and the model is much the same as usual. For this reason Django is often referred to as a MTV or Model Template View framework \cite{djangobook}. It is important to note that Django is not a programming language, it is a programming pattern designed to streamline web development in the Python programming language.
+	Although it has its own nomenclature, Django can be considered an MVC (Model View Controller) framework and has been compared to the popular Ruby on Rails web framework. An MVC framework is based on a three layer abstraction. The first layer abstracts the data access of the web application and is called the Model layer. The second layer is responsible for data display and is called the View layer. The final layer regulates the Views and is called the Controller layer. In Django's nomenclature, the view is equivalent to the standard controller, the template is equivalent to the standard view and the model is much the same as usual. For this reason Django is often referred to as an MTV \cite{djangobook}. It is important to note that Django is not a programming language, it is a programming pattern designed to streamline web development in the Python programming language.
 	
 	Django has its own lightweight web server designed to be used for testing and development. However, for production the Django Software Foundation recommends using Apache with the mod\_wsgi module \cite{djangoApache}.
 	\subsubsection{Apache}
@@ -409,12 +409,12 @@
 	
 	Apache processes any incoming HTTP requests from the clients and then sends the appropriate HTTP responses back. This will be done by interfacing with the Django web framework which will make the appropriate decisions based on the requests, and return responses containing content such as information from the Neo4j database. 
 	
-	Apache has many functions such as virtual hosting which allow one Apache installation to server multiple websites. This feature allows developers of small websites to save on server costs. Apache also provides many useful security features required when a website goes into production such as: password and digital certificate authentication, SSL and TLS support, and many more. For larger websites Apache also allows load balancing. 
+	Apache has many functions such as virtual hosting which allow one Apache installation to serve multiple websites. This feature allows developers of small websites to save on server costs. Apache also provides many useful security features required when a website goes into production such as: password and digital certificate authentication, SSL and TLS support, and much more. For larger websites Apache also allows load balancing. 
 	
 	\subsubsection{Neo4j}
 	Neo4j is a graph database written in Java. It is widely used and has drivers for many languages including Python. Neo4j follows the ACID model which means that it is extremely reliable. These statements are evidenced by the use of Neo4j in the systems of large companies such as Walmart and Ebay \cite{neo4j}.  
 	
-	Graph databases are a type of NoSQL or Not Only SQL database. They excel at managing large complex sets of data which can be described as nodes and relationships. Figure \ref{neo4eg} shows an example of the type of data that can be stored in a graph database.
+	Graph databases are a type of NoSQL or Not Only SQL databases. They excel at managing large complex sets of data which can be described as nodes and relationships. Figure \ref{neo4eg} shows an example of the type of data that can be stored in a graph database.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -442,7 +442,7 @@
 		\label{neo4eg}
 	\end{figure}
 	
-	In this application the data being stored will be that of Facebook relationships. Graph databases are orders of magnitudes faster than a RDBMS for queries on this kind of data, such as finding extended friend networks of individuals \cite{graphdbs}.  Figure \ref{friends} shows an example of the kind of data that will be stored in the database.
+	In this application the data being stored will be that of Facebook relationships. Graph databases are orders of magnitudes faster than RDBMS for queries on this kind of data, such as finding extended friend networks of individuals \cite{graphdbs}.  Figure \ref{friends} shows an example of the kind of data that will be stored in the database.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -472,14 +472,14 @@
 		\caption{Example of facebook type data in a graph database}
 		\label{friends}
 	\end{figure}
-	Note, from Figure \ref{friends}, that both the relationships as well as the entities themselves have associated data. In fact, each entity acts as a key value store. Queries can be performed to find all friends since a certain date or all friends of friends (as discussed above). These queries can be performed using Neo4j's Cypher query language or via language drivers. The language driver that will be used for this application is Py2neo.
+	Note from Figure \ref{friends} that both the relationships as well as the entities themselves have associated data. In fact, each entity acts as a key value store. Queries can be performed to find all friends since a certain date or all friends of friends (as discussed above). These queries can be performed using Neo4j's Cypher query language or via language drivers.
 	
 	\subsection{Supporting Software}
-	The Interconnected Facebook Links project is intended to be used by a Facebook user and the assumption upon which all user interfaces will be built is that the user is not technologically advanced. Therefore the final product needs to be user friendly and easy to use. The supporting software mentioned in this section describes the technologies that will be used to ensure the aforementioned user-friendliness and functionality of the product is achieved. The framework and internal structure  of the project in terms of the architecture, front-end and back-end has been described in the previous sections. This section describes the software that will be used to support these mentioned structures.
+	The Interconnected Facebook Links project is intended to be used by a Facebook user and the assumption upon which all user interfaces will be built is that the user is not technologically advanced. Therefore the final product needs to be user friendly. The supporting software mentioned in this section describes the technologies that will be used to ensure the aforementioned user-friendliness and functionality of the product. The framework and internal structure of the project in terms of the architecture of both the front and back ends has been described in the previous sections. This section describes the software that will be used to support these mentioned structures.
 	
-	In order to ensure that the end program is easy to use and looks professional, the visual design and theme needs to have a consistent, well designed layout and be visually appealing. Bootstrap is an HTML, CSS and JavaScript framework that allows this charming front-end visual design to be achieved \cite{Bootstrap}. Bootstrap provides various templates that will maintain the consistent theme throughout the final website. It also provides navigational links for the website and the template is customisable so it can be used to create the desired theme.
+	In order to ensure that the end program is easy to use and looks professional, the visual design and theme needs to have a consistent, well designed layout and be visually appealing. Bootstrap is an HTML, CSS and JS framework that allows this charming front-end visual design to be achieved \cite{Bootstrap}. Bootstrap provides various templates that will maintain a consistent theme throughout the final website. It also provides navigational links for the website and the template is customisable so it can be used to create the desired theme.
 	
-	Another technology that will support the functionally of the website is the d3.js JavaScript graphical library \cite{D3}. This library contains JavaScript code for many different visualisation graphs that can be used to visualize the data stored in the Neo4j database. Considering that the main requirement for this project is to visualise the interconnections, the 'force-directed graph' from the d3.js library will be used. As mentioned, other visualisations from the d3.js library can also be used to the further explore the database. These other visualisations include dynamic bar and line charts, geographical heat-maps and dc.js cross-filter graphs, as well as a variety of other options that may be used if they match the functionality appropriately.
+	Another technology that will support the functionally of the website is the d3.js graphical library \cite{D3}. This library contains JS code for many different visualisation graphs that can be used to visualise the data stored in the Neo4j database. Considering that the main requirement for this project is to visualise the interconnections, the 'force-directed graph' from the d3.js library will be used. As mentioned, other visualisations from the d3.js library can also be used to the further explore the database. These other visualisations include dynamic bar and line charts, geographical heat-maps and dc.js cross-filter graphs as well as a variety of other options that may be used if they match the functionality appropriately.
 	
 	\subsection{Use Cases}
 	A number of important use cases describing the base functionality of the product are listed and described in Table \ref{usecase}. The relationships between the use cases are shown in Figure \ref{usecased}.
@@ -515,7 +515,7 @@
 		\label{usecased}
 	\end{figure}
 	
-	There are a number of other use cases for the application. These would include the use of more visualisations as well as use by other types of users such as data scientists, sociologists and marketing professionals. The other visualisations were not highlighted as they do not form a part of the core functionality of the application which is to view interconnected Facebook links. The other users were not included because they do not form a part of the basic functionality in the first iterations of the application - they are not within the scope of this document. These use cases are expanded in the Appendix Section \ref{moreusecase}.
+	There are a number of other use cases for the application. These would include the use of more visualisations as well as use by other types of users such as data scientists, sociologists and marketing professionals. The other visualisations were not highlighted as they do not form a part of the core functionality of the application which is to view interconnected Facebook links. The other users were not included because they do not form a part of the basic functionality in the first iteration of the application - they are not within the scope of this document. These use cases are expanded in the Appendix Section \ref{moreusecase}.
 	
 	\begin{table} [htbp]
 		\caption{Crucial use cases for the product}
@@ -543,38 +543,38 @@
 	\subsection{Design Document} % Joe
 	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
-	The front-end design consists of a landing navigational web page, a friend status word chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of a web application for viewing interconnected Facebook links.
+	The front-end design consists of a landing navigational web page, a friend status word chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of the web application for viewing interconnected Facebook links.
 	
-	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view. Each of these views represent a single interlinked web page.
+	This section is divided into subsections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status update word chart view. Each of these views represent a single interlinked web page.
 	
 	\subsubsection{Landing Navigational Web Page}
 	The landing page was designed using a mark-up methodology for visualisation. This section describes each element of the page as well as its dependencies.
 	
 	The web page consists of several elements: a navigation bar, a body and a footer. The navigation bar contains links to each of the other web pages. The body contains two visual links to the other two web pages. The visual links are screen shots of the other pages which when selected navigate to the corresponding page. The footer contains copyright information.
 	
-	The page has the following dependencies: HTML, Bootstrap and the screen shot image files \cite{HTML, Bootstrap}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page.
+	The page has the following dependencies: HTML, Bootstrap and the screen shot image files \cite{Bootstrap}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page.
 	
 	\subsubsection{Friend Status Update Word Chart Web Page}
-	The friend status word chart web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
+	The friend status update word chart web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
 		
-	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the word chart visualisation. The description simply describes what is being visualised. The visualisation shows circles (each containing a common word with recent status updates). The more times a word has occurred, the larger the circles are. If hovered over the circle also reveals the exact number of times the word has appeared in recent status updates.
+	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the word chart visualisation. The description simply describes what is being visualised. The visualisation shows circles (each containing a common word from recent status updates). The more times a word has occurred, the larger the circles are. If hovered over by a mouse pointer, the circle also reveals the exact number of times the word has appeared in recent status updates.
 	
-	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
+	The web page uses a script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
 	
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=1]{bubbles}
-			\caption{Code structure for bubble chart drawing script where SVG is Scalable Vector Graphic.} \label{fig:wordchart}
+			\caption{Code structure for word chart drawing script.} \label{fig:wordchart}
 		\end{figure}
 
-	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
+	The page has the following dependencies: HTML, Bootstrap, d3.js, JS and JSON formatted word data \cite{Bootstrap, D3, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. JS was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
 	
 	\subsubsection{Friend Network Diagram Web Page}
 	The friend network diagram web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
 
 	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the friend network visualisation. The description simply describes what is being visualised. The visualisation shows profile pictures of friends in the network with lines between them representing friendship. The pictures can be dragged around the screen and stuck in place. The images also grow slightly while a user's cursor is over it.
 	
-	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:networkdiagram}.
+	The web page uses a script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:networkdiagram}.
 	
 		\begin{figure}[h]
 			\centering
@@ -582,20 +582,7 @@
 			\caption{Code structure for friend network drawing script.} \label{fig:networkdiagram}
 		\end{figure}
 		
-	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
-
-	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view.
-	\begin{figure}[h]
-		\centering
-		\includegraphics[scale=1]{bubbles}
-		\caption{Code structure for bubble chart drawing script.}
-	\end{figure}
-	
-	\begin{figure}[h]
-		\centering
-		\includegraphics[scale=1]{network}
-		\caption{Code structure for friend network drawing script.}
-	\end{figure}
+	The page has the following dependencies: HTML, Bootstrap, d3.js, JS and JSON formatted word data \cite{Bootstrap, D3, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for providing the framework to create the word chart visualisation. JS was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
 	
 	\subsection{Implementation} % Nathan
 	
@@ -605,8 +592,8 @@
 	
 	\begin{enumerate}
 		\item Create an HTML page to present the visualisation.
-		\item Implement the script that produces the visualistion.
-		\item Add the new HTML page to the index, allow users to navigate between visualisations.
+		\item Implement the script that produces the visualisation.
+		\item Add the new HTML page to the index allowing users to navigate between visualisations.
 	\end{enumerate}
 	
 	\subsubsection{Implementing HTML pages with Django}
@@ -626,7 +613,7 @@
 <link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
 		\end{lstlisting}
 		
-	Data for the friend network and for the word bubble chart is accepted in a JSON format. It is then filtered in the scripts and used to create the visualisations. Both visualisations were created using SVG  graphics, which is beneficial due to its interactive nature and powerful ability to customise. Visualisations are created dynamically and on demand, and so SVG graphics are perfectly suited to the context of the project. A major advantage of using these graphics is that they are relatively small and so users will not have to wait long to receive their visualisations \cite{SVG}.
+	Data for the friend network and for the word bubble chart is accepted in a JSON format. It is then filtered in the scripts and used to create the visualisations. Both visualisations were created using SVGs, which is beneficial due to its interactive nature and powerful ability to customise. Visualisations are created dynamically and on demand, and so SVGs are perfectly suited to the context of the project. A major advantage of using these graphics is that they are relatively small and so users will not have to wait long to receive their visualisations \cite{SVG}.
 	
 	\subsubsection{Friend Network}
 	The friend network was implemented using the d3.js force directed graph. To create the graph, explicit parameters were defined in the script to control the size of the graph, setting the width at 960px, the height at 500px and the radius of the  nodes in the graph to 6px. The HTML code imports the data through back-end functionality to create the friend network. 
@@ -634,15 +621,16 @@
 	The script accepts graph data with two concepts: "nodes" and "links". The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has a name and a group assigned to it. The link data maps nodes to each other, describing their relationship and assigning a value to the link between the nodes. This mapping is done by defining a link as the relationship between a source node and a target node.
 	
 	\subsubsection{Word Bubble Chart}
-	The word bubble chart was implemented using the d3.js pack layout. The d3.js pack layout allows developers to represent elements as bubbles, and the size of the bubble is determined by the frequency (also known as the size attribute) of the elements. The word bubble chart was implemented with a flattened hierarchy, meaning that there is only one level of bubbles as in figure \ref{fig:bubblechart}, as opposed to "bubble charts within bubble charts," shown in \ref{fig:packlayout}.
+	The word bubble chart was implemented using the d3.js pack layout. The d3.js pack layout allows developers to represent elements as bubbles, and the size of the bubble is determined by the frequency (also known as the size attribute) of the elements. The word bubble chart was implemented with a flattened hierarchy, meaning that there is only one level of bubbles as in Figure \ref{fig:bubblechart}, as opposed to "bubble charts within bubble charts," shown in Figure \ref{fig:packlayout}.
 	
   	The script accepts graph data with two attributes: "name" and "size". Each element in the JSON file gets its own bubble. The radius of the bubble is determined by each element's associated size attribute.
   	
-   \begin{figure}
-   	\centering
-   	\includegraphics[scale=1]{bubblechart.PNG}
-   	\caption{Bubble Chart with a flattened hierarchy} \label{fig:bubblechart}
-   \end{figure}
+   \begin{center}
+   	\includegraphics[width=\textwidth]{bubblechart.PNG}
+   	\captionof{figure}{Bubble Chart with a flattened hierarchy} 
+   	\label{fig:bubblechart}
+   \end{center}
+   
    
    \begin{figure}
    	\centering
@@ -652,32 +640,30 @@
    
    \subsubsection{Front-End Testing}
    
-   In order to ensure implementation occurred correctly, the following testing following implementation: 
+   In order to ensure implementation occurred correctly, the following testing was performed after implementation: 
    
    General testing involved ensuring that the project workflow ran smoothly. This meant following all existing links and testing that they actually worked, in other words, redirecting users to the correct pages.
    
-   The friend network graph page was tested first by using dummy data to ensure that the graph behaved as expected. The graph's border, node characteristics and interaction capabilities was constantly adjusted until they were considered satisfactory. After this the network graph was tested with real data from the neo4j database to ensure integration worked as expected. All of these tests were successful.
+   The friend network graph page was tested first by using dummy data to ensure that the graph behaved as expected. The graph's border, node characteristics and interaction capabilities was constantly adjusted until they were considered satisfactory. After this the network graph was tested with real data from the Neo4j database to ensure integration worked as expected. All of these tests were successful.
    
    Testing of the friend status update word analysing bubble chart page involved using various sets of dummy data to see how the bubble chart changed when the size and content of the data set changed.
-   
 	
 	\section{The Back-End}
 	
 	\subsection{Design Document} % Joe
 	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
-	The back-end design consists of a graphical database system containing supporting functionality for making friend network queries as well as a web application framework. Both views were designed using a functional methodology. The particular functionalities of the design are documented below. These views together represent the back-end aspect of a web application for viewing interconnected Facebook links.
+	The back-end design consists of a graph database system containing supporting functionality for making friend network queries as well as a web application framework. Both views were designed using a functional methodology. The particular functionalities of the design are documented below. These views together represent the back-end aspect of the web application for viewing interconnected Facebook links.
 	
 	The section is divided into sub sections representing the different views of the design, namely the database view and the web application framework view.
 	
 	\subsubsection{The Web Application Framework}
 	This section will discuss the functions, dependencies and details of the web application framework. The general operation of the system is shown in Figure \ref{fig:django}.
 	
-	\begin{figure}[h] 
-		\centering
-		\includegraphics[scale=1]{djangostruc}
-		\caption{Code structure for running of web application and processing user input.} \label{fig:django}
-	\end{figure}
+	\begin{center} 
+		\includegraphics[width=\textwidth]{djangostruc}
+		\captionof{figure}{Code structure for running of web application and processing user input.} \label{fig:django}
+	\end{center}
 	
 	The following functions were used in the web application framework: \texttt{home()}, \texttt{friendNetwork()} and \texttt{wordChart()}. These functions refer to the different pages served by the web application. Each of these functions simply return the file path to the requested page which is the input to each function.
 	
@@ -690,13 +676,13 @@
 	\subsubsection{The Graph Database}
 	This section will discuss the functions, dependencies and details of the the graph database. The general operation of the supporting functions of the system is shown in Figure \ref{fig:db}.
 	
-	\begin{figure} [htb]
+	\begin{center}
 		\centering
 		\includegraphics[scale=1]{neo4jdb}
-		\caption{Code structure for fetching friends of friends network from neo4j DB.} \label{fig:db}
-	\end{figure}
+		\captionof{figure}{Code structure for fetching friends of friends network from Neo4j database.} \label{fig:db}
+	\end{center}
 	
-	The following functions were used to support the graphical database: \texttt{getPerson()}, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()}. These functions each take as inputs the name and surname of the person being queried and return a dictionary containing the query results. 
+	The following functions were used to support the graph database: \texttt{getPerson()}, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()}. These functions each take as inputs the name and surname of the person being queried and return a dictionary containing the query results. 
 	
 	The \texttt{getPerson()} function uses the name and surname input to query the database for the requested person. The function returns a dictionary containing the person in a node.
 	
@@ -704,7 +690,7 @@
 	
 	The \texttt{getFoFNetwork()} function uses the name and surname input to query the database for the requested person, the person's friends and the friends of the person's friends as well as the links between them. This function makes use of the \texttt{getFriendNetwork()} function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
 	
-	The graphical database has the following dependencies: Neo4j, Py2neo and JSON \cite{neo4j, py2neo, JSON}. Neo4j was the graphical database used in the software. Py2neo was the Python API which was used in order to enable use of the database by the Python programming language. The web framework required use of Python. The dictionaries returned by the functions mentioned above were in JSON format.
+	The graph database has the following dependencies: Neo4j, Py2neo and JSON \cite{neo4j, py2neo, JSON}. Neo4j was the graphical database used in the software. Py2neo was the Python API which was used in order to enable use of the database by the Python programming language. The web framework required use of Python. The dictionaries returned by the functions mentioned above were in JSON format.
 	
 	Two other details of the database are important. Firstly, the fields in the dictionaries returned by the above functions were nodes and links where each node and link had sub-fields. An example of their format is shown in Listing \ref{list:dbjson}. Secondly, the database requires an initialisation and migration to start it up. Standard code is provided for these functionalities.
 	
@@ -777,7 +763,7 @@
 
 	
 	\subsection{The Scrum Backlog } \label{scrumback}
-	The Scrum backlog (labeled "1" in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
+	The Scrum backlog (labeled "1" in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is compiled by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritised by the product owner, the scrum team or other stakeholders during the SDLC. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
 	
 	\begin{longtable}{|>{\centering\arraybackslash}p{1cm}|p{8cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
 		\caption{The Scrum Product Backlog\label{backlog}}\\
@@ -786,54 +772,54 @@
 		\hline
 		2 	& Start a Django project and change to required settings	& 2 & 1\\
 		\hline
-		1 & Create neo4j database 	&  2 & 2 \\
+		1 & Create Neo4j database 	&  2 & 2 \\
 		\hline 		
-		3	& Make an HTML landing page view. This should also be a template for the other views and therefore must make use of a bootstrap theme and have navigational links. 	& 1 & 3\\
+		3	& Make an HTML landing page view. This should also be a template for the other views and therefore must make use of a Bootstrap theme and have navigational links. 	& 1 & 3\\
 		\hline 
 		4	& Source Facebook user data and load it onto the database. Obtain the required permissions to access this data. The data must be stored in a logical and structured fashion in order to ensure the data can be accessed as required. 	& 3 & 4\\
 		\hline
-		10	& Write Python scripts and functions that return data required by the different views in a correct format (i.e. JSON, CSV, TSV etc.) by using database queries 	& 3 & 5\\ 
+		10	& Write Python scripts and functions that return data required by the different views in a correct format by using database queries 	& 3 & 5\\ 
 		\hline
-		5	& Create a view that contains a d3.js "Force-diagram" that is used to visualize a friend network diagram that is interactively used by the end user. 	& 5 & 6\\
+		5	& Create a view that contains a d3.js "Force-diagram" that is used to visualise a friend network diagram that is interactively used by the end user. 	& 5 & 6\\
 		\hline 
-		6	& Create a view that contains a d3.js "Word bubble chart" that visualizes the popularity of words used by Facebook friends of the end user in their Facebook status.	& 4 & 7\\
+		6	& Create a view that contains a d3.js "Word bubble chart" that visualises the popularity of words used by Facebook friends of the end user in their Facebook status.	& 4 & 7\\
 		\hline 
 		7	& Set-up an Apache server on a server host computer and host the Django project that contains the various views. 	& 2 & 8 \\
 		\hline 
-		8	& Integrate the first phase systems required for the first sprint. This includes linking all the views to their URLs in the Django project framework, connect the neo4j database to the Django project, ensure that the views are able to pull required data from the database and that the Apache server successful hosts the project.  	& 3 & 9\\
+		8	& Integrate the first phase systems required for the first sprint. This includes linking all the views to their URLs in the Django project framework, connecting the Neo4j database to the Django project and ensuring that the views are able to pull required data from the database and that the Apache server successfully hosts the project.  	& 3 & 9\\
 		\hline 
-		9	& Do various software tests to ensure the integration is successful. These tests include testing the database queries return expected data, tests that the graphs in the views visualize the correct information and test that the Apache server host all the URLs  	& 3 & 10\\
+		9	& Do various software tests to ensure the integration is successful. These tests include testing the database queries return expected data, tests that the graphs in the views visualise the correct information and test that the Apache server host all of the URLs. 	& 3 & 10\\
 		\hline  
 		11	& Register for a domain name and host the Apache server to that domain in order to allow the project to be accessed on the Internet.	& 2 & 11\\
 		\hline
-		15	& Addition Python scripts and functions for the new views	& 3 & 12\\
+		15	& Add Python scripts and functions for the new views	& 3 & 12\\
 		\hline	
-		12	& Create a view that makes use of a d3.js library called crossfilter.js. This view must contain charts that visualize the user's various Facebook friend relationship data using bar charts, line charts and pie chart. Each chart in this view must filter the other charts &  3 & 13\\
+		12	& Create a view that makes use of a d3.js library called crossfilter.js. This view must contain charts that visualise the user's various Facebook friend relationship data using bar charts, line charts and pie chart. Each chart in this view must filter the other charts &  3 & 13\\
 		\hline
-		13	& Create a view that illustrates the degrees of separation between Facebook users. This view must take two names as an input of calculate the degree of separation between them.	&  4 & 14\\
+		13	& Create a view that illustrates the degrees of separation between Facebook users. This view must take two names as an input and calculate the degree of separation between them.	&  4 & 14\\
 		\hline
-		14	& View that can user the friend relationships to plan global trips for the user	& 6  & 15\\
+		14	& View that can be used by a user to plan global trips to his friends.	& 6  & 15\\
 		\hline
 		16	& Write a Python script that implements machine learning that the user can use to predict potential friend pairings.    	& 10 & 16\\
 		\hline
-		17	& Preform addition tests on the new views created.	& 2 & 17\\
+		17	& Perform additional tests on the new views created.	& 2 & 17\\
 		\hline
 		18	& Create a login interface where a user can create an account and login into the web application. An additional table to the database must be added to store these details.	& 5 & 18\\
 		\hline
-		19	& Make a Facebook API for automatically pulling user information from the Facebook website. This should allow all the view to be updated with the latest data	& 4 & 19\\
+		19	& Make a Facebook API for automatically pulling user information from the Facebook website. This should allow all views to be constantly up to date.	& 4 & 19\\
 		\hline
 		20	& Implement the HTTPS protocol on the server to ensure that the web application is more secure	& 3 & 20\\
 		\hline
-		21	& Create automated tests that continuously tests the software to ensure that it is always working as required 	& 4 & 21\\
+		21	& Create automated tests that continuously tests the software to ensure that it is always working as required. 	& 4 & 21\\
 		\hline
 		& \textbf{Total }	& 74 Days & \\
 		\hline 	
 	\end{longtable}
 	
-	The Scrum backlog shown in Table \ref{backlog} was complied at the beginning of the project by the Scrum team and product owner during the Scrum planning session. All tasks that are deemed necessary for the entire project are recorded in the backlog. As mentioned, this backlog is adjustable as there is a possibility that new tasks may arise during the project. Smaller meetings with th product owner and Scrum team will be conducted when the backlog needs to be adjusted. During the Scrum planning meetings, the logistics of the entire project in terms of the working environment and communication forums are also discussed in this meeting and is described in the next section.
+	The Scrum backlog shown in Table \ref{backlog} was compiled at the beginning of the project by the Scrum team and product owner during the Scrum planning session. All tasks that are deemed necessary for the entire project are recorded in the backlog. As mentioned, this backlog is adjustable as there is a possibility that new tasks may arise during the project. Smaller meetings with the product owner and Scrum team will be conducted when the backlog needs to be adjusted. During the Scrum planning meetings, the logistics of the entire project in terms of the working environment and communication forums is also discussed and is described in the next section.
 	
 	\subsection{The Scrum Logistics} \label{log}
-	The project logistics and the formation of the working environment are discussed the Scrum planning meeting. Firstly, the created project's software needs a central submission repository where all the project's software can be accessed. A Github repository is created and each member of the Scrum team are invited to join this repository and are given access to this repository. This repository is also used for the software version control and a is technology to allows collaborative software development.
+	The project logistics and the formation of the working environment are discussed in the Scrum planning meeting. Firstly, the created project's software needs a central submission repository where all the project's software can be accessed. A Github repository is created and each member of the Scrum team is invited to join this repository and are given access to this repository. This repository is also used for the software version control and is a technology which allows collaborative software development.
 	
 
 	
@@ -842,7 +828,7 @@
 		\captionof{figure}{Screen shot of the Trello web application taken from \cite{trello}} \label{fig:trello}
 	\end{center}
 	
-	In terms of communication, there are various platforms used to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{fig:trello}. This application has prioritized "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{fig:trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
+	In terms of communication, there are various platforms used to organise, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{fig:trello}. This application has prioritised "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritised board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{fig:trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
 	
 
 	\begin{center}
@@ -850,22 +836,20 @@
 		\captionof{figure}{Screen shot of the Slack messaging application taken from \cite{slack}} \label{fig:slack}
 	\end{center}
 	
-	Another communication forum used for this project is called Slack and this messaging platform is used by the Scrum team members to ask questions and post comments about the project \cite{slack}. This platform is different from other messaging platforms as users can also post code and get help from the other members for certain coding problems. Slack is also used to organize project events such as Scrum meetings, demonstration events and communicate deadlines. A screen shot of the Slack messaging platform is shown in Figure \ref{fig:slack} and it also shows an example of a typical project conversation.
-	
-	
+	Another communication forum used for this project is called Slack and this messaging platform is used by the Scrum team members to ask questions and post comments about the project \cite{slack}. This platform is different from other messaging platforms as users can also post code and get help from the other members for certain coding problems. Slack is also used to organize project events such as Scrum meetings, demonstration events and to communicate deadlines. A screen shot of the Slack messaging platform is shown in Figure \ref{fig:slack} and it also shows an example of a typical project conversation.
 	
 	These technologies and communication tools are used extensively during each sprint of the Scrum to ensure the sprint runs smoothly. The first sprint for the Tracking Facebook Interconnected Links project is discussed in the next section. 
 	
 	
 	\subsection{The Sprint Backlog } \label{sprintback}
-	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{fig:scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
+	 A sprint is typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{fig:scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these tasks are the most prioritised tasks remaining within the product backlog. 
 	
-	The first sprint for the Tracking Facebook Interconnected Links project is planned in a sprint planning meeting conducted between the Scrum members. This meeting is run for about 6 hours because the sprint is planned to run for about 4 weeks. During this meeting a sprint product backlog is drawn up and is shown in Table \ref{sprintbacklog}. As shown in Table \ref{sprintbacklog}, a short description of each task is defined as while as the duration of each task. It also shows the number of days in each week of the sprint each task should be worked on for. The overall sprint goals are defined for the sprint in this meeting which outline the expectations of the sprint's end product. For this first sprint, the following sprint goals are set out:
+	The first sprint for the Tracking Facebook Interconnected Links project is planned in a sprint planning meeting conducted between the Scrum members. This meeting is run for about 6 hours because the sprint is planned to run for about 4 weeks. During this meeting a sprint product backlog is drawn up and is shown in Table \ref{sprintbacklog}. A short description of each task is defined as while as the duration of each task. It also shows the number of days in each week of the sprint each task should be worked on for. The overall sprint goals are defined for the sprint in this meeting which outline the expectations of the sprint's end product. For this first sprint, the following sprint goals are set out:
 	
 	\begin{itemize}
 		\item Create a project prototype that includes one landing page and two functional views.
 		\item Create and populate the database.
-		\item Set-up the system's architecture such as setting up the framework and server. 
+		\item Set up the system's architecture such as setting up the framework and server. 
 	\end{itemize}
 	
 	
@@ -877,7 +861,7 @@
 		\hline
 		2 	& Start a Django project	& 2 &   & &  \\
 		\hline
-		1 & Create neo4j database 	&  2 &   & & \\
+		1 & Create Neo4j database 	&  2 &   & & \\
 		\hline 	
 		3	& Make an HTML landing page view with a bootstrap theme and navigational links. 	& 1 &  & & \\
 		\hline 
@@ -885,13 +869,13 @@
 		\hline
 		10	& Write Python scripts and functions that return data required in a correct format &  & 2  & 1 & \\ 
 		\hline
-		5	& Create a view that contains a d3.js "Force-diagram" that is used to visualize a friend network diagram	&  & 2  & 2 & 1 \\
+		5	& Create a view that contains a d3.js "Force-diagram" that is used to visualise a friend network diagram	&  & 2  & 2 & 1 \\
 		\hline 
-		6	& Create a view that contains a d3.js "Word bubble chart" that visualizes the popularity of words used in status	&  & 1 & 2 & 1 \\
+		6	& Create a view that contains a d3.js "word bubble chart" that visualises the popularity of words used in status	&  & 1 & 2 & 1 \\
 		\hline 
-		7	& Set-up an Apache server that host the Django project &  &   & 2 & \\
+		7	& Set up an Apache server that hosts the Django project &  &   & 2 & \\
 		\hline 
-		8	& Integrate the first phase systems.	&  &  & 2 & 1\\
+		8	& Integrate the first phase systems	&  &  & 2 & 1\\
 		\hline 
 		9	& Do software testing  	&  & & & 3 \\
 		\hline 	
@@ -899,11 +883,11 @@
 		
 	\end{longtable}
 	
-	Each task is also allocated to a Scrum team member during this sprint planning meeting. The team members choose the tasks that they would like to do with the front-end and back-end team members choosing their respective tasks. Once the tasks are scheduled to the team, a new Trello board is created with the new task allocations (as discussed in Section \ref{log}). The tasks described in Table \ref{sprintbacklog} are subjected to change, however these changes must not change the sprint's goals that were outlined. There were minutes that were taken for the Sprint planning meeting and these minutes can be found in Appendix B. In Appendix B, some project roles were simulated such as the Product Owner, Project Administrator, the Scrum Master and Marketing Manager in order add authenticity to the meeting that took place.
+	Each task is also allocated to a Scrum team member during this sprint planning meeting. The team members choose the tasks that they would like to do with the front-end and back-end team members choosing their respective tasks. Once the tasks are scheduled, a new Trello board is created with the new task allocations (as discussed in Section \ref{log}). The tasks described in Table \ref{sprintbacklog} are subject to change, however these changes must not change the sprint's goals that were outlined. There were minutes that were taken for the Sprint planning meeting and these minutes can be found in Appendix B. In Appendix B, some project roles were simulated such as the Product Owner, Project Administrator, Scrum Master and Marketing Manager in order to add authenticity to the meeting that took place.
 	
 	\subsection{The Daily Scrum Meetings}
 	
-	 Once the sprint begins, there is a daily Scrum meeting that occurs in the morning of each working day. During this meeting, each Scrum team member is given the opportunity for report on their daily progress. Each member is also required to talk about the following items:
+	 Once the sprint begins, there is a daily Scrum meeting that occurs in the morning of each working day. During this meeting, each Scrum team member is given the opportunity to report on their daily progress. Each member is also required to talk about the following items:
 	
 	\begin{itemize}
 		\item The tasks that they completed since the previous meeting
@@ -914,7 +898,7 @@
 	These daily Scrum meetings are meant to be relatively short (typically 15 minutes) and the objective of these meetings is to provide a platform for the Scrum team to keep track of progress. These meetings also allow for the members to obtain help or get ideas on how to solve small problems and can be used to communicate small project plan changes. 
 	
 	\subsection{Managing The Sprint Process}
-	The sprint process of the project is an effective methodology that allows rapid software development that can be flexible in terms of the requirements. However, the fast paced nature the sprint can be chaotic and disorganized and it is therefore very important to mange the project well. An organized, disciplined Project Manager (can also be the Scrum Master) must be appointed to ensure the project is well organized. Various project managing tools must be utilized in order to ensure the sprint achieves the set out sprint goals. Tools that have already been mentioned include conducting daily meetings and using the communication platforms effectively to maintain project progress. Another project managing tool that can be used is a Gantt chart. A Gantt shows the various tasks defined in the sprint backlog on a time-line. It illustrates to the Project Manager when certain tasks must be completed by, which team members are responsible for each task and also shows the critical path. The critical path are tasks in which the deadlines are crucial as delays with these tasks could cause delays for the entire sprint. The Gantt chart for the first sprint is drawn up and is shown in Figure \ref{fig:gantt}
+	The sprint process of the project is an effective methodology that allows rapid software development that can be flexible in terms of the requirements. However, the fast paced nature of the sprint can be chaotic and disorganiszed and it is therefore very important to manage the project well. An organised, disciplined Project Manager (can also be the Scrum Master) must be appointed to ensure the project is well organised. Various project managing tools must be utilizsed in order to ensure that the sprint achieves the set out sprint goals. Tools that have already been mentioned include conducting daily meetings and using the communication platforms effectively to maintain project progress. Another project managing tool that can be used is a Gantt chart. A Gantt chart shows the various tasks defined in the sprint backlog on a time-line. It illustrates to the Project Manager when certain tasks must be completed by, which team members are responsible for each task and the critical path. The critical path contains tasks which are crucial to the deadline as delaying these tasks could cause delays for the entire sprint. The Gantt chart for the first sprint is shown in Figure \ref{fig:gantt}
 	
 	\begin{center}
 		\includegraphics[width=\textwidth]{gantt}
@@ -923,22 +907,22 @@
 	
 
 	\section{Sprint Retrospective} \label{retro}
-	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label "3" in Figure \ref{fig:scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
+	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which including the successful goals achieved, the goals that were not achieved, the challenges that were faced and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label "3" in Figure \ref{fig:scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
 	
 	\subsection{The Goals Achieved and Positive Outcomes}
 	After the first sprint, a shippable prototype of the Tracking Facebook Interconnected Links project was produced by the Scrum team. The following goals were successfully achieved:
 	
 	\begin{itemize}
 		\item A web application with a landing page and two functional views was created.
-		\item The data for the views is stored in a neo4j graph database and the required data is pulled for the database using Cypher queries and Python functions.
-		\item The web application is hosted on an Apache web server.
+		\item The data for the views was stored in a Neo4j graph database and the required data was pulled for the database using Cypher queries and Python functions.
+		\item The web application was hosted on an Apache web server.
 	\end{itemize}
 	
-	The sprint's end product is functional and a detailed user guide document was written up which instructs the user on how to use the product. All the initial system environments were successful set-up such as the database, server, Django project and bootstrap theme which will not need to be done again in future sprints. This allows the next sprint to be able to focus more on creating more views and increasing functionally. 
+	The sprint's end product is functional and a detailed user guide document was written up which instructs the user on how to use the product. All the initial system environments were successfully set up such as the database, server, Django project and bootstrap theme which will not need to be done again in future sprints. This allows the next sprint to be able to focus more on creating more views and increasing functionality. 
 	
-	In terms of the working environment, the sprint process was relatively well organized which allowed these goals to be achieved. The Scrum team made effective use of the Trello and Github platforms. In particular, the Trello board was updated regularly with completed and new tasks which allowed the team to keep track of progress. The Github respiratory was also used effectively for integrating and storing the various tasks.
+	In terms of the working environment, the sprint process was relatively well organised which allowed these goals to be achieved. The Scrum team made effective use of the Trello and Github platforms. In particular, the Trello board was updated regularly with completed and new tasks which allowed the team to keep track of progress. The Github repository was also used effectively for integrating and storing the various tasks.
 	
-	The sprint was also well documented which will make progressing in the next sprint easier. A fully detailed Software Requirement Specification was created and can be used in future sprints to ensure that the progress is in line with what is required. A design document, implementation document and user guide was written which will also help with future project progression. 
+	The sprint was also well documented which will make progressing in the next sprint easier. A fully detailed SRS was created and can be used in future sprints to ensure that the progress is in line with what is required. A design document, implementation document and user guide was written which will also help with future project progression. 
 	
 	\subsection{The Negative Outcomes} \label{neg}
 	Although the first sprint achieved the goals that were set up for the sprint, a few negative outcomes occurred during the sprint. It is important to identify these negative aspects in order to improve them for the next sprint. These negative outcomes include the following:
@@ -947,10 +931,10 @@
 		\item The overall layout, design and chosen bootstrap theme used for the web application lacks attractiveness.
 		\item There is not enough data in the database. Although the sprint's end product is only a prototype, much more data is required to make the graphs for each view more functional.
 		\item The created views are not as interactive as they should be. More functionality must be added to them.
-		\item Did not make full use of the Django project as the "models" aspect of Django was not utilized. 
+		\item Full use of the Django project as the "models" aspect of Django was not utilised. 
 	\end{itemize}
 	
-	One negative aspect of the working environment was a lack of communication between the Scrum members at times. The Slack messaging platform was not fully utilized by the members to communicate. Often communication about challenges and problems faced by a member was dealt with in person with only one or two other members present. This meant that many times the entire team were not involved in that communication and therefore input and insight from the missing members could not happen. 
+	One negative aspect of the working environment was a lack of communication between the Scrum members at times. The Slack messaging platform was not fully utilised by the members to communicate. Often communication about challenges and problems faced by a member was dealt with in person with only one or two other members present. This meant that many times the entire team was not involved in that communication and therefore input and insight from the missing members could not happen. 
 	
 	Another problem faced was that the tasks were sometimes completed after the planned deadlines. This caused a slight build up of work towards the end of the sprint and final integration tasks were rushed. These mentioned negative outcomes need to be considered when planning the next sprint as this will improve the overall final project product.
 	
@@ -981,7 +965,7 @@
 	
 	
 	\subsection{The Improvements For the Next Sprint}
-	One of the main purposes of the sprint retrospective meeting is to highlight improvements that can be made for the next sprint and suggest plans on how to implement these improvements. The negative outcomes mentioned in Section \ref{neg} must be improved and the following are suggestions that should improve them:
+	One of the main purposes of the sprint retrospective meeting is to highlight improvements that can be made for the next sprint and suggest plans on how to implement these improvements. The negative outcomes mentioned in Section \ref{neg} must be improved and the following are suggestions that could improve them:
 	
 	\begin{itemize}
 		\item The design and  layout can be improved by using a better bootstrap template. It is suggested that the "Dashboard" template should be used.
@@ -994,7 +978,7 @@
 
 	\section{Conclusion}
 
-	The requirements, design, implementation and testing of a two-tier web-based application for visualising interconnected Facebook links has been presented. The group work aspects of the project, including SLDC as tools for communication and organisation, have been discussed. The prototype application showed that the selected technologies and tools are capable of delivering the required features and specifications. Future work for the project as well as improvements in the performance of the development team have been suggested.
+	The requirements, design, implementation and testing of a two-tier web-based application for visualising interconnected Facebook links has been presented. The group work aspects of the project, including SDLC as tools for communication and organisation, have been discussed. The prototype application showed that the selected technologies and tools are capable of delivering the required features and specifications. Future work for the project as well as improvements in the performance of the development team have been suggested.
 
 	
 	\begin{thebibliography}{1}
@@ -1012,40 +996,35 @@
 		
 		\bibitem{D3}  \emph{d3.js - Data Driven Documents} \url{www.d3.com} Last accessed: 9 March 2016.
 		
-		\bibitem{SVG}  \emph{The Advantages of using SVG} \url{http://www.todaysoftmag.com/article/1067/the-advantages-of-using-svg-scalable-vector-graphics} Last accessed: 10 March 2016.
+		\bibitem{django} Django Software Foundation. \emph{Django Overview}. \url{https://www.djangoproject.com/start/overview/}. 2016. Last accessed: 9 March 2016.
 		
-		\bibitem{django} Django Software Foundation. \emph{Django Overview}. \url{https://www.djangoproject.com/start/overview/}. 2016. Last accessed: 9 March 2016. 
+		\bibitem{apache} Apache Software Foundation. \emph{Apache - HTTP Server Project}. \url{https://httpd.apache.org/ABOUT_APACHE.html}. 2016. Last accessed: 9 March 2016.
+		
+		\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
+		
+		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
 		
 		\bibitem{djangobook} Adrian Holovaty, Jacob Kaplan-Moss, et al. \emph{The Django Book}. \url{http://www.djangobook.com/en/2.0/index.html#}. Ch 3. Last accessed: 9 March 2016.
 		
 		\bibitem{djangoApache} Django Software Foundation. \emph{How to install Django}. \url{https://docs.djangoproject.com/en/1.9/topics/install/}. 2016. Last accessed: 9 March 2016.	
 		
-		\bibitem{apache} Apache Software Foundation. \emph{Apache - HTTP Server Project}. \url{https://httpd.apache.org/ABOUT_APACHE.html}. 2016. Last accessed: 9 March 2016.	
-		
 		\bibitem{graphdbs} Robinson I, Webber J, Eifrem E. \emph{Graph Databases} O'Reilly Media. ch 2. pp 21 - 22. June 2013.
-		
-		\bibitem{wsgi} mod\_wsgi. \url{https://modwsgi.readthedocs.org/en/develop/}, Last accessed 7 April 2016.
-		
-		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
-		
-		\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
 		
 		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
 		
-		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
+		\bibitem{JSON} JSON. \url{http://www.json.org/}, Last accessed 10 April 2016
 		
-		\bibitem{slack} Slack. \url{https://slack.com/}, Last accessed 18 February 2016.
-		
-		\bibitem{trello} Trello. \url{https://trello.com/}, Last accessed 18 February 2016.
+		\bibitem{SVG}  \emph{The Advantages of using SVG} \url{http://www.todaysoftmag.com/article/1067/the-advantages-of-using-svg-scalable-vector-graphics} Last accessed: 10 March 2016.
 		
 		\bibitem{wsgi} mod\_wsgi. \url{https://modwsgi.readthedocs.org/en/develop/}, Last accessed 7 April 2016.
-		
 		
 		\bibitem{Cohn} M, Cohn \emph{What Are Agile \& Scrum}, Available from: \url{https://www.mountaingoatsoftware.com/}, Last accessed: 10/04/2016
 		
 		\bibitem{Haunts} S, Haunts \emph{Agile Software Development Succinctly}, Technology Resource Portal, Syncfusion Inc, Morrisville USA (2015)
 		
-		\bibitem{JSON} JSON. \url{http://www.json.org/}, Last accessed 10 April 2016
+		\bibitem{trello} Trello. \url{https://trello.com/}, Last accessed 18 February 2016.
+		
+		\bibitem{slack} Slack. \url{https://slack.com/}, Last accessed 18 February 2016.
 		
 		
 	\end{thebibliography}
@@ -1056,7 +1035,7 @@
 	
 	\section{Use Cases} \label{moreusecase}
 	
-	\emph{pre-requisites:} It is assumed that the server is operating correctly and that the client is running a modern web browser compatible with the versions of HTML, CSS and JavaScript used in the application. It is also assumed that the client has an internet connection.
+	\emph{pre-requisites:} It is assumed that the server is operating correctly and that the client is running a modern web browser compatible with the versions of HTML, CSS and JS used in the application. It is also assumed that the client has an internet connection.
 	
 	\subsection{Use Case 1: Log In}
 
@@ -1128,10 +1107,10 @@
 			\item The user is able to request a second email.
 		\end{enumerate}
 
-		7b. The users email address is incorrect:
+		7b. The user's email address is incorrect:
 
 		\begin{enumerate}
-			\item The user is able to change their email address and a second email.
+			\item The user is able to change their email address and request a second email.
 		\end{enumerate}
 	
 	\subsection{Use Case 3: Connect to Facebook}
@@ -1186,7 +1165,7 @@
 
 		\subsubsection{Alternate Flows}
 
-		4a. The file the user selects in invalid:
+		4a. The file the user selects is invalid:
 
 		\begin{enumerate}
 			\item The user is notified of their mistake.
@@ -1196,7 +1175,7 @@
 			\item The user is taken to their personal landing page, where they can access visualisations of their uploaded data.
 		\end{enumerate}
 
-		4b. The file the user selects in invalid and is unable to correct their mistake:
+		4b. The file the user selects is invalid and is unable to correct their mistake:
 
 		\begin{enumerate}
 			\item The user is notified of their mistake.
