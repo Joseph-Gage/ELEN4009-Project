@@ -238,7 +238,7 @@
 	
 	\begin{figure}[htbp]
 		\centering	    
-		\begin{subfigure}[b]{0.3\textwidth}
+		\begin{subfigure}[b]{0.45\textwidth}
 			\centering
 			\begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
 			
@@ -246,7 +246,8 @@
 			\node[main node] at (6,0) (2)  {Julian};
 			\node[main node] at (4,-2) (3) {Bob};
 			\node[main node] at (2,-4) (4) {Alice};
-			\node[main node] at (6,-4) (5) {Sasha};	      
+			\node[main node] at (6,-4) (5) {Sasha};	  
+			\node[coordinate] at (8,0) (point) {};    
 			
 			\path
 			(1) edge[bend left] (3)
@@ -259,9 +260,8 @@
 			\caption{Before click}
 			\label{fig:gull1}
 		\end{subfigure}
-		\qquad
-		\qquad
-		\begin{subfigure}[b]{0.3\textwidth}
+		~
+		\begin{subfigure}[b]{0.45\textwidth}
 			\centering
 			\begin{tikzpicture}[<->,>=stealth,shorten >=1pt,auto,thick,main node/.style={circle,fill=green!20,draw,align=center,minimum width=1.5cm}]
 			
@@ -346,6 +346,13 @@
 		\node[main node] at (4,-2) (3) {Bob};
 		\node[main node] at (0,-4) (4) {Alice};
 		\node[main node] at (8,-4) (5) {Sasha};
+
+		\path
+		(1) edge[bend left]  (3)
+		(3) edge[bend right] (5)
+		(3) edge[bend left]  (4)
+		(3) edge[bend left] (2)
+		;
 		
 		\node[below = 0 cm of 5, fill= white, rectangle, draw, align = left] {Age: 22 \\ Sex: female \\ Job: Engineer};
 		\node[below = 0 cm of 4, fill= white, rectangle, draw, align = left] {Age: 22 \\ Sex: female};
@@ -353,12 +360,7 @@
 		\node[below = 0 cm of 2, fill= white, rectangle, draw, align = left] {Age: 21 \\ Sex: male};
 		\node[below = 0 cm of 1, fill= white, rectangle, draw, align = left] {Sex: male};
 		
-		\path
-		(1) edge[bend left]  (3)
-		(3) edge[bend right] (5)
-		(3) edge[bend left]  (4)
-		(3) edge[bend left] (2)
-		;
+		
 		
 		\end{tikzpicture}
 		\caption{Friend network showing personal details.}
