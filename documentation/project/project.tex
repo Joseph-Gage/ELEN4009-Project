@@ -62,15 +62,15 @@
 		
 		\item Individuals can use the data for personal analytics.
 		
-		\item Sociologists to use the data to make and test new hypotheses.
+		\item Sociologists could use the data to make and test new hypotheses.
 		
-		\item Marketing and advertising agencies could create specialized and targeted adds depending on a set of user's likes and status updates.
+		\item Marketing and advertising agencies could create specialised and targeted adds depending on a set of user's likes and status updates.
 		
 	\end{itemize}    
 	
 	There are a large number of potential applications and the possibilities are only constrained by human creativity.
 	
-	The Tracking Interconnected Facebook Links project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example degrees of separation analyses or more personal analytics could be added. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
+	The Tracking Interconnected Facebook Links project is intended to visualise the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example, degrees of separation analyses or more personal analytics could be added. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
 	
 	The project team consists of four Software Engineering students, divided into two groups: one for the front-end and one for the back-end. This document serves as a description of the project. The software requirement specification will be laid out. The design and implementation of the front and back ends will be discussed. Finally, the Scrum planning and retrospective will be presented.
 	
@@ -80,7 +80,7 @@
 	
 	\begin{itemize}
 		
-		\item Create a prototype system for visualizing a person's Facebook connections, social trends and personal analytics.
+		\item Create a prototype system for visualising a person's Facebook connections, social trends and personal analytics.
 		
 		\item Document the requirements for the system.
 		
@@ -94,14 +94,14 @@
 	
 	\subsection{Stakeholders} % James
 	
-	The Project Management Body of Knowledge describes stakeholders as individuals or organizations that may be impacted in any way by the decisions or outcomes of a project \cite{pmbok}. There are a number of stakeholders whose interests must be considered when carrying out the objectives above. Often the stakeholders can have conflicting interests which must be compared and carefully weighed up in order to resolve the conflict. The following stakeholders are considered to be of paramount importance:
+	The Project Management Body of Knowledge describes stakeholders as individuals or organisations that may be impacted in any way by the decisions or outcomes of a project \cite{pmbok}. There are a number of stakeholders whose interests must be considered when carrying out the objectives above. Often the stakeholders can have conflicting interests which must be compared and carefully weighed up in order to resolve the conflict. The following stakeholders are considered to be of paramount importance:
 	
 	\begin{itemize}
-		\item \textbf{The Users}. The users of the system will be individuals who wish to explore their own personal Facebook friend networks and perform intimate personal analytics on their data. At this point the users \textbf{do not} include data scientists, analysts, sociologists and marketing/ advertising professionals - a later version of the software will be targeted at these groups. The reason that the individual was chosen as the first target market is that the requirements for the individual are much less resource intensive and thus are a more realistic goal for the first version of a product. Every decision that is made should improve the user's experience when interacting with the product. 
+		\item \textbf{The users}. The users of the system will be individuals who wish to explore their own personal Facebook friend networks and perform intimate personal analytics on their data. At this point the users \textbf{do not} include data scientists, analysts, sociologists and marketing/advertising professionals - a later version of the software will be targeted at these groups. The reason that the individual was chosen as the first target market is that the requirements for the individual are much less resource intensive and thus are a more realistic goal for the first version of a product. Every decision that is made should improve the user's experience when interacting with the product. 
 		
-		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are then divided into two teams, the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. Note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
+		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are divided into two teams - the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. Note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
 		
-		\item \textbf{Facebook}. Although Facebook will not itself be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about amount or type of data about them on Facebook.
+		\item \textbf{Facebook}. Although Facebook will not itself be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about the amount or type of data about them on Facebook.
 		
 	\end{itemize}
 	
@@ -112,15 +112,15 @@
 		
 		\item \textbf{Apache}. A popular web server.
 		
-		\item \textbf{Client-Server}. An architecture or model for distributed computing via the Internet or other network.
+		\item \textbf{API} - Application Program Interface. A set of tools for building for software products.
+		
+		\item \textbf{Client-Server}. An architecture or model for distributed computing via the Internet or other networks.
 		
 		\item \textbf{CSS} - Cascading Style Sheets. A language for describing the presentation of a website.
 		
 		\item \textbf{Cypher}. The query language for Neo4j graph databases.
 		
 		\item \textbf{d3.js}. A popular JavaScript library for visualisation.
-		
-		\item \textbf{SVG}. Scalable Vector Graphic. An XML-based vector image format, supporting interactive functionality and animations.
 		
 		\item \textbf{DBMS} - Database Management System. A database program.
 		
@@ -179,7 +179,7 @@
 	The requirements for the application are that it:
 	\begin{enumerate}
 		\item consists of a front-end that runs client side and a back-end that runs server side, 
-		\item has user friendly front-end which is easy to use for non-technologically inclined people,
+		\item has a user friendly front-end which is easy to use for non-technologically inclined people,
 		\item is scalable - with a back-end that supports multiple clients,
 		\item is fast and responsive leading to an enjoyable user experience,
 		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical manner which facilitates discovery,
@@ -189,7 +189,7 @@
 	\end{enumerate}
 	
 	\subsubsection{Purpose}
-	The purpose of the project is to provide a tool to be used by individuals (and organizations at a later stage) to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualizing this information dynamically so that it will be advantageous to any  user.
+	The purpose of the project is to provide a tool to be used by individuals (and organisations at a later stage) to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualising this information dynamically so that it will be advantageous to any  user.
 	
 	\subsubsection{System Overview}
 	This project will be made up of various software systems with the back-end and front-end working together to form a web-based visualisation application. The overview of the entire software system is illustrated in Figure \ref{system}. This figure shows how the various components of the system interact with each other. Figure \ref{system} shows how the client (using a web browser) interacts with an Apache server and the Django framework. It describes how data from the Neo4j database is fetched by the Django framework and sent to the user via the Apache server.
@@ -202,26 +202,26 @@
 	\end{figure}
 	
 	\subsection{Software Development Life Cycle Choice}
-	The SDLC is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SLDCs were considered and are listed below.
+	The SDLC is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SDLCs were considered and are listed below.
 	
 	\begin{itemize}
 		\item \textbf{Waterfall model} - A sequential development model that lacks feedback. This technique consists of the following steps: requirements definition, design, implementation, verification and maintenance. However, due to the lack of feedback, this approach is not feasible unless the requirements are not completely defined in advance, the scope is fixed and the technology is well understood by the development team.
 		
-		\item \textbf{Iterative and Incremental process} - A development model in which features are gradually added. Unlike the waterfall approach, this approach makes small changes at a time which can allow for more flexibility. However, this approach still requires the whole system to be well defined at the project start.
+		\item \textbf{Iterative and incremental process} - A development model in which features are gradually added. Unlike the waterfall approach, this approach makes small changes at a time which can allow for more flexibility. However, this approach still requires the whole system to be well defined at the project start.
 		
 		\item \textbf{Agile} - A number of development principles aimed at facilitating the evolution of requirements and solutions in a collaborative process.
 		
 	\end{itemize}
 	
-	For this particular project, the fast pace method of the Agile SDLC is the best approach as the pace of producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
+	For this particular project, the fast pace method of the Agile SDLC is the best approach as speed in producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
 	
-	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
+	The Agile SDLC also has varying methodologies that allows the achievement of an Agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
 	
 	In the Scrum process, prioritised project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
 	
 	
 	\subsection{Architecture Choice}
-	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{backsec} and \ref{frontsec}), network communication and team composition. 
+	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{frontsec} and \ref{backsec}), network communication and team composition. 
 	
 	A two-tier, client-server architecture has been selected. In 'client-server', client refers to any user actively interacting with the server via the user interface provided by the system. Server refers to the storage and hosting of the business and data layers. The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
 	
@@ -998,8 +998,6 @@
 
 	
 	\begin{thebibliography}{1}
-		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
-		
 		\bibitem{fb} Statista. \url {http://www.statista.com/statistics/264810/number-of-monthly-active-facebook-users-worldwide/}. Last accessed 18 February 2016. 
 		
 		\bibitem{pmbok} Project Management Institute. \emph{A Guide to the Project Management Body of Knowledge (PMBOK Guide)}. Newtown Square, Pa: Project Management Institute, 2004. ch 13. p 390.
@@ -1025,11 +1023,14 @@
 		\bibitem{apache} Apache Software Foundation. \emph{Apache - HTTP Server Project}. \url{https://httpd.apache.org/ABOUT_APACHE.html}. 2016. Last accessed: 9 March 2016.	
 		
 		\bibitem{graphdbs} Robinson I, Webber J, Eifrem E. \emph{Graph Databases} O'Reilly Media. ch 2. pp 21 - 22. June 2013.
+		
 		\bibitem{wsgi} mod\_wsgi. \url{https://modwsgi.readthedocs.org/en/develop/}, Last accessed 7 April 2016.
+		
 		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
-		\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
 		
 		\bibitem{neo4j} neo4j. \url{http://neo4j.com/}, Last accessed 18 February 2016.
+		
+		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
 		
 		\bibitem{py2neo} Py2Neo. \url{http://py2neo.org/2.0/}, Last accessed 18 February 2016.
 		
