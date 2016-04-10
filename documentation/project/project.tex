@@ -11,6 +11,9 @@
 
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
 
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
 \title{\huge Tracking Interconnected Facebook Links - Project Report}
 
 \author{ \horrule{1pt} \\ \textbf{ELEN4009 - Software Engineering} \\ \emph{School of Electrical and Information Engineering,} \\ \emph{University of the Witwatersrand,} \\ \emph{Johannesburg, South Africa} \\ \horrule{1pt} \\\\ \emph{Back-End Pair:} \\ Julian Zeegers (704582) \\ James Allingham (672732) \\ \\ \emph{Front-End Pair:} \\ Joseph Gage (751052)\\ Nathan Haag (873666) \\ \horrule{1pt}}
@@ -468,7 +471,40 @@ Your abstract goes here...
 	Another technology that will support the functionally of the website is the d3.js JavaScript graphical library \cite{D3}. This library contains JavaScript code for many different visualisation graphs that can be used to visualize the data stored in the Neo4j database. Considering that the main requirement for this project is to visualise the interconnections, the 'force-directed graph' from the d3.js library will be used. As mentioned, other visualisations from the d3.js library can also be used to the further explore the database. These other visualisations include dynamic bar and line charts, geographical heat-maps and dc.js cross-filter graphs, as well as a variety of other options that may be used if they match the functionality appropriately.
 
 	\subsection{Use Cases}
-	A number of important use cases describing the base functionality of the product are listed and described in Table \ref{usecase}. These use cases are expanded upon in the Appendix Section \ref{moreusecase}.
+	A number of important use cases describing the base functionality of the product are listed and described in Table \ref{usecase}. The relationships between the use cases are shown in Figure \ref{usecased}.
+
+	\begin{figure}[htbp]
+		\begin{tikzpicture}[]
+
+			\node at (-1,0) (user) {user};
+			\node[ellipse, draw, fill = blue!10] at (2,-2) (su) {sign up};
+			\node[ellipse, draw, fill = blue!10] at (2,0) (li) {log in};
+			\node[ellipse, draw, fill = blue!10, align = center] at (6,2) (cf) {connect to \\ Facebook};
+			\node[ellipse, draw, fill = blue!10] at (6,-2) (ud) {upload data};
+			\node[ellipse, draw, fill = blue!10, align = center] at (6,0) (vf) {view friend \\ network};
+			\node[ellipse, draw, fill = blue!10, align = center] at (11,0) (vfd) {view friendship \\ data};
+			\node[ellipse, draw, fill = blue!10, align = center] at (11,-2) (vrd) {view relationship \\ data};
+			\node[ellipse, draw, fill = blue!10, align = center] at (10,2) (vpd) {view personal \\ data};
+			\node[ellipse, draw, fill = blue!10, align = center] at (2, 2) (vov) {view other \\ visualisations};
+
+			\path
+		      (user) edge[] (su)
+		      (user) edge[] (li)
+		      (li) edge[] (cf)
+		      (li) edge[] (vf)
+		      (li) edge[] (ud)
+		      (vf) edge[] (vfd)
+		      (vf) edge[] (vrd)
+		      (vf) edge[] (vpd)
+		      (li) edge[] (vov)
+		      ;
+
+		\end{tikzpicture}
+		\caption{Use case diagram}
+		\label{usecased}
+	\end{figure}
+
+	There are a number of other use cases for the application. These would include the use of more visualisations as well as use by other types of users such as data scientists, sociologists and marketing professionals. The other visualisations were not highlighted as they do not form a part of the core functionality of the application which is to view interconnected Facebook links. The other users were not included because they do not form a part of the basic functionality in the first iterations of the application - they are not within the scope of this document. This use case is expanded in the Appendix Section \ref{moreusecase}.
 
 	\begin{table} [htbp]
 		\caption{Crucial use cases for the product}
@@ -489,17 +525,7 @@ Your abstract goes here...
 		\end{tabular}
 	\end{table}
 
-	\begin{figure}[htbp]
-		\begin{tikzpicture}[->,>=stealth,draw,fill=white,ultra thick]
-
-			\node at (0,0) (user) {user};
-			\node[ellipse] at (2,1) (su) {sign up};
-			\node[ellipse] at (2,0) (li) {log in};
-
-		\end{tikzpicture}
-		\caption{Use case diagram}
-		\label{usecased}
-	\end{figure}
+	
 
 \section{The Front-End}	
 
@@ -555,5 +581,56 @@ Your abstract goes here...
 
 
 \end{thebibliography}
+
+\newpage
+
+\appendix
+
+\section{Use Cases} \label{moreusecase}
+
+\emph{pre-requisites:} It is assumed that the server is operating correctly and that the client is running a modern web browser compatible with the versions of HTML, CSS and JavaScript used in the application. It is also assumed that the client has an internet connection.
+
+	\subsection{Use Case 1: Log In}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user launches a browser
+
+			\item The user navigates to the URL of the web application
+
+			\item The user clicks the log in button on the default home page
+
+			\item The user enters their user name and passwords in the appropriate fields
+
+			\item The user clicks the log in button on the login page
+
+			\item The user is taken to their personal landing page
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		6a. The user enters the incorrect login details
+
+		\begin{enumerate}
+			\item The user is notified of their mistake
+
+			\item The user enters the correct details
+
+			\item The user is taken to their personal landing page
+		\end{enumerate}
+
+		\hspace{-0.8cm} 6b. The user enters the incorrect login details
+
+		\begin{enumerate}
+			\item The user is notified of their mistake
+
+			\item The user requests that their password be reset
+
+			\item A password reset link it emailed to the user
+		\end{enumerate}
+
+
 
 \end{document}
