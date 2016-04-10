@@ -120,6 +120,8 @@
 		
 		\item \textbf{d3.js}. A popular JavaScript library for visualisation.
 		
+		\item \textbf{SVG}. Scalable Vector Graphic. An XML-based vector image format, supporting interactive functionality and animations.
+		
 		\item \textbf{DBMS} - Database Management System. A database program.
 		
 		\item \textbf{Django}. An MTV web application framework, written in Python.
@@ -552,6 +554,68 @@
 	
 	\subsection{Implementation} % Nathan
 	
+	\subsubsection{Introduction}
+	The implementation of the front-end user interface formed the simpler aspect of the project. The front-end was created with HTML, using Bootstrap styling to create a desirable look and feel. The visualisations themselves, which were created using d3.js, were called in the HTML as script elements through Django's \textit{static files} functionality. 
+	In order to provide developers with the ability to add new functionality easily and to ensure scalability, a separate module exists for each visualisation that the software presents to end-users. This means that to add a new visualisation, three separate steps need to occur:
+	
+	\begin{enumerate}
+		\item Create an HTML page to present the visualisation.
+		\item Implement the script that produces the visualistion.
+		\item Add the new HTML page to the index, allow users to navigate between visualisations.
+	\end{enumerate}
+	
+	\subsubsection{Implementing HTML pages with Django}
+	Django refers to HTML pages as \textit{templates}. The initial implementation of the web pages consisted of coding a page using HTML and Bootstrap, and testing that the inserted scripts worked correctly in producing the visualisations. Once the scripts had been tested, the pages were integrated with Django. Instead of referring to the normal Bootstrap files, the page referred to the Bootstrap file found within Django's static files environment.
+	
+	Static files are loaded into the HTML page as follows:
+	\begin{lstlisting}
+{% load staticfiles %}
+	\end{lstlisting}
+	
+	To direct the HTML page to the Bootstrap styling file, the following link is called:
+		\begin{lstlisting}
+<link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
+		\end{lstlisting}
+	To direct the HTML page to the d3.js functionality, the following script is called:
+		\begin{lstlisting}
+<link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
+		\end{lstlisting}
+		
+	Data for the friend network and for the word bubble chart is accepted in a JSON format. It is then filtered in the scripts and used to create the visualisations. Both visualisations were created using SVG  graphics, which is beneficial due to its interactive nature and powerful ability to customise. Visualisations are created dynamically and on demand, and so SVG graphics are perfectly suited to the context of the project. A major advantage of using these graphics is that they are relatively small and so users will not have to wait long to receive their visualisations \cite{SVG}.
+	
+	\subsubsection{Friend Network}
+	The friend network was implemented using the d3.js force directed graph. To create the graph, explicit parameters were defined in the script to control the size of the graph, setting the width at 960px, the height at 500px and the radius of the  nodes in the graph to 6px. The HTML code imports the data through back-end functionality to create the friend network. 
+	
+	The script accepts graph data with two concepts: "nodes" and "links". The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has a name and a group assigned to it. The link data maps nodes to each other, describing their relationship and assigning a value to the link between the nodes. This mapping is done by defining a link as the relationship between a source node and a target node.
+	
+	\subsubsection{Word Bubble Chart}
+	The word bubble chart was implemented using the d3.js pack layout. The d3.js pack layout allows developers to represent elements as bubbles, and the size of the bubble is determined by the frequency (also known as the size attribute) of the elements. The word bubble chart was implemented with a flattened hierarchy, meaning that there is only one level of bubbles as in figure \ref{fig:bubblechart}, as opposed to "bubble charts within bubble charts," shown in \ref{fig:packlayout}.
+	
+  	The script accepts graph data with two attributes: "name" and "size". Each element in the JSON file gets its own bubble. The radius of the bubble is determined by each element's associated size attribute.
+  	
+   \begin{figure}
+   	\centering
+   	\includegraphics[scale=1]{bubblechart.PNG}
+   	\caption{Bubble Chart with a flattened hierarchy} \label{fig:bubblechart}
+   \end{figure}
+   
+   \begin{figure}
+   	\centering
+   	\includegraphics[scale=1]{packlayout.PNG}
+   	\caption{Pack Layout, showing hierarchical composition} \label{fig:packlayout}
+   \end{figure}
+   
+   \subsubsection{Front-End Testing}
+   
+   In order to ensure implementation occurred correctly, the following testing following implementation: 
+   
+   General testing involved ensuring that the project workflow ran smoothly. This meant following all existing links and testing that they actually worked, in other words, redirecting users to the correct pages.
+   
+   The friend network graph page was tested first by using dummy data to ensure that the graph behaved as expected. The graph's border, node characteristics and interaction capabilities was constantly adjusted until they were considered satisfactory. After this the network graph was tested with real data from the neo4j database to ensure integration worked as expected. All of these tests were successful.
+   
+   Testing of the friend status update word analysing bubble chart page involved using various sets of dummy data to see how the bubble chart changed when the size and content of the data set changed.
+   
+	
 	\section{The Back-End}
 	
 	\subsection{Design Document} % Joe
@@ -854,6 +918,8 @@
 		\bibitem{Bootstrap}  \emph{Get Bootstrap - 3.3.6} \url{www.getbootstrap.com} Last accessed: 9 March 2016.
 		
 		\bibitem{D3}  \emph{d3.js - Data Driven Documents} \url{www.d3.com} Last accessed: 9 March 2016.
+		
+		\bibitem{SVG}  \emph{The Advantages of using SVG} \url{http://www.todaysoftmag.com/article/1067/the-advantages-of-using-svg-scalable-vector-graphics} Last accessed: 10 March 2016.
 		
 		\bibitem{django} Django Software Foundation. \emph{Django Overview}. \url{https://www.djangoproject.com/start/overview/}. 2016. Last accessed: 9 March 2016. 
 		
