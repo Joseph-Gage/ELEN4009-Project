@@ -154,6 +154,10 @@
 		
 		\item \textbf{SDLC} - Software Development Life Cycle. The process or approach the software development team adheres to.
 		
+		\item \textbf{SDD} - Software Design Description. A document detailing the design of a software project.
+		
+		\item \textbf{SVG} - Scalable Vector Graphic. A vector 2D image format.
+		
 		\item \textbf{Trello}. A web application for managing project tasks.
 		
 		\item \textbf{UI} - User Interface. A tool allowing a user to interact with an application.
@@ -211,7 +215,7 @@
 	
 	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
 	
-	In the Scrum process, prioritized project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
+	In the Scrum process, prioritised project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
 	
 	
 	\subsection{Architecture Choice}
@@ -535,7 +539,7 @@
 	\section{The Front-End}	
 	
 	\subsection{Design Document} % Joe
-	This section was written in accordance with the IEEE Std 1016-1987 for Software Design Documents (SDD) \cite{IEEE}. 
+	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
 	The front-end design consists of a landing navigational web page, a friend status word chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of a web application for viewing interconnected Facebook links.
 	
@@ -607,20 +611,20 @@
 	
 	\begin{figure}[htb] 
 		\centering
-		\includegraphics[scale=1]{django}
+		\includegraphics[scale=1]{djangostruc}
 		\caption{Code structure for running of web application and processing user input.} \label{fig:django}
 	\end{figure}
 	
-	The following functions were used in the web application framework: home, friendNetwork and wordChart. These functions refer to the different pages served by the web application. Each of these functions simply return the file path to the requested page which is the input to each function.
+	The following functions were used in the web application framework: \texttt{home()}, \texttt{friendNetwork()} and \texttt{wordChart()}. These functions refer to the different pages served by the web application. Each of these functions simply return the file path to the requested page which is the input to each function.
 	
-	The friendNetwork function, however, also calls a database supporting function to retrieve data which the page supported by the friendNetwork function requires. The function not only returns the file path but also the content for the page to use.
+	The \texttt{friendNetwork()} function, however, also calls a database supporting function to retrieve data which the page supported by the \texttt{friendNetwork()} function requires. The function not only returns the file path but also the content for the page to use.
 	
-	The web application framework has the following dependencies: Django web framework, Apache HTTP server, Web Server Gateway Interface (WSGI), Python  and the page documents \cite{django, apache, wsgi}. Django was the framework used for integrating the source code used in the web application. Apache was the HTTP server used to host the web application. WSGI integrates the Django framework and the Apache server. Python was the programming language used by the framework. The page documents were stored within the Django framework and were required by the functions described above. 
+	The web application framework has the following dependencies: Django web framework, Apache HTTP server, mod\_wsgi, Python  and the page documents \cite{django, apache, wsgi}. Django was the framework used for integrating the source code used in the web application. Apache was the HTTP server used to host the web application. mod\_wsgi integrates the Django framework and the Apache server. Python was the programming language used by the framework. The page documents were stored within the Django framework and were required by the functions described above. 
 	
 	Several other details of the web framework are important. Firstly, the web application file system contains all of the dependencies of the functions mentioned as well as their supporting functions. Secondly, the file system also contains several configuration files specific to Django. Finally, several other scripts are required to run to start the server and web application - these are standardly available with the dependencies used.
 	
-	\subsubsection{The Graphical Database}
-	This section will discuss the functions, dependencies and details of the the graphical database. The general operation of the supporting functions of the system is shown in Figure \ref{fig:db}.
+	\subsubsection{The Graph Database}
+	This section will discuss the functions, dependencies and details of the the graph database. The general operation of the supporting functions of the system is shown in Figure \ref{fig:db}.
 	
 	\begin{figure} [htb]
 		\centering
@@ -628,15 +632,15 @@
 		\caption{Code structure for fetching friends of friends network from neo4j DB.} \label{fig:db}
 	\end{figure}
 	
-	The following functions were used to support the graphical database: getPerson, getFriendNetwork and getFoFNetwork. These functions each take as inputs the name and surname of the person being queried and return a dictionary containing the query results. 
+	The following functions were used to support the graphical database: \texttt{getPerson()}, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()}. These functions each take as inputs the name and surname of the person being queried and return a dictionary containing the query results. 
 	
-	The getPerson function uses the name and surname input to query the database for the requested person. The function returns a dictionary containing the person in a node.
+	The \texttt{getPerson()} function uses the name and surname input to query the database for the requested person. The function returns a dictionary containing the person in a node.
 	
-	The getFriendNetwork function uses the name and surname input to query the database for the requested person and the person's friends as well as the links between them. This function makes use of the getPerson function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
+	The \texttt{getFriendNetwork()} function uses the name and surname input to query the database for the requested person and the person's friends as well as the links between them. This function makes use of the \texttt{getPerson()} function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
 	
-	The getFoFNetwork function uses the name and surname input to query the database for the requested person, the person's friends and the friends of the person's friends as well as the links between them. This function makes use of the getFriendNetwork function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
+	The \texttt{getFoFNetwork()} function uses the name and surname input to query the database for the requested person, the person's friends and the friends of the person's friends as well as the links between them. This function makes use of the \texttt{getFriendNetwork()} function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
 	
-	The graphical database has the following dependencies: neo4j, py2neo and JSON \cite{neo4j, py2neo, JSON}. neo4j was the graphical database used in the software. py2neo was the Python API which was used in order to enable use of the database by the Python programming language. The web framework required use of Python. The dictionaries returned by the functions mentioned above were in JSON format.
+	The graphical database has the following dependencies: Neo4j, Py2neo and JSON \cite{neo4j, py2neo, JSON}. Neo4j was the graphical database used in the software. Py2neo was the Python API which was used in order to enable use of the database by the Python programming language. The web framework required use of Python. The dictionaries returned by the functions mentioned above were in JSON format.
 	
 	Two other details of the database are important. Firstly, the fields in the dictionaries returned by the above functions were nodes and links where each node and link had sub-fields. An example of their format is shown in Listing \ref{list:dbjson}. Secondly, the database requires an initialisation and migration to start it up. Standard code is provided for these functionalities.
 	
@@ -978,6 +982,8 @@
 		\bibitem{Cohn} M, Cohn \emph{What Are Agile \& Scrum}, Available from: \url{https://www.mountaingoatsoftware.com/}, Last accessed: 10/04/2016
 		
 		\bibitem{Haunts} S, Haunts \emph{Agile Software Development Succinctly}, Technology Resource Portal, Syncfusion Inc, Morrisville USA (2015)
+		
+		\bibitem{JSON} JSON. \url{http://www.json.org/}, Last accessed 10 April 2016
 		
 		
 	\end{thebibliography}
