@@ -166,7 +166,7 @@
 	\section{Software Requirement Specification} % James
 	
 	\subsection{Introduction}
-	This project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This section describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and fulfils its requirements.
+	This project is intended to visualise the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This section describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and fulfils its requirements.
 	
 	\subsubsection{Requirements}
 	
@@ -537,6 +537,47 @@
 	\subsection{Design Document} % Joe
 	This section was written in accordance with the IEEE Std 1016-1987 for Software Design Documents (SDD) \cite{IEEE}. 
 	
+	The front-end design consists of a landing navigational web page, a friend status word chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of a web application for viewing interconnected Facebook links.
+	
+	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view. Each of these views represent a single interlinked web page.
+	
+	\subsubsection{Landing Navigational Web Page}
+	The landing page was designed using a mark-up methodology for visualisation. This section describes each element of the page as well as its dependencies.
+	
+	The web page consists of several elements: a navigation bar, a body and a footer. The navigation bar contains links to each of the other web pages. The body contains two visual links to the other two web pages. The visual links are screen shots of the other pages which when selected navigate to the corresponding page. The footer contains copyright information.
+	
+	The page has the following dependencies: HTML, Bootstrap and the screen shot image files \cite{HTML, Bootstrap}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page.
+	
+	\subsubsection{Friend Status Update Word Chart Web Page}
+	The friend status word chart web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
+		
+	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the word chart visualisation. The description simply describes what is being visualised. The visualisation shows circles (each containing a common word with recent status updates). The more times a word has occurred, the larger the circles are. If hovered over the circle also reveals the exact number of times the word has appeared in recent status updates.
+	
+	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
+	
+		\begin{figure}[htb]
+			\centering
+			\includegraphics[scale=1]{bubbles}
+			\caption{Code structure for bubble chart drawing script where SVG is Scalable Vector Graphic.} \label{fig:wordchart}
+		\end{figure}
+
+	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
+	
+	\subsubsection{Friend Network Diagram Web Page}
+	The friend network diagram web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
+
+	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the friend network visualisation. The description simply describes what is being visualised. The visualisation shows profile pictures of friends in the network with lines between them representing friendship. The pictures can be dragged around the screen and stuck in place. The images also grow slightly while a user's cursor is over it.
+	
+	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:networkdiagram}.
+	
+		\begin{figure}
+			\centering
+			\includegraphics[scale=1]{network}
+			\caption{Code structure for friend network drawing script.} \label{fig:networkdiagram}
+		\end{figure}
+		
+	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
+
 	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view.
 	\begin{figure}
 		\centering
@@ -555,9 +596,9 @@
 	\section{The Back-End}
 	
 	\subsection{Design Document} % Joe
-	This section was written in accordance with the IEEE Std 1016-1987 for Software Design Documents (SDD) \cite{IEEE}. 
+	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
-	The back-end design consists of a graphical database system containing supporting functionality for making friend network queries as well as a web application framework. Both views were designed using a functional methodology. The particular functionalities of the design are documented below.
+	The back-end design consists of a graphical database system containing supporting functionality for making friend network queries as well as a web application framework. Both views were designed using a functional methodology. The particular functionalities of the design are documented below. These views together represent the back-end aspect of a web application for viewing interconnected Facebook links.
 	
 	The section is divided into sub sections representing the different views of the design, namely the database view and the web application framework view.
 	
