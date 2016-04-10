@@ -13,7 +13,8 @@
 \usepackage{longtable}
 \usepackage[title]{appendix}
 \usepackage{array}
-
+\usepackage{caption}
+\usepackage{capt-of}
 \newcommand{\horrule}[1]{\rule{\linewidth}{#1}}
 
 \setlength{\parindent}{0em}
@@ -37,8 +38,7 @@
 	\thispagestyle{empty}
 	
 	\begin{abstract}
-		Your abstract goes here...
-		...
+		The Tracking Facebook Interconnected Links project is fully documented after the first prototype is developed. A detailed Software Requirement Specification is described that covers both the back-end and front-end requirements. The front-end and back-end's design and implementation of the first increment of the project is discussed in detail as well as the goals that were achieved. The agile Scrum methodology approach that was used for this project is also reviewed with a full description of the first sprint of the project. The sprint retrospective summarizes the achievements of the first sprint and the improvements that can be made in the next sprint. 
 	\end{abstract}
 	
 	\newpage
@@ -55,7 +55,7 @@
 	
 	\subsection{Problem Statement} % James
 	
-	Facebook is one of the most popular social networks used today. Due to the fact that it has over 1.5 billion users, it produces an incredibly large amount of data \cite{fb}. This data could be used in a number of ways:
+	Facebook is one of the most popular social networks used today. Due to the fact that it has over 1.5 billion users, it produces an incredibly large amount of data \cite{fb}. This data could be used in a number of ways, listed below.
 	
 	\begin{itemize}
 		\item Data scientists and analysts could make use of this data to learn about social trends.
@@ -70,17 +70,17 @@
 	
 	There are a large number of potential applications and the possibilities are only constrained by human creativity.
 	
-	The Tracking Interconnected Facebook Links project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example degrees of separation analyses or more personal analytics. This document describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and is created as close to the requirements as possible. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
+	The Tracking Interconnected Facebook Links project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Some personal analytics such as analyses of the user's Facebook post contents will also be implemented. There is a myriad of additional features that could be added to this tool and therefore the solution must be dynamic and flexible. For example degrees of separation analyses or more personal analytics could be added. At a later point the project could be expanded to include the large scale data analytics used by data scientists, sociologists and marketers. 
 	
 	The project team consists of four Software Engineering students, divided into two groups: one for the front-end and one for the back-end. This document serves as a description of the project. The software requirement specification will be laid out. The design and implementation of the front and back ends will be discussed. Finally, the Scrum planning and retrospective will be presented.
 	
 	\subsection{Project Objectives} % James
 	
-	In order to both quantify the success of the project as well as properly create tasks with correct priorities, the objective of the project must be laid out. They are as follows:
+	In order to both quantify the success of the project as well as properly create tasks with correct priorities, the objectives of the project must be laid out. They are as listed below.
 	
 	\begin{itemize}
 		
-		\item Create a prototype system for visualizing a persons Facebook connections, social trends and personal analytics.
+		\item Create a prototype system for visualizing a person's Facebook connections, social trends and personal analytics.
 		
 		\item Document the requirements for the system.
 		
@@ -99,9 +99,9 @@
 	\begin{itemize}
 		\item \textbf{The Users}. The users of the system will be individuals who wish to explore their own personal Facebook friend networks and perform intimate personal analytics on their data. At this point the users \textbf{do not} include data scientists, analysts, sociologists and marketing/ advertising professionals - a later version of the software will be targeted at these groups. The reason that the individual was chosen as the first target market is that the requirements for the individual are much less resource intensive and thus are a more realistic goal for the first version of a product. Every decision that is made should improve the user's experience when interacting with the product. 
 		
-		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are then divided into two teams, the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. It is important to note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
+		\item \textbf{The development team}. The development team consists of four software engineering students. These four developers are then divided into two teams, the front-end team and the back-end team. It is important that the work in the project is divided appropriately between the teams. Note that the Scrum SDLC does not make distinctions between different developers and so it is up to the developers themselves to choose the appropriate tasks that best fit their skill sets. The success or the failure of the project will have a large impact on the development team. On the other hand, the development team will have a large impact on whether or not the project is a success. Whenever a decision is made, it should be one that makes both the best use of the team as well as improves the likelihood that the project will be a success.
 		
-		\item \textbf{Facebook}. Although Facebook will not themselves be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about amount or type of data about them on Facebook.
+		\item \textbf{Facebook}. Although Facebook will not itself be involved in the project, the perception of the company could be influenced by the product if it is successful. This could be as a result of people learning more about amount or type of data about them on Facebook.
 		
 	\end{itemize}
 	
@@ -114,7 +114,7 @@
 		
 		\item \textbf{Client-Server}. An architecture or model for distributed computing via the Internet or other network.
 		
-		\item \textbf{CSS} - Cascading Style Sheets. A style sheet language for describing the presentation of a website.
+		\item \textbf{CSS} - Cascading Style Sheets. A language for describing the presentation of a website.
 		
 		\item \textbf{Cypher}. The query language for Neo4j graph databases.
 		
@@ -132,13 +132,13 @@
 		
 		\item \textbf{GUI} - Graphical User Interface. A visual tool that allows a user to interact with an application.
 		
-		\item \textbf{HTML} - Hyper Text Markup Language. A markup language for creating web pages.
+		\item \textbf{HTML} - Hyper Text Markup Language. A language for creating web pages.
 		
 		\item \textbf{HTTP} - Hyper Text Transfer Protocol. An Application level protocol that makes use of HTML from sending and receiving messages in a client-server architecture.
 		
 		\item \textbf{JS} - JavaScript. A scripting language often used in building interactive applications in the Web 2.0.
 		
-		\item \textbf{JSON} - JavaScript Object Notation. A data interchange notation used extensively in web applications.
+		\item \textbf{JSON} - JavaScript Object Notation. A data interchange format used extensively in web applications.
 		
 		\item \textbf{mod\_wsgi}. The Django module for Apache Web Server.
 		
@@ -156,6 +156,10 @@
 		
 		\item \textbf{SDLC} - Software Development Life Cycle. The process or approach the software development team adheres to.
 		
+		\item \textbf{SDD} - Software Design Description. A document detailing the design of a software project.
+		
+		\item \textbf{SVG} - Scalable Vector Graphic. A vector 2D image format.
+		
 		\item \textbf{Trello}. A web application for managing project tasks.
 		
 		\item \textbf{UI} - User Interface. A tool allowing a user to interact with an application.
@@ -168,27 +172,27 @@
 	\section{Software Requirement Specification} % James
 	
 	\subsection{Introduction}
-	This project is intended to visualize the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. There will be more features that could potentially be added to this tool and therefore the solution must be dynamic and flexible. This section describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and fulfils its requirements.
+	This project is intended to visualise the links and connections of a Facebook user with other users. Initially, these visualisations are focused on identifying the relationships of a Facebook user (and the end user of this product) with the network of friends this Facebook user has. The visuals are also intended to further illustrate the relationship connections of the user's friends of friends and an overview of the user's friend network. Additional features could potentially be added to this tool and therefore the solution must be dynamic and flexible. This section describes the software requirements that will ensure that the end product is of the highest quality, produced most efficiently and fulfils its requirements.
 	
 	\subsubsection{Requirements}
 	
 	The requirements for the application are that it:
 	\begin{enumerate}
-		\item consists of a front-end that runs client side and a back-end that runs server side 
-		\item has user friendly front-end which is easy to use for non-technologically inclined people
-		\item is scalable - with a back-end that supports multiple clients
-		\item is fast and responsive leading to an enjoyable user experience
-		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical which facilitates discovery
-		\item is extensible - allowing for additions and modifications to be made quickly and with ease
-		\item is secure - keeping the users personal data safe and respecting their privacy
-		\item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API
+		\item consists of a front-end that runs client side and a back-end that runs server side, 
+		\item has user friendly front-end which is easy to use for non-technologically inclined people,
+		\item is scalable - with a back-end that supports multiple clients,
+		\item is fast and responsive leading to an enjoyable user experience,
+		\item provides attractive and useful visualisations of Facebook data which allow the user to explore their Facebook networks in an intuitive and practical manner which facilitates discovery,
+		\item is extensible - allowing for additions and modifications to be made quickly and with ease,
+		\item is secure - keeping the users personal data safe and respecting their privacy, and
+		\item allows flexibility for data acquisition - the application should allow users to upload their own data or access their data via the Facebook API.
 	\end{enumerate}
 	
 	\subsubsection{Purpose}
 	The purpose of the project is to provide a tool to be used by individuals (and organizations at a later stage) to learn more about friend networks and how people are connected. This could be for marketing purposes, sociological research, finding friends or even for personal  interest. Facebook provides a wealth of useful information about individuals, groups of individuals and companies. This project is a tool for visualizing this information dynamically so that it will be advantageous to any  user.
 	
 	\subsubsection{System Overview}
-	This project will be made up of various software systems with the back-end and front-end working together to form a dynamic visualisation program. The overview of the entire software system is illustrated in Figure \ref{system}. This figure shows how the various components of the system interact with each other. Figure \ref{system} shows how the client (using a web browser) interacts with an Apache server and the Django framework. It describes how data from the Neo4j database is fetched by the Django framework and sent to the user via the Apache server.
+	This project will be made up of various software systems with the back-end and front-end working together to form a web-based visualisation application. The overview of the entire software system is illustrated in Figure \ref{system}. This figure shows how the various components of the system interact with each other. Figure \ref{system} shows how the client (using a web browser) interacts with an Apache server and the Django framework. It describes how data from the Neo4j database is fetched by the Django framework and sent to the user via the Apache server.
 	
 	\begin{figure}[h]
 		\centering
@@ -198,7 +202,7 @@
 	\end{figure}
 	
 	\subsection{Software Development Life Cycle Choice}
-	The Software Development Life Cycle (SDLC) is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SLDCs were considered:
+	The SDLC is the process or approach the software development team adheres to throughout the project's development. Choosing the correct SDLC for the project is an important decision at the start of a software project as it could determine whether a project is successfully completed within the time frame, budget and scope requirements. A number of common SLDCs were considered and are listed below.
 	
 	\begin{itemize}
 		\item \textbf{Waterfall model} - A sequential development model that lacks feedback. This technique consists of the following steps: requirements definition, design, implementation, verification and maintenance. However, due to the lack of feedback, this approach is not feasible unless the requirements are not completely defined in advance, the scope is fixed and the technology is well understood by the development team.
@@ -209,28 +213,28 @@
 		
 	\end{itemize}
 	
-	For this particular project, the fast pace method of the Agile SDLC was thought to be the best approach as the pace of producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
+	For this particular project, the fast pace method of the Agile SDLC is the best approach as the pace of producing a working solution is a priority. The requirements for this project have not yet been fully defined and therefore the chosen Agile SDLC must be flexible and able to deal with requirement changes of various sizes.
 	
-	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed\cite{Kinsey}.
+	The Agile SDLC also has varying methodologies that allows the achievement of an agile software development movement. These methods include the Dynamic System Development Method, the Scrum Method, Rapid Application Development, extreme programming and the Feature-Driven Development Method. The Scrum methodology is the chosen method for this project as it allows the project progression to be agile and flexible with continuous feedback sessions to ensure the requirements are dynamically followed \cite{Kinsey}.
 	
-	In the Scrum process, prioritized project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
+	In the Scrum process, prioritised project tasks (referred to as sprints) are defined in short daily meetings (typically 15 minutes) with all the project team members. These meetings allow the team to communicate project progress and identify the important features that need to be added in order to increase the project progress pace. For this project, these sprints will allow for a working product to be produced in the shortest amount of time while additional features can be  added at a later stage. This process also allows the client to closely keep track of progress and adjust the requirements in order to produce the most high-grade product possible. The daily meeting process occurs for up to 30 days by which time the first release of the developed software should be ready.   
 	
 	
 	\subsection{Architecture Choice}
 	The choice of software architecture is influenced by the tools and libraries used for both the front-end service and the back-end service (detailed in sections \ref{backsec} and \ref{frontsec}), network communication and team composition. 
 	
-	To specify the architecture choice, the team has chosen to follow a two-tier, client-server architecture. In 'client-server', client refers to any user actively interacting with (that is, drawing on for relevant data) the server via the user interface provided by the system. Server refers to the storage and hosting of the integrated software solution on the 'opposite end' of the network, including business and data layer (drawn from the Neo4j graph database). The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
+	A two-tier, client-server architecture has been selected. In 'client-server', client refers to any user actively interacting with the server via the user interface provided by the system. Server refers to the storage and hosting of the business and data layers. The user interface is only possible with logic on the server. Based on user requests, the logic decides on the correct data to be sent from the server to the client. Having the logic stored on the same server as the database is an important step towards decreasing response time between receiving and fulfilling user request \cite{twotieradvantage}. 
 	
 	Two-tier means that any instance of a client utilizing the provided user interface will be separated from the server via a network through which all communication will occur. For the purpose of tracking interconnected Facebook links, the network between the client and the server will be the Internet. This design choice follows the need for multiple users to have access to the software simultaneously \cite{beginningsofteng}. 
 	
-	It is important to take note that in this architecture, the client and the server are tightly woven together, as communication between the two entities occurs directly over the network. This means that there is no middle tier to interpret and translate data correctly. In terms of team composition, this design choice is beneficial and reduces the amount of code needed to ensure compatibility. A single, four-man team is working on the software, utilizing an Agile SDLC method that promotes continuous feedback. Due to the small size of the team and the ability to closely work together and ensure quality amongst team work, direct communication between client and server is efficient and easy to achieve.
+	It is important to take note that in this architecture, the client and the server are tightly woven together, as communication between the two entities occurs directly over the network. This means that there is no middle tier to interpret and translate data correctly. In terms of team composition, this design choice is beneficial and reduces the amount of code needed to ensure compatibility.
 	
 	\subsection{Front-End Service} \label{frontsec}
 	
 	\subsubsection{User Interface Functionality}
 	The front-end User Interface (UI) will contain several tools for visualizing Facebook friend networks. The most basic tool will show a simple network diagram to view all friends and friends of friends for the user. This friendship diagram will include several functionalities.
 	
-	Firstly, a user may select any of his friends and the diagram will transition to the selected person's friend network. This is pictured in figure \ref{click}. 
+	Firstly, a user may select any of his friends and the diagram will transition to the selected person's friend network. This is pictured in Figure \ref{click}. 
 	
 	\begin{figure}[htbp]
 		\centering	    
@@ -285,7 +289,7 @@
 		\label{click}
 	\end{figure}
 	
-	Secondly, the user may select certain information to be displayed on the diagram. For example, friendship data can be selected as in figure \ref{details} or relationship data as in figure \ref{relation}.
+	Secondly, the user may select certain information to be displayed on the diagram. For example, friendship data can be selected as in Figure \ref{details} or relationship data as in Figure \ref{relation}.
 	
 	\begin{figure}[htbp]
 		\centering
@@ -511,7 +515,7 @@
 		\label{usecased}
 	\end{figure}
 	
-	There are a number of other use cases for the application. These would include the use of more visualisations as well as use by other types of users such as data scientists, sociologists and marketing professionals. The other visualisations were not highlighted as they do not form a part of the core functionality of the application which is to view interconnected Facebook links. The other users were not included because they do not form a part of the basic functionality in the first iterations of the application - they are not within the scope of this document. This use case is expanded in the Appendix Section \ref{moreusecase}.
+	There are a number of other use cases for the application. These would include the use of more visualisations as well as use by other types of users such as data scientists, sociologists and marketing professionals. The other visualisations were not highlighted as they do not form a part of the core functionality of the application which is to view interconnected Facebook links. The other users were not included because they do not form a part of the basic functionality in the first iterations of the application - they are not within the scope of this document. These use cases are expanded in the Appendix Section \ref{moreusecase}.
 	
 	\begin{table} [htbp]
 		\caption{Crucial use cases for the product}
@@ -524,11 +528,11 @@
 			sign up & The user has to sign up to be able to log in for the first time \\
 			connect to Facebook & The user can connect to their Facebook account to pull data from the Facebook API \\
 			upload data & The user can manually upload their friend network data \\
-			View friend network & The user views their friend network, showing friends and friends of friends \\
-			View friendship data & The user views the details of the friendship links in the friend network view \\
-			View relationship data & The user views the details of the relationship links in the friend network view \\
-			View personal data & The user views the personal details of their friends in the friend network view \\
-			View other visualisations & The user can view other visualisations of their data \\ \hline
+			view friend network & The user views their friend network, showing friends and friends of friends \\
+			view friendship data & The user views the details of the friendship links in the friend network view \\
+			view relationship data & The user views the details of the relationship links in the friend network view \\
+			view personal data & The user views the personal details of their friends in the friend network view \\
+			view other visualisations & The user can view other visualisations of their data \\ \hline
 		\end{tabular}
 	\end{table}
 	
@@ -537,16 +541,57 @@
 	\section{The Front-End}	
 	
 	\subsection{Design Document} % Joe
-	This section was written in accordance with the IEEE Std 1016-1987 for Software Design Documents (SDD) \cite{IEEE}. 
+	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
+	The front-end design consists of a landing navigational web page, a friend status word chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of a web application for viewing interconnected Facebook links.
+	
+	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view. Each of these views represent a single interlinked web page.
+	
+	\subsubsection{Landing Navigational Web Page}
+	The landing page was designed using a mark-up methodology for visualisation. This section describes each element of the page as well as its dependencies.
+	
+	The web page consists of several elements: a navigation bar, a body and a footer. The navigation bar contains links to each of the other web pages. The body contains two visual links to the other two web pages. The visual links are screen shots of the other pages which when selected navigate to the corresponding page. The footer contains copyright information.
+	
+	The page has the following dependencies: HTML, Bootstrap and the screen shot image files \cite{HTML, Bootstrap}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page.
+	
+	\subsubsection{Friend Status Update Word Chart Web Page}
+	The friend status word chart web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
+		
+	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the word chart visualisation. The description simply describes what is being visualised. The visualisation shows circles (each containing a common word with recent status updates). The more times a word has occurred, the larger the circles are. If hovered over the circle also reveals the exact number of times the word has appeared in recent status updates.
+	
+	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
+	
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=1]{bubbles}
+			\caption{Code structure for bubble chart drawing script where SVG is Scalable Vector Graphic.} \label{fig:wordchart}
+		\end{figure}
+
+	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
+	
+	\subsubsection{Friend Network Diagram Web Page}
+	The friend network diagram web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
+
+	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the friend network visualisation. The description simply describes what is being visualised. The visualisation shows profile pictures of friends in the network with lines between them representing friendship. The pictures can be dragged around the screen and stuck in place. The images also grow slightly while a user's cursor is over it.
+	
+	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:networkdiagram}.
+	
+		\begin{figure}[h]
+			\centering
+			\includegraphics[scale=1]{network}
+			\caption{Code structure for friend network drawing script.} \label{fig:networkdiagram}
+		\end{figure}
+		
+	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
+
 	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view.
-	\begin{figure}
+	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=1]{bubbles}
 		\caption{Code structure for bubble chart drawing script.}
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=1]{network}
 		\caption{Code structure for friend network drawing script.}
@@ -619,31 +664,31 @@
 	\section{The Back-End}
 	
 	\subsection{Design Document} % Joe
-	This section was written in accordance with the IEEE Std 1016-1987 for Software Design Documents (SDD) \cite{IEEE}. 
+	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
-	The back-end design consists of a graphical database system containing supporting functionality for making friend network queries as well as a web application framework. Both views were designed using a functional methodology. The particular functionalities of the design are documented below.
+	The back-end design consists of a graphical database system containing supporting functionality for making friend network queries as well as a web application framework. Both views were designed using a functional methodology. The particular functionalities of the design are documented below. These views together represent the back-end aspect of a web application for viewing interconnected Facebook links.
 	
 	The section is divided into sub sections representing the different views of the design, namely the database view and the web application framework view.
 	
 	\subsubsection{The Web Application Framework}
 	This section will discuss the functions, dependencies and details of the web application framework. The general operation of the system is shown in Figure \ref{fig:django}.
 	
-	\begin{figure}[htb] 
+	\begin{figure}[h] 
 		\centering
-		\includegraphics[scale=1]{django}
+		\includegraphics[scale=1]{djangostruc}
 		\caption{Code structure for running of web application and processing user input.} \label{fig:django}
 	\end{figure}
 	
-	The following functions were used in the web application framework: home, friendNetwork and wordChart. These functions refer to the different pages served by the web application. Each of these functions simply return the file path to the requested page which is the input to each function.
+	The following functions were used in the web application framework: \texttt{home()}, \texttt{friendNetwork()} and \texttt{wordChart()}. These functions refer to the different pages served by the web application. Each of these functions simply return the file path to the requested page which is the input to each function.
 	
-	The friendNetwork function, however, also calls a database supporting function to retrieve data which the page supported by the friendNetwork function requires. The function not only returns the file path but also the content for the page to use.
+	The \texttt{friendNetwork()} function, however, also calls a database supporting function to retrieve data which the page supported by the \texttt{friendNetwork()} function requires. The function not only returns the file path but also the content for the page to use.
 	
-	The web application framework has the following dependencies: Django web framework, Apache HTTP server, Web Server Gateway Interface (WSGI), Python  and the page documents \cite{django, apache, wsgi}. Django was the framework used for integrating the source code used in the web application. Apache was the HTTP server used to host the web application. WSGI integrates the Django framework and the Apache server. Python was the programming language used by the framework. The page documents were stored within the Django framework and were required by the functions described above. 
+	The web application framework has the following dependencies: Django web framework, Apache HTTP server, mod\_wsgi, Python  and the page documents \cite{django, apache, wsgi}. Django was the framework used for integrating the source code used in the web application. Apache was the HTTP server used to host the web application. mod\_wsgi integrates the Django framework and the Apache server. Python was the programming language used by the framework. The page documents were stored within the Django framework and were required by the functions described above. 
 	
 	Several other details of the web framework are important. Firstly, the web application file system contains all of the dependencies of the functions mentioned as well as their supporting functions. Secondly, the file system also contains several configuration files specific to Django. Finally, several other scripts are required to run to start the server and web application - these are standardly available with the dependencies used.
 	
-	\subsubsection{The Graphical Database}
-	This section will discuss the functions, dependencies and details of the the graphical database. The general operation of the supporting functions of the system is shown in Figure \ref{fig:db}.
+	\subsubsection{The Graph Database}
+	This section will discuss the functions, dependencies and details of the the graph database. The general operation of the supporting functions of the system is shown in Figure \ref{fig:db}.
 	
 	\begin{figure} [htb]
 		\centering
@@ -651,38 +696,91 @@
 		\caption{Code structure for fetching friends of friends network from neo4j DB.} \label{fig:db}
 	\end{figure}
 	
-	The following functions were used to support the graphical database: getPerson, getFriendNetwork and getFoFNetwork. These functions each take as inputs the name and surname of the person being queried and return a dictionary containing the query results. 
+	The following functions were used to support the graphical database: \texttt{getPerson()}, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()}. These functions each take as inputs the name and surname of the person being queried and return a dictionary containing the query results. 
 	
-	The getPerson function uses the name and surname input to query the database for the requested person. The function returns a dictionary containing the person in a node.
+	The \texttt{getPerson()} function uses the name and surname input to query the database for the requested person. The function returns a dictionary containing the person in a node.
 	
-	The getFriendNetwork function uses the name and surname input to query the database for the requested person and the person's friends as well as the links between them. This function makes use of the getPerson function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
+	The \texttt{getFriendNetwork()} function uses the name and surname input to query the database for the requested person and the person's friends as well as the links between them. This function makes use of the \texttt{getPerson()} function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
 	
-	The getFoFNetwork function uses the name and surname input to query the database for the requested person, the person's friends and the friends of the person's friends as well as the links between them. This function makes use of the getFriendNetwork function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
+	The \texttt{getFoFNetwork()} function uses the name and surname input to query the database for the requested person, the person's friends and the friends of the person's friends as well as the links between them. This function makes use of the \texttt{getFriendNetwork()} function. The function returns a dictionary containing all of the queried persons in nodes and the relationships between them in links.
 	
-	The graphical database has the following dependencies: neo4j, py2neo and JSON \cite{neo4j, py2neo, JSON}. neo4j was the graphical database used in the software. py2neo was the Python API which was used in order to enable use of the database by the Python programming language. The web framework required use of Python. The dictionaries returned by the functions mentioned above were in JSON format.
+	The graphical database has the following dependencies: Neo4j, Py2neo and JSON \cite{neo4j, py2neo, JSON}. Neo4j was the graphical database used in the software. Py2neo was the Python API which was used in order to enable use of the database by the Python programming language. The web framework required use of Python. The dictionaries returned by the functions mentioned above were in JSON format.
 	
 	Two other details of the database are important. Firstly, the fields in the dictionaries returned by the above functions were nodes and links where each node and link had sub-fields. An example of their format is shown in Listing \ref{list:dbjson}. Secondly, the database requires an initialisation and migration to start it up. Standard code is provided for these functionalities.
 	
 	\begin{lstlisting}[caption=test,captionpos=b,label=list:dbjson]
-	Please insert JSON dictionary example here Jamie!
+	{
+	    "links": [
+	        {
+	            "level": "None", 
+	            "since": "2014", 
+	            "source": 248, 
+	            "target": 247, 
+	            "type": "FRIENDS_WITH"
+	        }, 
+	        {
+	            "level": "dating", 
+	            "since": "2015", 
+	            "source": 248, 
+	            "target": 252, 
+	            "type": "IN_RELATIONSHIP_WITH"
+	        }, 
+	        {
+	            "level": "None", 
+	            "since": "2013", 
+	            "source": 248, 
+	            "target": 249, 
+	            "type": "FRIENDS_WITH"
+	        }
+	    ], 
+	    "nodes": [
+	        {
+	            "age": null, 
+	            "id": 247, 
+	            "img_url": "{% static 'images/paul.jpg' %}", 
+	            "name": "Paul", 
+	            "occupation": "None", 
+	            "surname": "Cresswell"
+	        }, 
+	        {
+	            "age": 21, 
+	            "id": 248, 
+	            "img_url": "{% static 'images/james.jpg' %}", 
+	            "name": "James", 
+	            "occupation": "Student", 
+	            "surname": "Allingham"
+	        }, 
+	        {
+	            "age": 21, 
+	            "id": 249, 
+	            "img_url": "{% static 'images/jules.jpg' %}", 
+	            "name": "Julian", 
+	            "occupation": "Data Scientist", 
+	            "surname": "Zeegers"
+	        }
+	    ]
+	}
+
 	\end{lstlisting} 
 	
 	\subsection{Implementation} % Nathan
 	
 	\section{The Sprint Planning}
-	The Scrum process is an agile approach to projects (particularly software development projects) that encourages incremental progress, teamwork, collaboration with clients and allows for sudden requirement changes \cite{Cohn}. This process is comprised of short project sprints (typically 30 days) with each sprint focusing on the succeeding project requirements. This incremental approach requires functionally of aspects of the project after each sprint. This section discusses the sprint planning progress and the Scrum approach taken for the Tracking Interconnected Facebook Links project. Figure \ref{scrum} illustrates the Scrum process and the labeled numbered sections 1, 2 and 3 are discussed in sections  \ref{scrumback} ,  \ref{sprintback} and  \ref{retro} respectively.
+	The Scrum process is an agile approach to projects (particularly software development projects) that encourages incremental progress, teamwork, collaboration with clients and allows for sudden requirement changes \cite{Cohn}. This process is comprised of short project sprints (typically 30 days) with each sprint focusing on the succeeding project requirements. This incremental approach requires functionally of aspects of the project after each sprint. This section discusses the sprint planning progress and the Scrum approach taken for the Tracking Interconnected Facebook Links project. Figure \ref{fig:scrum} illustrates the Scrum process and the labeled numbered sections 1, 2 and 3 are discussed in Sections  \ref{scrumback} ,  \ref{sprintback} and  \ref{retro} respectively.
 	
-	\begin{figure}[h!]
-		\centering
-		\includegraphics[width=\textwidth]{scrum}
-		\caption{Diagram of the entire Scrum Process adapted from \cite{Haunts}}
-		\label{scrum}
-	\end{figure}
+\begin{center}
+	\includegraphics[width=\textwidth]{scrum}
+	\captionof{figure}{Diagram of the entire Scrum Process adapted from \cite{Haunts}} \label{fig:scrum}
+\end{center}
+		
+		
+
 	
 	\subsection{The Scrum Backlog } \label{scrumback}
-	The Scrum backlog (labeled "1" in Figure \ref{scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
+	The Scrum backlog (labeled "1" in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
 	
-	\begin{longtable}{|>{\centering\arraybackslash}p{0.1\textwidth}|p{0.7\textwidth}|>{\centering\arraybackslash}p{0.1\textwidth}|>{\centering\arraybackslash}p{0.1\textwidth}|}
+	\begin{longtable}{|>{\centering\arraybackslash}p{1cm}|p{8cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
+		\caption{The Scrum Product Backlog\label{backlog}}\\
 		\hline 
 		ID & \centering  Task Description  &  Estimate (days) & Priority   \\
 		\hline
@@ -728,9 +826,8 @@
 		\hline
 		21	& Create automated tests that continuously tests the software to ensure that it is always working as required 	& 4 & 21\\
 		\hline
-		& \textbf{Total }	& 74 & \\
-		\hline 
-		\caption{The Scrum Product Backlog\label{backlog}}	
+		& \textbf{Total }	& 74 Days & \\
+		\hline 	
 	\end{longtable}
 	
 	The Scrum backlog shown in Table \ref{backlog} was complied at the beginning of the project by the Scrum team and product owner during the Scrum planning session. All tasks that are deemed necessary for the entire project are recorded in the backlog. As mentioned, this backlog is adjustable as there is a possibility that new tasks may arise during the project. Smaller meetings with th product owner and Scrum team will be conducted when the backlog needs to be adjusted. During the Scrum planning meetings, the logistics of the entire project in terms of the working environment and communication forums are also discussed in this meeting and is described in the next section.
@@ -738,46 +835,43 @@
 	\subsection{The Scrum Logistics} \label{log}
 	The project logistics and the formation of the working environment are discussed the Scrum planning meeting. Firstly, the created project's software needs a central submission repository where all the project's software can be accessed. A Github repository is created and each member of the Scrum team are invited to join this repository and are given access to this repository. This repository is also used for the software version control and a is technology to allows collaborative software development.
 	
-	\begin{figure}[h!]
-		\centering
+
+	
+	\begin{center}
 		\includegraphics[width=\textwidth]{trello}
-		\caption{Screen shot of the Trello web application taken from \cite{trello} }
-		\label{trello}
-	\end{figure}
+		\captionof{figure}{Screen shot of the Trello web application taken from \cite{trello}} \label{fig:trello}
+	\end{center}
 	
-	In terms of communication, there a various platforms to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{trello}. This application has prioritized "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
+	In terms of communication, there are various platforms used to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{fig:trello}. This application has prioritized "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{fig:trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
 	
-	
-	\begin{figure}[h!]
-		\centering
+
+	\begin{center}
 		\includegraphics[width=\textwidth]{slick}
-		\caption{Screen shot of the Slack messaging application taken from \cite{slack}}
-		\label{slack}
-	\end{figure}
+		\captionof{figure}{Screen shot of the Slack messaging application taken from \cite{slack}} \label{fig:slack}
+	\end{center}
 	
-	
-	Another communication forum used for this project is called Slack and this messaging platform is used by the Scrum team members to ask questions and post comments about the project REF HERE. This platform is different from other messaging platforms as user can also post code and get help from the other members for certain coding problems. Slack is also used to organize project events such as Scrum meetings, demonstration events and communicate deadlines. A screen shot of the Slack messaging application is shown in Figure \ref{slack} and it also shows an example of a typical project conversation.
+	Another communication forum used for this project is called Slack and this messaging platform is used by the Scrum team members to ask questions and post comments about the project \cite{slack}. This platform is different from other messaging platforms as users can also post code and get help from the other members for certain coding problems. Slack is also used to organize project events such as Scrum meetings, demonstration events and communicate deadlines. A screen shot of the Slack messaging platform is shown in Figure \ref{fig:slack} and it also shows an example of a typical project conversation.
 	
 	
 	
-	These technologies and communication tools are used extensively during each sprint of the Scrum to ensure the sprint runs smoothly. The first sprint for the Facebook Interconnection Analyzing project is discussed in the next section. 
+	These technologies and communication tools are used extensively during each sprint of the Scrum to ensure the sprint runs smoothly. The first sprint for the Tracking Facebook Interconnected Links project is discussed in the next section. 
 	
 	
 	\subsection{The Sprint Backlog } \label{sprintback}
-	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
+	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{fig:scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
 	
-	The first sprint for the Tracking Facebook Interconnected Links project is planned in a sprint planning meeting conducted between the Scrum members. This meeting is run for about 6 hours because the sprint is planned to run for about 4 weeks. During this meeting a sprint product backlog is drawn up and is shown in table \ref{sprintbacklog}. As shown in table \ref{sprintbacklog}, a short description of each task is defined as while as the duration of each task. It also shows the number of days in each week of the sprint each task should be worked on for. The overall sprint goals are defined for the sprint in this meeting which outline the expectations of the sprint's end product. For this first sprint, the following sprint goals are set out:
+	The first sprint for the Tracking Facebook Interconnected Links project is planned in a sprint planning meeting conducted between the Scrum members. This meeting is run for about 6 hours because the sprint is planned to run for about 4 weeks. During this meeting a sprint product backlog is drawn up and is shown in Table \ref{sprintbacklog}. As shown in Table \ref{sprintbacklog}, a short description of each task is defined as while as the duration of each task. It also shows the number of days in each week of the sprint each task should be worked on for. The overall sprint goals are defined for the sprint in this meeting which outline the expectations of the sprint's end product. For this first sprint, the following sprint goals are set out:
 	
 	\begin{itemize}
-		\item Create a system prototype that includes one landing page and two functional views.
+		\item Create a project prototype that includes one landing page and two functional views.
 		\item Create and populate the database.
 		\item Set-up the system's architecture such as setting up the framework and server. 
 	\end{itemize}
 	
 	
-	\begin{longtable}[h!]{|>{\centering\arraybackslash}p{0.5cm}|p{8cm}|>{\centering\arraybackslash}p{1.3cm}|>{\centering\arraybackslash}p{1.3cm}|>{\centering\arraybackslash}p{1.3cm}|>{\centering\arraybackslash}p{1.3cm}|}
+	\begin{longtable}[h!]{|>{\centering\arraybackslash}p{0.5cm}|p{6.5cm}|>{\centering\arraybackslash}p{1.1cm}|>{\centering\arraybackslash}p{1.1cm}|>{\centering\arraybackslash}p{1.1cm}|>{\centering\arraybackslash}p{1cm}|}\caption{The Sprint Product Backlog\label{sprintbacklog}}\\
 		\hline
-		\multicolumn{2}{|c|}{}  &  \multicolumn{4}{c|}{Days per Week Task is worked on}  \\
+		\multicolumn{2}{|c|}{}  &  \multicolumn{4}{c|}{Days Task Worked on per Week}  \\
 		\hline
 		ID & \centering Short Task Description & Week 1 & Week 2 & Week 3 & Week 4   \\
 		\hline
@@ -801,14 +895,15 @@
 		\hline 
 		9	& Do software testing  	&  & & & 3 \\
 		\hline 	
-		\caption{The Sprint Product Backlog\label{sprintbacklog}}
+		
+		
 	\end{longtable}
 	
-	Each task is also allocated to a Scrum team member during this sprint planning meeting. The team members choose the tasks that they would like to do with the front-end and back-end team members choosing their respective tasks. Once the tasks are scheduled to the team, a new Trello board is created with the new task allocation (as discussed in section \ref{log}). The tasks described in table \ref{sprintbacklog} are subjected to change, however these changes must not change the sprint's goals that were outlined. There were minutes that were taken for the Sprint planning meeting and these minutes can be found in Appendix A REF HERE.   
+	Each task is also allocated to a Scrum team member during this sprint planning meeting. The team members choose the tasks that they would like to do with the front-end and back-end team members choosing their respective tasks. Once the tasks are scheduled to the team, a new Trello board is created with the new task allocations (as discussed in Section \ref{log}). The tasks described in Table \ref{sprintbacklog} are subjected to change, however these changes must not change the sprint's goals that were outlined. There were minutes that were taken for the Sprint planning meeting and these minutes can be found in Appendix B. In Appendix B, some project roles were simulated such as the Product Owner, Project Administrator, the Scrum Master and Marketing Manager in order add authenticity to the meeting that took place.
 	
 	\subsection{The Daily Scrum Meetings}
 	
-	The tasks described in table \ref{sprintbacklog} are subjected to change, however these changes must not change the sprint's goals that were outlined. Once for the sprint begins, there is a daily Scrum meeting that occurs in the morning of each working day. During this meeting, each Scrum team member is given the opportunity for report on their daily progress. Each member is also required to talk about the following items during the Scrum meeting:
+	 Once the sprint begins, there is a daily Scrum meeting that occurs in the morning of each working day. During this meeting, each Scrum team member is given the opportunity for report on their daily progress. Each member is also required to talk about the following items:
 	
 	\begin{itemize}
 		\item The tasks that they completed since the previous meeting
@@ -816,67 +911,62 @@
 		\item Any project challenges that they are currently struggling with 
 	\end{itemize}
 	
-	These daily Scrum meetings are meant to be relatively short (typically 15 minutes) and the objective of these meetings is to provide a platform for the Scrum to keep track of progress. These meetings also allow for the members to obtain help or get ideas on how to solve small problems and can be used to communicate small project plan changes. 
+	These daily Scrum meetings are meant to be relatively short (typically 15 minutes) and the objective of these meetings is to provide a platform for the Scrum team to keep track of progress. These meetings also allow for the members to obtain help or get ideas on how to solve small problems and can be used to communicate small project plan changes. 
 	
 	\subsection{Managing The Sprint Process}
-	The is sprint process of the project is an effective methodology that allows rapid software development that can be flexible in terms of requirements. However, the fast paced nature the sprint can be chaotic and disorganized and it is therefore very important to mange the project well. An organized, disciplined Project Manager (can also be the Scrum Master) must be appointed to ensure the project the well organized. Various project managing tools must utilized in order to ensure the sprint achieves the set out sprint goals. Tools that have already been mentioned include conducting daily meetings and using the communication platforms effectively to maintain project progress. Another project managing tool that can be used is a Gantt chart. A Gantt show the various tasks defined in the sprint backlog on a time line. It illustrates to the Project Manager when certain tasks must be completed by, which team members are responsible for each task and also show the critical path. The critical path are tasks in which the deadline for them are crucial as delays with these critical tasks could cause delays for the entire sprint. The Gantt chart for the first sprint is drawn up and is shown in Figure \ref{gantt}.
+	The sprint process of the project is an effective methodology that allows rapid software development that can be flexible in terms of the requirements. However, the fast paced nature the sprint can be chaotic and disorganized and it is therefore very important to mange the project well. An organized, disciplined Project Manager (can also be the Scrum Master) must be appointed to ensure the project is well organized. Various project managing tools must be utilized in order to ensure the sprint achieves the set out sprint goals. Tools that have already been mentioned include conducting daily meetings and using the communication platforms effectively to maintain project progress. Another project managing tool that can be used is a Gantt chart. A Gantt shows the various tasks defined in the sprint backlog on a time-line. It illustrates to the Project Manager when certain tasks must be completed by, which team members are responsible for each task and also shows the critical path. The critical path are tasks in which the deadlines are crucial as delays with these tasks could cause delays for the entire sprint. The Gantt chart for the first sprint is drawn up and is shown in Figure \ref{fig:gantt}
 	
-	\begin{figure}[h!]
-		\centering
+	\begin{center}
 		\includegraphics[width=\textwidth]{gantt}
-		\caption{Screen shot of Gantt Chart}
-		\label{gantt}
-	\end{figure}
+		\captionof{figure}{Screen shot of Gantt Chart} \label{fig:gantt}
+	\end{center}
 	
-	
-	
-	
-	
+
 	\section{Sprint Retrospective} \label{retro}
-	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieve the basic sprint goals (as shown by the label "3" in Figure \ref{scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
+	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label "3" in Figure \ref{fig:scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
 	
 	\subsection{The Goals Achieved and Positive Outcomes}
 	After the first sprint, a shippable prototype of the Tracking Facebook Interconnected Links project was produced by the Scrum team. The following goals were successfully achieved:
 	
 	\begin{itemize}
 		\item A web application with a landing page and two functional views was created.
-		\item The data for the views are stored in a neo4j graph database and the required data is pulled for the database using neo4j queries and Python functions.
+		\item The data for the views is stored in a neo4j graph database and the required data is pulled for the database using Cypher queries and Python functions.
 		\item The web application is hosted on an Apache web server.
 	\end{itemize}
 	
-	The sprint's end product is functional and detailed set-up document was written up which instructs the user on how to use the product. All the initial system environments were successful set-up such as the database, server, Django project and bootstrap theme which will not need to be done again in future sprints. The next sprint can focus more on creating more views and functionally. 
+	The sprint's end product is functional and a detailed user guide document was written up which instructs the user on how to use the product. All the initial system environments were successful set-up such as the database, server, Django project and bootstrap theme which will not need to be done again in future sprints. This allows the next sprint to be able to focus more on creating more views and increasing functionally. 
 	
-	In terms of the working environment, the sprint process was relatively well organized which allowed these goals to be achieved. The Scrum team made effective use of the Trello and Github platforms. In particular, the Trello board was updated regularly with completed and new tasks which allowed the team to keep track of progress. The Github respiratory was also used effectively for integrating the various tasks.
+	In terms of the working environment, the sprint process was relatively well organized which allowed these goals to be achieved. The Scrum team made effective use of the Trello and Github platforms. In particular, the Trello board was updated regularly with completed and new tasks which allowed the team to keep track of progress. The Github respiratory was also used effectively for integrating and storing the various tasks.
 	
-	The sprint was also well documented which will make progressing in the next sprint easier. A fully detailed Software Requirement Specification was created and can be used in future sprints to ensure th progress is in line with what is required. A design document, implementation document and user guide was written which will also help with future project progression. The Scrum team members worked well together and each member understood their respective responsibilities.
+	The sprint was also well documented which will make progressing in the next sprint easier. A fully detailed Software Requirement Specification was created and can be used in future sprints to ensure that the progress is in line with what is required. A design document, implementation document and user guide was written which will also help with future project progression. 
 	
 	\subsection{The Negative Outcomes} \label{neg}
 	Although the first sprint achieved the goals that were set up for the sprint, a few negative outcomes occurred during the sprint. It is important to identify these negative aspects in order to improve them for the next sprint. These negative outcomes include the following:
 	
 	\begin{itemize}
 		\item The overall layout, design and chosen bootstrap theme used for the web application lacks attractiveness.
-		\item There is not enough data in the database. Although the sprint's end product is only a prototype, much more data is required to much the graphs for each view more functional.
+		\item There is not enough data in the database. Although the sprint's end product is only a prototype, much more data is required to make the graphs for each view more functional.
 		\item The created views are not as interactive as they should be. More functionality must be added to them.
 		\item Did not make full use of the Django project as the "models" aspect of Django was not utilized. 
 	\end{itemize}
 	
-	One negative aspect of the working environment was a lack of communication between the Scrum members at times. The Slack messaging platform was not fully utilized by the members to communicate. Often communication about challenges and problems faced by a member was dealt with in person with only one or two other members. This meant that many times the entire team were not involved in that communication and therefore input and insight from the missing members could not happen. 
+	One negative aspect of the working environment was a lack of communication between the Scrum members at times. The Slack messaging platform was not fully utilized by the members to communicate. Often communication about challenges and problems faced by a member was dealt with in person with only one or two other members present. This meant that many times the entire team were not involved in that communication and therefore input and insight from the missing members could not happen. 
 	
 	Another problem faced was that the tasks were sometimes completed after the planned deadlines. This caused a slight build up of work towards the end of the sprint and final integration tasks were rushed. These mentioned negative outcomes need to be considered when planning the next sprint as this will improve the overall final project product.
 	
 	\subsection{The Sprint Retrospective Meeting Feedback}
-	The sprint retrospective meeting gives the scrum team an opportunity to reflect on the previous sprint and give their own input on how to improve for the next sprint. Table \ref{feedback} shows the feedback given by each member during this meeting.
+	The sprint retrospective meeting gives the scrum team an opportunity to reflect on the previous sprint and and serves as an opportunity for team members to give their own input on how to improve for the next sprint. Table \ref{feedback} shows the feedback given by each member during this meeting.
 	
 	\begin{table}[h!]
 		\caption{The Sprint Retrospective Meeting Feedback\label{feedback}}
 		\small
-		\begin{tabular}{|>{\centering\arraybackslash}p{1.8cm}|p{4.7cm}|p{4.7cm}|p{4.7cm}|}
+		\begin{tabular}{|>{\centering\arraybackslash}p{1.8cm}|p{3.4cm}|p{3.4cm}|p{3.4cm}|}
 			\hline
 			\multicolumn{1}{|c|}{}  &  \multicolumn{3}{c|}{Feedback Questions}  \\
 			\hline
 			Member's Name & What went well during the last sprint? & What did not go well during the last sprint? & How can the team improve for the next sprint? \\
 			\hline
-			James Allingham & & & \\
+			James Allingham & The team communicated well and the work was all completed on time. & The deadline for the prototype was very stressful as it was almost missed. & Work should be better integrated from the start to prevent last minute integration problems. \\
 			\hline
 			Joseph Gage & & & \\
 			\hline
@@ -891,16 +981,21 @@
 	
 	
 	\subsection{The Improvements For the Next Sprint}
-	One of the main purposes of the sprint retrospective meeting is to highlight improvements that can be made for the next sprint and suggest plans on how to implement these improvements. The negative outcomes mentioned in section \ref{neg} must be improved and the following are suggests that should improvement them:
+	One of the main purposes of the sprint retrospective meeting is to highlight improvements that can be made for the next sprint and suggest plans on how to implement these improvements. The negative outcomes mentioned in Section \ref{neg} must be improved and the following are suggestions that should improve them:
 	
 	\begin{itemize}
 		\item The design and  layout can be improved by using a better bootstrap template. It is suggested that the "Dashboard" template should be used.
 		\item In order to obtain more Facebook data, the database should use a Facebook API to continuously pull data from the Facebook site. 
 		\item Hosting the Apache server on a dedicated host computer server.
-		\item Add more functionality and user interaction to the views.
 	\end{itemize}
-	
-	During the next sprint meetings, better task time estimation must be made, especially tasks that involve integrating the project components. The use of the Slack messaging platform must also be encouraged to allow the entire team an opportunity to help fix problems. Although the first sprint has these mention improvements that must be implemented, the outcome of the first sprint was successful and it has create a good software development foundation for the future increments of the project.
+
+	During the next sprint meetings, better task time estimation must be made, especially tasks that involve integrating the project components. The use of the Slack messaging platform must also be encouraged to allow the entire team the opportunity to help fix problems. Although the first sprint has these mentioned improvements that must be implemented, the outcome of the first sprint was successful and it has produced a good software development foundation for the future increments of the project.
+
+
+	\section{Conclusion}
+
+	The requirements, design, implementation and testing of a two-tier web-based application for visualising interconnected Facebook links has been presented. The group work aspects of the project, including SLDC as tools for communication and organisation, have been discussed. The prototype application showed that the selected technologies and tools are capable of delivering the required features and specifications. Future work for the project as well as improvements in the performance of the development team have been suggested.
+
 	
 	\begin{thebibliography}{1}
 		\bibitem{IEEE} IEEE Standards Board. \emph{IEEE Guide to Software Design Descriptions}. IEEE, New York, 25 May 1993.
@@ -949,6 +1044,8 @@
 		
 		\bibitem{Haunts} S, Haunts \emph{Agile Software Development Succinctly}, Technology Resource Portal, Syncfusion Inc, Morrisville USA (2015)
 		
+		\bibitem{JSON} JSON. \url{http://www.json.org/}, Last accessed 10 April 2016
+		
 		
 	\end{thebibliography}
 	
@@ -961,48 +1058,251 @@
 	\emph{pre-requisites:} It is assumed that the server is operating correctly and that the client is running a modern web browser compatible with the versions of HTML, CSS and JavaScript used in the application. It is also assumed that the client has an internet connection.
 	
 	\subsection{Use Case 1: Log In}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user launches a browser.
+
+			\item The user navigates to the URL of the web application.
+
+			\item The user clicks the \emph{log in} button on the default home page.
+
+			\item The user enters their user name and passwords in the appropriate fields.
+
+			\item The user clicks the \emph{log in} button on the login page.
+
+			\item The user is taken to their personal landing page.
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		6a. The user enters the incorrect login details:
+
+		\begin{enumerate}
+			\item The user is notified of their mistake.
+
+			\item The user enters the correct details.
+
+			\item The user is taken to their personal landing page.
+		\end{enumerate}
+		
+		6b. The user enters the incorrect login details and is unable to correct them:
+
+		\begin{enumerate}
+			\item The user is notified of their mistake.
+
+			\item The user requests that their password be reset.
+
+			\item A password reset link it emailed to the user.
+		\end{enumerate}
+
+	\subsection{Use Case 2: Sign Up}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user launches a browser.
+
+			\item The user navigates to the URL of the web application.
+
+			\item The user clicks the \emph{sign up} button on the default home page.
+
+			\item The user enters their account details on the sign up page. These include: user name, password and email address.
+
+			\item The user is informed that they have been sent a verification email address.
+
+			\item The user goes to their email and clicks the validation link sent to them.
+
+			\item The user is taken back to the default home page, where they can now log in.
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		7a. The user does not receive the verification email:
+
+		\begin{enumerate}
+			\item The user is able to request a second email.
+		\end{enumerate}
+
+		7b. The users email address is incorrect:
+
+		\begin{enumerate}
+			\item The user is able to change their email address and a second email.
+		\end{enumerate}
 	
-	\subsubsection{Basic Flow}
-	
-	\begin{enumerate}
-		\item The user launches a browser
-		
-		\item The user navigates to the URL of the web application
-		
-		\item The user clicks the log in button on the default home page
-		
-		\item The user enters their user name and passwords in the appropriate fields
-		
-		\item The user clicks the log in button on the login page
-		
-		\item The user is taken to their personal landing page
-		
-	\end{enumerate}
-	
-	\subsubsection{Alternate Flows}
-	
-	6a. The user enters the incorrect login details
-	
-	\begin{enumerate}
-		\item The user is notified of their mistake
-		
-		\item The user enters the correct details
-		
-		\item The user is taken to their personal landing page
-	\end{enumerate}
-	
-	\hspace{-0.8cm} 6b. The user enters the incorrect login details
-	
-	\begin{enumerate}
-		\item The user is notified of their mistake
-		
-		\item The user requests that their password be reset
-		
-		\item A password reset link it emailed to the user
-	\end{enumerate}
-	
+	\subsection{Use Case 3: Connect to Facebook}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks the \emph{connect to Facebook} button on their personal landing page.
+
+			\item The user fills in their Facebook log in details.
+
+			\item The user clicks the \emph{submit} button.
+
+			\item The user is returned to their personal landing page, where they can access visualisations of their Facebook data.		
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		4a. The user enters the incorrect login details:
+
+		\begin{enumerate}
+			\item The user is notified of their mistake.
+
+			\item The user enters the correct details.
+
+			\item The user is taken to their personal landing page, where they can access visualisations of their Facebook data.
+		\end{enumerate}
+
+		4b. The user enters the incorrect login details and is unable to correct their mistake:
+
+		\begin{enumerate}
+			\item The user is notified of their mistake.
+
+			\item The user is taken to their personal landing page, where they can only access visualisations of old data.
+		\end{enumerate}
+
+	\subsection{Use Case 4: Upload Data}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks the \emph{upload data} button on their personal landing page.
+
+			\item The user selects the file path of the data stored in JSON format.
+
+			\item The user clicks the \emph{submit} button.
+
+			\item The user is returned to their personal landing page, where they can access visualisations of their Facebook data.		
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		4a. The file the user selects in invalid:
+
+		\begin{enumerate}
+			\item The user is notified of their mistake.
+
+			\item The user enters the correct details.
+
+			\item The user is taken to their personal landing page, where they can access visualisations of their uploaded data.
+		\end{enumerate}
+
+		4b. The file the user selects in invalid and is unable to correct their mistake:
+
+		\begin{enumerate}
+			\item The user is notified of their mistake.
+
+			\item The user is taken to their personal landing page, where they can only access visualisations of old data.
+		\end{enumerate}
+
+	\subsection{Use Case 5: View Friend Network}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks the \emph{view friend network} button on their personal landing page.
+
+			\item The user is taken to the friend network visualisation page where they have additional options for visualisation. 	
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		2a. The user does not have any data to visualise
+
+		\begin{enumerate}
+			\item The user is notified of the problem.
+
+			\item The user is taken back to their personal landing page.
+
+		\end{enumerate}
+
+	\subsection{Use Case 6: View Friendship Data}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks the \emph{view friendship data} button on the friend network visualisation page.
+
+			\item The visualisation on the page changes to show the extra information about friendship links. 	
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		2a. The user does not have any extra friendship data to visualise
+
+		\begin{enumerate}
+			\item The user is notified of the problem.
+
+			\item No changes occur to the visualisation.
+
+		\end{enumerate}
+
+	\subsection{Use Case 7: View Relationship Data}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks the \emph{view relationship data} button on the friend network visualisation page.
+
+			\item The visualisation on the page changes to show the extra information about relationship links. 	
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		2a. The user does not have any extra relationship data to visualise
+
+		\begin{enumerate}
+			\item The user is notified of the problem.
+
+			\item No changes occur to the visualisation.
+
+		\end{enumerate}
+
+	\subsection{Use Case 8: View Personal Data}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks the \emph{view personal data} button on the friend network visualisation page.
+
+			\item The visualisation on the page changes to show the extra information about the friend nodes. 	
+
+		\end{enumerate}
+
+		\subsubsection{Alternate Flows}
+
+		2a. The user does not have any extra personal data to visualise
+
+		\begin{enumerate}
+			\item The user is notified of the problem.
+
+			\item No changes occur to the visualisation.
+
+		\end{enumerate}	
+
+	\subsection{Use Case 9: View Other Visualisations}
+
+		\subsubsection{Basic Flow}
+
+		\begin{enumerate}
+			\item The user clicks any other visualisation buttons on their personal landing page.
+
+			\item The user is taken to the appropriate visualisation page where there will be visualisation specific options. 	
+
+		\end{enumerate}
 	
 	\includepdf[pages=1,pagecommand={\section{The Minutes from the First Sprint Planning Meeting}}, fitpaper=true, scale=0.8]{Minutes.pdf}
-	\includepdf[pages=2-,pagecommand={}, fitpaper=true, scale = 0.8]{Minutes.pdf}
-	
+	\includepdf[pages=2-,pagecommand={}, fitpaper=true, scale = 0.8]{Minutes.pdf}	
+
 \end{document}
