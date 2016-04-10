@@ -559,7 +559,7 @@
 	
 	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
 	
-		\begin{figure}[htb]
+		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=1]{bubbles}
 			\caption{Code structure for bubble chart drawing script where SVG is Scalable Vector Graphic.} \label{fig:wordchart}
@@ -574,7 +574,7 @@
 	
 	The web page uses a code script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:networkdiagram}.
 	
-		\begin{figure}
+		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=1]{network}
 			\caption{Code structure for friend network drawing script.} \label{fig:networkdiagram}
@@ -583,13 +583,13 @@
 	The page has the following dependencies: HTML, Bootstrap, d3.js, Javascript and JSON formatted word data \cite{HTML, Bootstrap, D3, js, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. Javascript was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
 
 	The section is divided into sub sections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status word chart view.
-	\begin{figure}
+	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=1]{bubbles}
 		\caption{Code structure for bubble chart drawing script.}
 	\end{figure}
 	
-	\begin{figure}
+	\begin{figure}[h]
 		\centering
 		\includegraphics[scale=1]{network}
 		\caption{Code structure for friend network drawing script.}
@@ -609,7 +609,7 @@
 	\subsubsection{The Web Application Framework}
 	This section will discuss the functions, dependencies and details of the web application framework. The general operation of the system is shown in Figure \ref{fig:django}.
 	
-	\begin{figure}[htb] 
+	\begin{figure}[h] 
 		\centering
 		\includegraphics[scale=1]{djangostruc}
 		\caption{Code structure for running of web application and processing user input.} \label{fig:django}
@@ -702,7 +702,7 @@
 	\subsection{Implementation} % Nathan
 	
 	\section{The Sprint Planning}
-	The Scrum process is an agile approach to projects (particularly software development projects) that encourages incremental progress, teamwork, collaboration with clients and allows for sudden requirement changes \cite{Cohn}. This process is comprised of short project sprints (typically 30 days) with each sprint focusing on the succeeding project requirements. This incremental approach requires functionally of aspects of the project after each sprint. This section discusses the sprint planning progress and the Scrum approach taken for the Tracking Interconnected Facebook Links project. Figure \ref{scrum} illustrates the Scrum process and the labeled numbered sections 1, 2 and 3 are discussed in Sections  \ref{scrumback} ,  \ref{sprintback} and  \ref{retro} respectively.
+	The Scrum process is an agile approach to projects (particularly software development projects) that encourages incremental progress, teamwork, collaboration with clients and allows for sudden requirement changes \cite{Cohn}. This process is comprised of short project sprints (typically 30 days) with each sprint focusing on the succeeding project requirements. This incremental approach requires functionally of aspects of the project after each sprint. This section discusses the sprint planning progress and the Scrum approach taken for the Tracking Interconnected Facebook Links project. Figure \ref{fig:scrum} illustrates the Scrum process and the labeled numbered sections 1, 2 and 3 are discussed in Sections  \ref{scrumback} ,  \ref{sprintback} and  \ref{retro} respectively.
 	
 \begin{center}
 	\includegraphics[width=\textwidth]{scrum}
@@ -713,7 +713,7 @@
 
 	
 	\subsection{The Scrum Backlog } \label{scrumback}
-	The Scrum backlog (labeled "1" in Figure \ref{scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
+	The Scrum backlog (labeled "1" in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is complied by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The Scrum team for Tracking Facebook Interconnected Links project is comprised of four software developers with two members forming the back-end team and two members forming the front-end team. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritized by the product owner, the scrum team or other stakeholders during the project development. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
 	
 	\begin{longtable}{|>{\centering\arraybackslash}p{1cm}|p{8cm}|>{\centering\arraybackslash}p{1.5cm}|>{\centering\arraybackslash}p{1.5cm}|}
 		\caption{The Scrum Product Backlog\label{backlog}}\\
@@ -762,7 +762,7 @@
 		\hline
 		21	& Create automated tests that continuously tests the software to ensure that it is always working as required 	& 4 & 21\\
 		\hline
-		& \textbf{Total }	& 74 & \\
+		& \textbf{Total }	& 74 Days & \\
 		\hline 	
 	\end{longtable}
 	
@@ -778,7 +778,7 @@
 		\captionof{figure}{Screen shot of the Trello web application taken from \cite{trello}} \label{fig:trello}
 	\end{center}
 	
-	In terms of communication, there are various platforms used to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{trello}. This application has prioritized "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
+	In terms of communication, there are various platforms used to organize, ask questions or give comments with regards to the project. These platforms include Github, Trello and Slack. Github is used as a form of communication as the commit messages are used to keep track of completed tasks. Another platform called Trello is also used to keep track of progress and it also servers as a task organisation tool \cite{trello}. A screen shot of the Trello web application is shown in Figure \ref{fig:trello}. This application has prioritized "boards" that are ranged in three levels of priorities; namely high, medium and low. The Scrum master adds each task in the form of a "card" to a prioritized board with information associated with the task such as the member or members responsible for the task, the deadline and a task check list. Once a task card is completed, the team member who completed the task moves the task to the done board. This web application can can be downloaded as a mobile application by each Scrum team member and is useful for the Scrum master and team members to keep track of project progress. Figure \ref{fig:trello} show a screen shot of the Trello web application and shows an example of the "boards" and "cards" using for the project.
 	
 
 	\begin{center}
@@ -786,7 +786,7 @@
 		\captionof{figure}{Screen shot of the Slack messaging application taken from \cite{slack}} \label{fig:slack}
 	\end{center}
 	
-	Another communication forum used for this project is called Slack and this messaging platform is used by the Scrum team members to ask questions and post comments about the project \cite{slack}. This platform is different from other messaging platforms as users can also post code and get help from the other members for certain coding problems. Slack is also used to organize project events such as Scrum meetings, demonstration events and communicate deadlines. A screen shot of the Slack messaging platform is shown in Figure \ref{slack} and it also shows an example of a typical project conversation.
+	Another communication forum used for this project is called Slack and this messaging platform is used by the Scrum team members to ask questions and post comments about the project \cite{slack}. This platform is different from other messaging platforms as users can also post code and get help from the other members for certain coding problems. Slack is also used to organize project events such as Scrum meetings, demonstration events and communicate deadlines. A screen shot of the Slack messaging platform is shown in Figure \ref{fig:slack} and it also shows an example of a typical project conversation.
 	
 	
 	
@@ -794,7 +794,7 @@
 	
 	
 	\subsection{The Sprint Backlog } \label{sprintback}
-	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
+	A sprint is an iteration of the project's product and it is a stage within in the Scrum progress. A sprint in typically two to four weeks long and it should produce a shippable increment of the product at the end of the sprint. A sprint is comprised of tasks defined in a sprint backlog and is labeled "2" in Figure \ref{fig:scrum}. The sprint backlog is made up of certain tasks already defined in the Scrum product backlog (discussed in Section \ref{scrumback}) and these task are the most prioritized task remaining within the product backlog. 
 	
 	The first sprint for the Tracking Facebook Interconnected Links project is planned in a sprint planning meeting conducted between the Scrum members. This meeting is run for about 6 hours because the sprint is planned to run for about 4 weeks. During this meeting a sprint product backlog is drawn up and is shown in Table \ref{sprintbacklog}. As shown in Table \ref{sprintbacklog}, a short description of each task is defined as while as the duration of each task. It also shows the number of days in each week of the sprint each task should be worked on for. The overall sprint goals are defined for the sprint in this meeting which outline the expectations of the sprint's end product. For this first sprint, the following sprint goals are set out:
 	
@@ -850,8 +850,7 @@
 	These daily Scrum meetings are meant to be relatively short (typically 15 minutes) and the objective of these meetings is to provide a platform for the Scrum team to keep track of progress. These meetings also allow for the members to obtain help or get ideas on how to solve small problems and can be used to communicate small project plan changes. 
 	
 	\subsection{Managing The Sprint Process}
-	The sprint process of the project is an effective methodology that allows rapid software development that can be flexible in terms of the requirements. However, the fast paced nature the sprint can be chaotic and disorganized and it is therefore very important to mange the project well. An organized, disciplined Project Manager (can also be the Scrum Master) must be appointed to ensure the project is well organized. Various project managing tools must be utilized in order to ensure the sprint achieves the set out sprint goals. Tools that have already been mentioned include conducting daily meetings and using the communication platforms effectively to maintain project progress. Another project managing tool that can be used is a Gantt chart. A Gantt shows the various tasks defined in the sprint backlog on a time-line. It illustrates to the Project Manager when certain tasks must be completed by, which team members are responsible for each task and also shows the critical path. The critical path are tasks in which the deadlines are crucial as delays with these tasks could cause delays for the entire sprint. The Gantt chart for the first sprint is drawn up and is shown in Figure \ref{gantt}.
-	
+	The sprint process of the project is an effective methodology that allows rapid software development that can be flexible in terms of the requirements. However, the fast paced nature the sprint can be chaotic and disorganized and it is therefore very important to mange the project well. An organized, disciplined Project Manager (can also be the Scrum Master) must be appointed to ensure the project is well organized. Various project managing tools must be utilized in order to ensure the sprint achieves the set out sprint goals. Tools that have already been mentioned include conducting daily meetings and using the communication platforms effectively to maintain project progress. Another project managing tool that can be used is a Gantt chart. A Gantt shows the various tasks defined in the sprint backlog on a time-line. It illustrates to the Project Manager when certain tasks must be completed by, which team members are responsible for each task and also shows the critical path. The critical path are tasks in which the deadlines are crucial as delays with these tasks could cause delays for the entire sprint. The Gantt chart for the first sprint is drawn up and is shown in Figure \ref{fig:gantt}
 	
 	\begin{center}
 		\includegraphics[width=\textwidth]{gantt}
@@ -860,7 +859,7 @@
 	
 
 	\section{Sprint Retrospective} \label{retro}
-	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label "3" in Figure \ref{scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
+	Once a sprint is completed, there is a meeting conducted in which the sprint is reviewed and this meeting is called the Sprint Retrospective Meeting. During this meeting, many items related to the sprint are discussed which includes the successful goals achieved, the goals that were not achieved, the challenges that were face and how well the Scrum team worked together. As mentioned, at the end of a sprint, a shippable product must be created that achieves the basic sprint goals (as shown by the label "3" in Figure \ref{fig:scrum}). The sprint product is reviewed in this meeting and the Scrum team members are also given an opportunity to express there opinion. This section discusses all these aspects of the sprint retrospective.
 	
 	\subsection{The Goals Achieved and Positive Outcomes}
 	After the first sprint, a shippable prototype of the Tracking Facebook Interconnected Links project was produced by the Scrum team. The following goals were successfully achieved:
