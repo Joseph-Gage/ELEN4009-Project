@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+  <style>
+
+  .link {
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .node text {
+    pointer-events: none;
+    font: 10px sans-serif;
+  }
+
+  .node.fixed {
+    fill: #04f;
+  }
+
+  </style>
+<head>
+{% load staticfiles %}
+  <title>Friend Network Chart</title>
+  <meta charset="utf-8"/>
+  <link rel="stylesheet" href="{% static 'js/bootstrap.min.css' %}">
+
+  <script src="{% static 'js/d3.min.js' %} "></script>
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Tracking Interconnected Facebook Nodes - A Visualisation</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="index"><a href="/home/">Home</a></li>
+        <li ><a href="/friend-network/">Friend Network Chart</a></li>
+        <li><a href="/word-chart/">Word Chart</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <h2>Joseph Gage's Network Chart</h2>
+
+  <section class = "container">
+    <script type="text/javascript">
+
+var width = 960,
+    height = 500,
+    radius = 6;
+
+/*var graph = {
+  "nodes":[{"name":"Joseph Gage","group":1, "image_url": "{% static 'images/joe.jpg' %}"},
+           {"name":"James Allingham","group":2, "image_url": "{% static 'images/james.jpg' %}"},
+           {"name":"Julian Zeegers","group":2, "image_url": "{% static 'images/julz.jpg' %}"},
+           {"name":"Paul Cresswell","group":2, "image_url": "{% static 'images/paul.jpg' %}"},
+           {"name":"Nathan Haag","group":2, "image_url": "{% static 'images/nathan.jpg' %}"},
+           {"name":"Uncle Trevor","group":2, "image_url": "{% static 'images/null.jpg' %}"},
+           {"name":"James' Mom","group":2, "image_url": "{% static 'images/nullf.jpg' %}"},
+           {"name":"Alex Eliasov","group":2, "image_url": "{% static 'images/null.jpg' %}"},
+           {"name":"Paul's Dad","group":2, "image_url": "{% static 'images/null.jpg' %}"},
+           {"name":"Sasha Naidoo","group":2, "image_url": "{% static 'images/sasha.jpg' %}"}],
+"links":[{"source":1,"target":0,"value":50, "relationship": "friend"},
+         {"source":2,"target":0,"value":50, "relationship": "friend"},
+         {"source":3,"target":0,"value":50, "relationship": "friend"},
+         {"source":4,"target":0,"value":50, "relationship": "friend"},
+         {"source":7,"target":0,"value":50, "relationship": "friend"},
+         {"source":9,"target":0,"value":50, "relationship": "friend"},
+         {"source":2,"target":1,"value":100, "relationship": "friend"},
+         {"source":3,"target":1,"value":100, "relationship": "friend"},
+         {"source":4,"target":1,"value":100, "relationship": "friend"},
+         {"source":6,"target":1,"value":100, "relationship": "friend"},
+         {"source":9,"target":1,"value":100, "relationship": "friend"},
+         {"source":3,"target":2,"value":150, "relationship": "friend"},
+         {"source":4,"target":2,"value":150, "relationship": "friend"},
+         {"source":5,"target":2,"value":150, "relationship": "friend"},
+         {"source":7,"target":2,"value":150, "relationship": "friend"},
+         {"source":9,"target":2,"value":150, "relationship": "friend"},
+         {"source":8,"target":3,"value":200, "relationship": "friend"},
+         {"source":9,"target":3,"value":200, "relationship": "friend"},]}*/
+
+
+var graph = {{ FriendGraph|safe }};
+
+var nodes = graph.nodes,
+    links = graph.links;
+
+for(i=0; i<links.length; i++)
+{
+  for(j=0; j<nodes.length; j++)
+    {
+      if(links[i]["source"]==nodes[j]["id"]) links[i]["source"] = j;
+      if(links[i]["target"]==nodes[j]["id"]) links[i]["target"] = j;
+    }
+}
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var force = d3.layout.force()
+    .charge(-400)
+    .gravity(0.05)
+    .linkDistance(250)
+    .size([width, height]);
+
+  force
+      .nodes(nodes)
+      .links(links)
+      .start();
+
+  var drag = force.drag()
+      .on("dragstart", dragstart);
+
+  var link = svg.selectAll(".link")
+      .data(links)
+    .enter().insert("line")
+      .attr("class", "link");
+
+  var node = svg.selectAll(".node")
+      .data(nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .call(force.drag)
+      .on("dblclick", dblclick);
+
+  node.insert("image")
+      .attr("xlink:href", function(d) {return d.img_url})
+      .attr("x", function(d) {if (d.group==1) return -20
+                                  else return -20})
+      .attr("y", function(d) {if (d.group==1) return -20
+                                  else return -20})
+      .attr("width", function(d) {if (d.group==1) return 40
+                                  else return 40})
+      .attr("height", function(d) {if (d.group==1) return 40
+                                  else return 40})
+      .on('mouseenter', function() {
+        d3.select(this)
+          .transition()
+          .attr("x", function(d) { return -60;})
+          .attr("y", function(d) { return -60;})
+          .attr("height", 100)
+          .attr("width", 100);
+        })
+      .on( 'mouseleave', function() {
+        d3.select( this )
+          .transition()
+          .attr("x", function(d) { return -25;})
+          .attr("y", function(d) { return -25;})
+          .attr("height", 50)
+          .attr("width", 50);
+      });
+
+  node.append("text")
+      .attr("dx", 25)
+      .attr("dy", ".35em")
+      .text(function(d) { return d.name });
+
+  force.on("tick", function() {
+    node.attr("cx", function(d) {return d.x = Math.max(radius, Math.min(width-radius, d.x)); })
+        .attr("cy", function(d) {return d.y = Math.max(radius, Math.min(width-radius, d.y)); });
+
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+        
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    force.start();
+  });
+
+  function dblclick(d) {
+    d3.select(this).classed("fixed", d.fixed = false);
+  }
+
+  function dragstart(d) {
+    d3.select(this).classed("fixed", d.fixed = true);
+  }
+
+</script>
+  </section>
+
+  <section class = "container">
+    <div class = "row">
+      <p> The above graph displays the words displayed in the statuses of your connected Facebook nodes. The size of the bubbles represent the frequency with which the word appeared. Hover over the bubble for more details.</p>
+    </div>
+  </section>
+
+  <!--<div class = "footer navbar-fixed-bottom container-fluid">
+    <p class="text-muted credit">&copy 2016 Tracking Interconnected Facebook Nodes</p>
+  </div>-->
+
+</body>
+</html>
