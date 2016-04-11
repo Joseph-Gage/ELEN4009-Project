@@ -31,7 +31,6 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
-	
 	\date{\vspace{-5ex}}
 	\maketitle
 	\pagestyle{plain}
@@ -41,15 +40,19 @@
 		The Tracking Facebook Interconnected Links project is fully documented after the first prototype is developed. A detailed Software Requirement Specification is described that covers both the back-end and front-end requirements. The front-end and back-end's design and implementation of the first increment of the project is discussed in detail as well as the goals that were achieved. The agile Scrum methodology approach that was used for this project is also reviewed with a full description of the first sprint of the project. The sprint retrospective summarises the achievements of the first sprint and the improvements that can be made in the next sprint. 
 	\end{abstract}
 	
+	\pagenumbering{roman}
+	\setcounter{page}{0}
+	
 	\newpage
 	
 	\tableofcontents
 	\listoffigures
 	\listoftables
-	\thispagestyle{empty}
-	\setcounter{page}{0}
 	
 	\newpage
+	
+	\setcounter{page}{0}
+	\pagenumbering{arabic}
 	
 	\section{Introduction}
 	
@@ -545,7 +548,7 @@
 	\subsection{Design Document} % Joe
 	This section was written in accordance with the IEEE Std 1016-1987 for SDDs \cite{IEEE}. 
 	
-	The front-end design consists of a landing navigational web page, a friend status word chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of the web application for viewing interconnected Facebook links.
+	The front-end design consists of a landing navigational web page, a friend status word bubble chart web page and a friend network diagram web page. These web pages together represent the front-end aspect of the web application for viewing interconnected Facebook links.
 	
 	This section is divided into subsections representing the different views of the design, namely the home page view, the friend network diagram view and the friend status update word chart view. Each of these views represent a single interlinked web page.
 	
@@ -556,17 +559,17 @@
 	
 	The page has the following dependencies: HTML, Bootstrap and the screen shot image files \cite{Bootstrap}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page.
 	
-	\subsubsection{Friend Status Update Word Chart Web Page}
-	The friend status update word chart web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
+	\subsubsection{Friend Status Update Word Bubble Chart Web Page}
+	The friend status update word bubble chart web page was designed using a mark-up methodology for visualisation along with some functional dependence. This section describes each element of the page, the script it uses as well as its dependencies.
 		
-	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the word chart visualisation. The description simply describes what is being visualised. The visualisation shows circles (each containing a common word from recent status updates). The more times a word has occurred, the larger the circles are. If hovered over by a mouse pointer, the circle also reveals the exact number of times the word has appeared in recent status updates.
+	The web page consists of several elements: a navigation bar, a body and a description. The navigation bar contains links to each of the other web pages. The body contains the word chart visualisation. The description simply describes what is being visualised. The visualisation shows circles known as bubbles (each containing a common word from recent status updates). The more times a word has occurred, the larger the bubbles are. If hovered over by a mouse pointer, the bubble also reveals the exact number of times the word has appeared in recent status updates.
 	
 	The web page uses a script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
 	
 		\begin{figure}[h]
 			\centering
 			\includegraphics[scale=1]{bubbles}
-			\caption{Code structure for word chart drawing script.} \label{fig:wordchart}
+			\caption{Code structure for word bubble chart drawing script.} \label{fig:wordchart}
 		\end{figure}
 
 	The page has the following dependencies: HTML, Bootstrap, d3.js, JS and JSON formatted word data \cite{Bootstrap, D3, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. JS was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
@@ -1011,7 +1014,7 @@ application = get_wsgi_application()
 			\hline
 			James Allingham & The team communicated well and the work was all completed on time. & The deadline for the prototype was very stressful as it was almost missed. & Work should be better integrated from the start to prevent last minute integration problems. \\
 			\hline
-			Joseph Gage & & & \\
+			Joseph Gage & Delegation of tasks was completed early on and each member was committed to finishing his tasks well and on time. & A proper code structure and design was not discussed before the commencement of work which led to inefficiencies in integration and testing. & More thorough project planning in terms of code structure and architecture can be planned before the project begins.\\
 			\hline
 			Nathan Haag & Team communication and delegating of tasks was efficient and clear cut. That being said, team interaction and help was still a contributing factor to team success. & Clearly defined requirements as to what was needed from the "client" was not a part of the sprint, which was frustrating. & Integrate all front-end visualisations with back-end, retrieving real data and create visualisations with bigger data. \\
 			\hline
