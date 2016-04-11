@@ -791,9 +791,28 @@ application = get_wsgi_application()
 	\end{lstlisting}
 	
 	\begin{lstlisting} [caption=friendNetwork(),captionpos=b,label=list:friendNetwork,breaklines=true]
-	#content is rendered to network.html page
 		content = {"FriendGraph": json.dumps(db.getFoFNetwork("Joseph", "Gage"))}
 		return render_to_response("/var/www/friendAnalyzer/friendAnalyzerApp/templates/network.html",content)
+	\end{lstlisting}
+	
+	\subsubsection{Py2Neo Queries}
+	
+	As mentioned in the back-end design document, referring specifically to the graph database, there are three functions which support the database: \texttt{getPerson()}, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()}.
+	
+	For the \texttt{getPerson()} function, the query is implemented as shown in listing \ref{list:getPersonQuery}. The query finds a match in the database based on the input parameters {N} (Name) and {S} (Surname) and then appends the return values in the form of a \textit{node} element to the function return statement.
+	
+	\begin{lstlisting} [caption=getPerson(),captionpos=b,label=list:getPersonQuery,breaklines=true]
+	query = "MATCH (p {name:{N}, surname:{S}}) RETURN ID(p) AS id, p.name AS name, p.surname AS surname, p.age AS age, p.occupation AS occupation, p.img_url AS img_url"
+	...
+	result["nodes"].append({"id":record.id,"name":str(record.name),"surname":str(record.surname),"age":record.age,"occupation":str(record.occupation),"img_url":str(record.img_url)})
+	\end{lstlisting}
+	
+	\texttt{getFriendNetwork()} and \texttt{getFoFNetwork()} are carried out in a similar fashion. The difference is that where \texttt{getPerson()} returns the details of a single person, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()} uses a for loop to run through all the friends and all the friends of friends, respectively, that a user has, and appends them to the return result. An example of this from the \texttt{getFriendNetwork()} function is shown in \ref{list:getFriendNetwork}.
+	
+	\begin{lstlisting} [caption=getFriendNetwork(),captionpos=b,label=list:getFriendNetwork,breaklines=true]
+	for record in graph.cypher.execute(query, {"N":name,"S":surname}):
+		result["nodes"].append({"id":record.idf,"name":str(record.f["name"]),"surname":str(record.f["surname"]),"age":record.f["age"],"occupation":str(record.f["occupation"]), "img_url":str(record.f["img_url"])})
+		result["links"].append({"source":record.idp, "target":record.idf, "since":str(record.r["since"]), "type":str(record.r.type), "level":str(record.r["level"])})
 	\end{lstlisting}
 	
 	\section{The Sprint Planning}
@@ -806,7 +825,6 @@ application = get_wsgi_application()
 		
 		
 
-	
 	\subsection{The Scrum Backlog } \label{scrumback}
 	The Scrum backlog (labelled `1' in Figure \ref{fig:scrum}) is a backlog that contains all the tasks for the entire project that are required to be completed. The formation of the Scrum backlog is compiled by the Scrum team and the product owner to ensure that the defined tasks are closely in line with the requirements for the project. The backlog comprises of the various task definitions, a time estimation of each task and the task's priority. The Scrum backlog is made at the beginning of the project during the planning stage. This backlog is flexible as tasks can be added, changed and re-prioritised by the product owner, the scrum team or other stakeholders during the SDLC. The Scrum Product Backlog for the Tracking Facebook Interconnected Links is shown in Table \ref{backlog} which includes all the tasks, the estimated time and priority.     
 	
