@@ -566,10 +566,10 @@
 	
 	The web page uses a script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:wordchart}.
 	
-		\begin{figure}[h]
+		\begin{figure}[htbp]
 			\centering
 			\includegraphics[scale=1]{bubbles}
-			\caption{Code structure for word bubble chart drawing script.} \label{fig:wordchart}
+			\caption{Code structure for word bubble chart drawing script} \label{fig:wordchart}
 		\end{figure}
 
 	The page has the following dependencies: HTML, Bootstrap, d3.js, JS and JSON formatted word data \cite{Bootstrap, D3, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for the providing the framework to create the word chart visualisation. JS was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
@@ -581,10 +581,10 @@
 	
 	The web page uses a script for creating the visualisation it displays.  The general operation of the script is pictured in Figure \ref{fig:networkdiagram}.
 	
-		\begin{figure}[h]
+		\begin{figure}[htbp]
 			\centering
 			\includegraphics[scale=1]{network}
-			\caption{Code structure for friend network drawing script.} \label{fig:networkdiagram}
+			\caption{Code structure for friend network drawing script} \label{fig:networkdiagram}
 		\end{figure}
 		
 	The page has the following dependencies: HTML, Bootstrap, d3.js, JS and JSON formatted word data \cite{Bootstrap, D3, JSON}. HTML was the mark-up language used for the page. Bootstrap was used for styling the page. d3.js was used for providing the framework to create the word chart visualisation. JS was used to write the script for creating the visualisation on the page. The word data was also used by the script to create the visualisation.
@@ -621,7 +621,13 @@
 	Data for the friend network and for the word bubble chart is accepted in a JSON format. It is then filtered in the scripts and used to create the visualisations. Both visualisations were created using SVGs, which is beneficial due to its interactive nature and powerful ability to customise. Visualisations are created dynamically and on demand, and so SVGs are perfectly suited to the context of the project. A major advantage of using these graphics is that they are relatively small and so users will not have to wait long to receive their visualisations \cite{SVG}.
 	
 	\subsubsection{Friend Network}
-	The friend network was implemented using the d3.js force directed graph. To create the graph, explicit parameters were defined in the script to control the size of the graph, setting the width at 960px, the height at 500px and the radius of the  nodes in the graph to 6px. The HTML code imports the data through back-end functionality to create the friend network. 
+	The friend network was implemented using the d3.js force directed graph, shown in Figure \ref{fig:graph}. To create the graph, explicit parameters were defined in the script to control the size of the graph, setting the width at 960px, the height at 500px and the radius of the  nodes in the graph to 6px. The HTML code imports the data through back-end functionality to create the friend network. 
+
+	\begin{figure}[htbp]
+			\centering
+			\includegraphics[width=\textwidth]{graph.jpg}
+			\caption{Force directed graph showing a friend network} \label{fig:graph}
+		\end{figure}
 	
 	The script accepts graph data with two concepts: `nodes' and `links'. The node data is used to create the nodes on the graph representing the Facebook friends of the current user. Each node has an id, name, surname, occupation, age and img\_url assigned to it. The link data maps nodes to each other, describing their relationship level, type and duration. This mapping is done by defining a link as the relationship between a source node and a target node.
 	
@@ -639,7 +645,7 @@
    \begin{figure}
    	\centering
    	\includegraphics[scale=1]{packlayout.PNG}
-   	\caption{Pack Layout, showing hierarchical composition.} \label{fig:packlayout}
+   	\caption{Pack Layout, showing hierarchical composition} \label{fig:packlayout}
    \end{figure}
    
    \subsubsection{Front-End Testing}
@@ -665,7 +671,7 @@
 	
 	\begin{center} 
 		\includegraphics[width=\textwidth]{djangostruc}
-		\captionof{figure}{Code structure for running of web application and processing user input.} \label{fig:django}
+		\captionof{figure}{Code structure for running of web application and processing user input} \label{fig:django}
 	\end{center}
 	
 	The following functions were used in the web application framework: \texttt{home()}, \texttt{friendNetwork()} and \texttt{wordChart()}. These functions refer to the different pages served by the web application. Each of these functions simply return the file path to the requested page which is the input to each function.
