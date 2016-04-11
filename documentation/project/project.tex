@@ -811,12 +811,29 @@ application = get_wsgi_application()
 	\end{lstlisting}
 	
 	\begin{lstlisting} [caption=friendNetwork(),captionpos=b,label=list:friendNetwork,breaklines=true]
-	#content is rendered to network.html page
 		content = {"FriendGraph": json.dumps(db.getFoFNetwork("Joseph", "Gage"))}
 		return render_to_response("/var/www/friendAnalyzer/friendAnalyzerApp/templates/network.html",content)
 	\end{lstlisting}
 	
-
+	\subsubsection{Py2Neo Queries}
+	
+	As mentioned in the back-end design document, referring specifically to the graph database, there are three functions which support the database: \texttt{getPerson()}, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()}.
+	
+	For the \texttt{getPerson()} function, the query is implemented as shown in listing \ref{list:getPersonQuery}. The query finds a match in the database based on the input parameters {N} (Name) and {S} (Surname) and then appends the return values in the form of a \textit{node} element to the function return statement.
+	
+	\begin{lstlisting} [caption=getPerson(),captionpos=b,label=list:getPersonQuery,breaklines=true]
+	query = "MATCH (p {name:{N}, surname:{S}}) RETURN ID(p) AS id, p.name AS name, p.surname AS surname, p.age AS age, p.occupation AS occupation, p.img_url AS img_url"
+	...
+	result["nodes"].append({"id":record.id,"name":str(record.name),"surname":str(record.surname),"age":record.age,"occupation":str(record.occupation),"img_url":str(record.img_url)})
+	\end{lstlisting}
+	
+	\texttt{getFriendNetwork()} and \texttt{getFoFNetwork()} are carried out in a similar fashion. The difference is that where \texttt{getPerson()} returns the details of a single person, \texttt{getFriendNetwork()} and \texttt{getFoFNetwork()} uses a for loop to run through all the friends and all the friends of friends, respectively, that a user has, and appends them to the return result. An example of this from the \texttt{getFriendNetwork()} function is shown in \ref{list:getFriendNetwork}.
+	
+	\begin{lstlisting} [caption=getFriendNetwork(),captionpos=b,label=list:getFriendNetwork,breaklines=true]
+	for record in graph.cypher.execute(query, {"N":name,"S":surname}):
+		result["nodes"].append({"id":record.idf,"name":str(record.f["name"]),"surname":str(record.f["surname"]),"age":record.f["age"],"occupation":str(record.f["occupation"]), "img_url":str(record.f["img_url"])})
+		result["links"].append({"source":record.idp, "target":record.idf, "since":str(record.r["since"]), "type":str(record.r.type), "level":str(record.r["level"])})
+	\end{lstlisting}
 	
 	\section{The Sprint Planning}
 	The Scrum process is an agile approach to projects (particularly software development projects) that encourages incremental progress, teamwork, collaboration with clients and allows for sudden requirement changes \cite{Cohn}. This process is comprised of short project sprints (typically 30 days) with each sprint focusing on the succeeding project requirements. This incremental approach requires functionally of aspects of the project after each sprint. This section discusses the sprint planning progress and the Scrum approach taken for the Tracking Interconnected Facebook Links project. Figure \ref{fig:scrum} illustrates the Scrum process and the labeled numbered sections 1, 2 and 3 are discussed in Sections  \ref{scrumback} ,  \ref{sprintback} and  \ref{retro} respectively.
