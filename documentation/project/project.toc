@@ -1,0 +1,81 @@
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\contentsline {subsection}{\numberline {1.1}Problem Statement}{1}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Project Objectives}{2}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Stakeholders}{2}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Abbreviations, Acronyms and Definitions}{3}{subsection.1.4}
+\contentsline {section}{\numberline {2}Software Requirement Specification}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Introduction}{5}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Requirements}{5}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Purpose}{6}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}System Overview}{6}{subsubsection.2.1.3}
+\contentsline {subsection}{\numberline {2.2}Software Development Life Cycle Choice}{7}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Architecture Choice}{9}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Front-End Service}{9}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}UI Functionality}{9}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}UI Implementation}{12}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Back-End Service}{12}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Apache}{13}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}Neo4j}{14}{subsubsection.2.5.2}
+\contentsline {subsection}{\numberline {2.6}Supporting Software}{15}{subsection.2.6}
+\contentsline {subsection}{\numberline {2.7}Use Cases}{16}{subsection.2.7}
+\contentsline {section}{\numberline {3}The Front-End}{18}{section.3}
+\contentsline {subsection}{\numberline {3.1}Design Document}{18}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Landing Navigational Web Page}{18}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Friend Status Update Word Bubble Chart Web Page}{18}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Friend Network Diagram Web Page}{20}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}Implementation}{20}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Introduction}{20}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Implementing HTML pages with Django}{22}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Friend Network}{23}{subsubsection.3.2.3}
+\contentsline {subsubsection}{\numberline {3.2.4}Word Bubble Chart}{24}{subsubsection.3.2.4}
+\contentsline {subsubsection}{\numberline {3.2.5}Front-End Testing}{25}{subsubsection.3.2.5}
+\contentsline {section}{\numberline {4}The Back-End}{26}{section.4}
+\contentsline {subsection}{\numberline {4.1}Design Document}{26}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}The Web Application Framework}{27}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}The Graph Database}{29}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Implementation}{33}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Introduction}{33}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Django}{33}{subsubsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.3}Web Server}{33}{subsubsection.4.2.3}
+\contentsline {subsubsection}{\numberline {4.2.4}Views}{34}{subsubsection.4.2.4}
+\contentsline {subsubsection}{\numberline {4.2.5}Py2Neo Queries}{35}{subsubsection.4.2.5}
+\contentsline {section}{\numberline {5}The Sprint Planning}{36}{section.5}
+\contentsline {subsection}{\numberline {5.1}The Scrum Backlog }{37}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}The Scrum Logistics}{40}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}The Sprint Backlog }{42}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}The Daily Scrum Meetings}{44}{subsection.5.4}
+\contentsline {subsection}{\numberline {5.5}Managing The Sprint Process}{45}{subsection.5.5}
+\contentsline {section}{\numberline {6}Sprint Retrospective}{46}{section.6}
+\contentsline {subsection}{\numberline {6.1}The Goals Achieved and Positive Outcomes}{46}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}The Negative Outcomes}{47}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}The Sprint Retrospective Meeting Feedback}{48}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}The Improvements For the Next Sprint}{48}{subsection.6.4}
+\contentsline {section}{\numberline {7}Conclusion}{50}{section.7}
+\contentsline {section}{\numberline {A}Use Cases}{53}{appendix.A}
+\contentsline {subsection}{\numberline {A.1}Use Case 1: Log In}{53}{subsection.A.1}
+\contentsline {subsubsection}{\numberline {A.1.1}Basic Flow}{53}{subsubsection.A.1.1}
+\contentsline {subsubsection}{\numberline {A.1.2}Alternate Flows}{53}{subsubsection.A.1.2}
+\contentsline {subsection}{\numberline {A.2}Use Case 2: Sign Up}{54}{subsection.A.2}
+\contentsline {subsubsection}{\numberline {A.2.1}Basic Flow}{54}{subsubsection.A.2.1}
+\contentsline {subsubsection}{\numberline {A.2.2}Alternate Flows}{54}{subsubsection.A.2.2}
+\contentsline {subsection}{\numberline {A.3}Use Case 3: Connect to Facebook}{54}{subsection.A.3}
+\contentsline {subsubsection}{\numberline {A.3.1}Basic Flow}{54}{subsubsection.A.3.1}
+\contentsline {subsubsection}{\numberline {A.3.2}Alternate Flows}{55}{subsubsection.A.3.2}
+\contentsline {subsection}{\numberline {A.4}Use Case 4: Upload Data}{55}{subsection.A.4}
+\contentsline {subsubsection}{\numberline {A.4.1}Basic Flow}{55}{subsubsection.A.4.1}
+\contentsline {subsubsection}{\numberline {A.4.2}Alternate Flows}{56}{subsubsection.A.4.2}
+\contentsline {subsection}{\numberline {A.5}Use Case 5: View Friend Network}{56}{subsection.A.5}
+\contentsline {subsubsection}{\numberline {A.5.1}Basic Flow}{56}{subsubsection.A.5.1}
+\contentsline {subsubsection}{\numberline {A.5.2}Alternate Flows}{56}{subsubsection.A.5.2}
+\contentsline {subsection}{\numberline {A.6}Use Case 6: View Friendship Data}{57}{subsection.A.6}
+\contentsline {subsubsection}{\numberline {A.6.1}Basic Flow}{57}{subsubsection.A.6.1}
+\contentsline {subsubsection}{\numberline {A.6.2}Alternate Flows}{57}{subsubsection.A.6.2}
+\contentsline {subsection}{\numberline {A.7}Use Case 7: View Relationship Data}{57}{subsection.A.7}
+\contentsline {subsubsection}{\numberline {A.7.1}Basic Flow}{57}{subsubsection.A.7.1}
+\contentsline {subsubsection}{\numberline {A.7.2}Alternate Flows}{57}{subsubsection.A.7.2}
+\contentsline {subsection}{\numberline {A.8}Use Case 8: View Personal Data}{58}{subsection.A.8}
+\contentsline {subsubsection}{\numberline {A.8.1}Basic Flow}{58}{subsubsection.A.8.1}
+\contentsline {subsubsection}{\numberline {A.8.2}Alternate Flows}{58}{subsubsection.A.8.2}
+\contentsline {subsection}{\numberline {A.9}Use Case 9: View Other Visualisations}{58}{subsection.A.9}
+\contentsline {subsubsection}{\numberline {A.9.1}Basic Flow}{58}{subsubsection.A.9.1}
+\contentsline {section}{\numberline {B}The Minutes from the First Sprint Planning Meeting}{59}{appendix.B}
